@@ -6,6 +6,8 @@ I. Functionalities
   3. Vote.
   4. User Login.
   5. Add Groups.
+
+
 II. Articles
   1. Team.
   2. Why School of Athens?
