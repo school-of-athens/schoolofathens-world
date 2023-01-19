@@ -17,6 +17,7 @@
     .frontface {
       width: 100vw;
       height: 100vh;
+      box-sizing: border-box;
       margin: 0;
       position: relative;
       display: flex;
@@ -60,12 +61,12 @@
       }
     }
 
-    .section:hover {
+    .sect:hover {
       background-color: #EDF2F7;
       border-radius: 50px;
     }
 
-    .section {
+    .sect {
       padding: 2rem;
       margin-bottom: 3rem !important;
     }
@@ -77,153 +78,195 @@
     a {
       font-size: 1.1rem !important;
     }
+
+    .scroll-snap {
+      max-height: 100vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+    }
+
+    section {
+      box-sizing: border-box;
+      text-align: center;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 
 </head>
 
 <body>
-  <div class="frontface">
-    <div class="frontImg"></div>
-    <div class="frontTitle px-3">
-      <h1 class="text-white" style="margin-left: auto; margin-right: auto; margin-bottom: 10px;">Welcome to the School
-        Of Athens!</h1>
-      <p class="lead container"
-        style="color: white; font-weight: normal; margin-left: auto; margin-right: auto; max-width: 1000px;">The
-        School of Athens is a fresco by the
-        Italian Renaissance artist Raphael. It depicts a congregation of philosophers, mathematicians, and scientists
-        from Ancient Greece, including Plato, Aristotle, Pythagoras, Archimedes, and Heraclitus.</p>
-      <p class="lead">
-        <a href="#" class="btn btn-lg btn-light border-white bg-white">Learn more</a>
-      </p>
-    </div>
-  </div>
-
-  <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
-    <div class="container-fluid" style="padding: 0 3rem;">
-      <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
-        <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The School of
-              Athens</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="todo">To Do</a>
-          </li>
-        </ul>
-
-        <div class="login-signup" style="text-align: center;">
-          <button type="button" class="btn btn-outline-secondary me-2"
-            onclick="window.location.href='login';">Login</button>
-          <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+  <div class="scroll-snap">
+    <section>
+      <div class="frontface">
+        <div class="frontImg"></div>
+        <div class="frontTitle px-3">
+          <h1 class="text-white" style="margin-left: auto; margin-right: auto; margin-bottom: 10px;">Welcome to the
+            School
+            Of Athens!</h1>
+          <p class="lead container"
+            style="color: white; font-weight: normal; margin-left: auto; margin-right: auto; max-width: 1000px;">The
+            School of Athens is a fresco by the
+            Italian Renaissance artist Raphael. It depicts a congregation of philosophers, mathematicians, and
+            scientists
+            from Ancient Greece, including Plato, Aristotle, Pythagoras, Archimedes, and Heraclitus.</p>
+          <p class="lead">
+            <a href="#" class="btn btn-lg btn-light border-white bg-white">Learn more</a>
+          </p>
         </div>
       </div>
-    </div>
-  </nav>
+    </section>
 
-  <div class="container justify-content-center content">
-    <h1>Welcome to the School Of Athens!</h1>
-    <div class="row section my-auto">
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra vel
-          turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum faucibus.
-          Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et tortor
-          at
-          risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc mi ipsum.
-          Purus non enim praesent elementum facilisis leo.</p>
-      </div>
-    </div>
-    <div class="row section my-auto">
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec sagittis
-          aliquam
-          malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-          Vulputate
-          enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue eu
-          consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
-      </div>
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-    </div>
-    <div class="row section my-auto">
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra vel
-          turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum faucibus.
-          Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et tortor
-          at
-          risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc mi ipsum.
-          Purus non enim praesent elementum facilisis leo.</p>
-      </div>
-    </div>
-    <div class="row section my-auto">
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec sagittis
-          aliquam
-          malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-          Vulputate
-          enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue eu
-          consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
-      </div>
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-    </div><div class="row section my-auto">
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra vel
-          turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum faucibus.
-          Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et tortor
-          at
-          risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc mi ipsum.
-          Purus non enim praesent elementum facilisis leo.</p>
-      </div>
-    </div>
-    <div class="row section my-auto">
-      <div class="col-lg-8 col-md-7 col-12 my-auto">
-        <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec sagittis
-          aliquam
-          malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-          Vulputate
-          enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue eu
-          consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
-      </div>
-      <div class="col-lg-4 col-md-5 col-12 my-auto">
-        <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
-      </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
+      <div class="container-fluid" style="padding: 0 3rem;">
+        <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
+          <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The School of
+                Athens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="todo">To Do</a>
+            </li>
+          </ul>
 
-  </div>
+          <div class="login-signup" style="text-align: center;">
+            <button type="button" class="btn btn-outline-secondary me-2"
+              onclick="window.location.href='login';">Login</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div class="container justify-content-center content">
+        <h1 style="margin-top: 6rem;">Welcome to the School Of Athens!</h1>
+        <div class="row sect my-auto">
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
+              vel
+              turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
+              faucibus.
+              Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
+              tortor
+              at
+              risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
+              mi ipsum.
+              Purus non enim praesent elementum facilisis leo.</p>
+          </div>
+        </div>
+        <div class="row sect my-auto">
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
+              sagittis
+              aliquam
+              malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
+              Vulputate
+              enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
+              eu
+              consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+        </div>
+        <div class="row sect my-auto">
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
+              vel
+              turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
+              faucibus.
+              Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
+              tortor
+              at
+              risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
+              mi ipsum.
+              Purus non enim praesent elementum facilisis leo.</p>
+          </div>
+        </div>
+        <div class="row sect my-auto">
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
+              sagittis
+              aliquam
+              malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
+              Vulputate
+              enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
+              eu
+              consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+        </div>
+        <div class="row sect my-auto">
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+              do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
+              vel
+              turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
+              faucibus.
+              Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
+              tortor
+              at
+              risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
+              mi ipsum.
+              Purus non enim praesent elementum facilisis leo.</p>
+          </div>
+        </div>
+        <div class="row sect my-auto">
+          <div class="col-lg-8 col-md-7 col-12 my-auto">
+            <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
+              sagittis
+              aliquam
+              malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
+              Vulputate
+              enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
+              eu
+              consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-12 my-auto">
+            <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          </div>
+        </div>
 
+      </div>
+    </section>
+  
+<section>
   <div class="container footer mt-4">
     <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
       <div class="row">
@@ -248,8 +291,11 @@
       </div>
     </footer>
   </div>
+</section>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>

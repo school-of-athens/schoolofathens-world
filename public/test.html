@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        .container {
+            max-height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        section {
+            box-sizing: border-box;
+            height: 100vh;
+            text-align: center;
+            scroll-snap-align: start;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Calculator</h1>
+    <div class="container">
+        <section style="background-color: red; height: 150vh;">
+            <h1>This is page 1</h1>
+        </section>
 
-    <form action="/api/test" method="post">
-        <input type="text" name="num1" placeholder="Enter your first number">
-        <input type="text" name="num2" placeholder="Enter your second number">
-        <button type="submit" name="submit">Submit</button>
-    </form>
+        <section style="background-color: blue;">
+            <h1>This is page 1</h1>
+        </section>
+
+        <section style="background-color: purple; height: 200vh;">
+            <h1>This is page 1</h1>
+        </section>
+
+        <section style="background-color: yellow;">
+            <h1>This is page 1</h1>
+        </section>
+
+
+
+
+
+    </div>
 </body>
 </html>
