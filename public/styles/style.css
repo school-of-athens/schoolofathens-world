@@ -91,6 +91,10 @@ p {
     .login-signup {
         margin-bottom: 1rem;
     }
+
+    .offcanvas-end {
+        max-width: 80%;
+    }
 }
 
 .navbar-toggler {
