@@ -81,11 +81,15 @@
       max-height: 100vh;
       overflow-y: scroll;
       overflow-x: hidden;
-      scroll-snap-type: y mandatory;
+      scroll-snap-type: y proximity;
     }
 
     .inside-text {
       padding: 2rem;
+    }
+
+    .frontface.sect {
+      margin-bottom: 0;
     }
 
   </style>
@@ -164,7 +168,7 @@
         <div class="col-lg-4 col-md-5 col-12">
           <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
         </div>
-        <div class="inside-text col-lg-8 col-md-7 col-12 text-start">
+        <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
           <h1 class="text-start">How it works.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
             do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
