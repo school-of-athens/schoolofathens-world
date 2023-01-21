@@ -1,18 +1,16 @@
 # School-Of-Athens
-# #TODO:
-I. Functionalities
-  1. Add a new referendum.
-  2. Add articles.
-  3. Vote.
-  4. User Login.
-  5. Add Groups.
+# #TODO by Timeline:
+1. Beautify album card
+2. Create carousel
+3. Create forum page
+4. Create about page
+5. Create footer for index page
+6. Refractor css
+7. Create content for index page
+8. Create content for about page
+  People.
+  We need help.
+9. Create rules for forum
 
-
-II. Articles
-  1. Team.
-  2. Why School of Athens?
-  3. What's the problem of modern democracy?
-  4. How does schoolofathens.world fix that?
-  5. Education Resources.
-  6. Debate & Speech Resources.
-  7. Forum Romanum.
+# #Development Log:
+12/24/22: Genesis Day
