@@ -1,5 +1,4 @@
-# School-Of-Athens
-# #TODO by Timeline:
+# TODO by Timeline:
 1. Beautify album card
 2. Create carousel
 3. Create forum page
@@ -12,5 +11,14 @@
   We need help.
 9. Create rules for forum
 
-# #Development Log:
+# Development Plan:
+1. Create front end
+2. Add database
+3. Add publish article and poll functionalities
+4. Add authentication and create profile page
+5. Add groups
+6. Add blockchain and smart contract
+7. Decentralize organization
+
+# Development Log:
 12/24/22: Genesis Day
