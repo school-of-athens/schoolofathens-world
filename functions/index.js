@@ -1,18 +1,23 @@
 const functions = require("firebase-functions");
 const express = require("express");
-const bodyParser = require("body-parser");
 const https = require("https");
 const getDate = require(__dirname + "/getDate.js");
 
+const admin = require("firebase-admin");
+const credentials = require(__dirname + "key.json");
+
+admin.initializeApp({
+    credential: admin.credential.cert(credentials)
+});
+
+const db = admin.firestore();
+
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-var ArticlesList = [];
-ArticlesList.push({
-    content: "This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-    publishDate: getDate.getDate(),
-    img_src: "/images/School-Of-Athens.jpg"
+app.get("/test", (req, res) => {
+    res.send(__dirname);
 });
 
 app.get("/learn", (req, res) => {
@@ -23,13 +28,15 @@ app.get("/compose", (req, res) => {
     res.render('compose', {today: getDate.getDate()});
 });
 
-app.post("/compose", (req, res) => {
+app.post("/compose", async (req, res) => {
 
-    ArticlesList.push({
+    const newArticle = {
         content: req.body.content,
         publishDate: getDate.getDate(),
-        img_src: "/images/" + req.body.image
-    });
+        img_src: "https://schoolofathens.world/images/" + req.body.image
+    };
+
+    const response = await db.collection("articles").add(newArticle);
 
     res.redirect("/learn");
 });
