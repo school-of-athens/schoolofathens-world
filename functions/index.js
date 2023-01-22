@@ -4,7 +4,7 @@ const https = require("https");
 const getDate = require(__dirname + "/getDate.js");
 
 const admin = require("firebase-admin");
-const credentials = require(__dirname + "key.json");
+const credentials = require(__dirname + "/key.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(credentials)
@@ -20,17 +20,28 @@ app.get("/test", (req, res) => {
     res.send(__dirname);
 });
 
-app.get("/learn", (req, res) => {
-    res.render('learn', {ArticlesList: ArticlesList});
+app.get("/learn", async (req, res) => {
+    const usersRef = db.collection("articles");
+    const response = await usersRef.get();
+
+    let articlesList = [];
+    response.forEach((doc) => {
+        let article = doc.data();
+        article.id = doc.id;
+        articlesList.push(article);
+    })
+
+    res.render('learn', { articlesList: articlesList });
 });
 
 app.get("/compose", (req, res) => {
-    res.render('compose', {today: getDate.getDate()});
+    res.render('compose', { today: getDate.getDate() });
 });
 
 app.post("/compose", async (req, res) => {
 
     const newArticle = {
+        title: req.body.title,
         content: req.body.content,
         publishDate: getDate.getDate(),
         img_src: "https://schoolofathens.world/images/" + req.body.image
@@ -39,6 +50,17 @@ app.post("/compose", async (req, res) => {
     const response = await db.collection("articles").add(newArticle);
 
     res.redirect("/learn");
+});
+
+app.get("/learn/:articleID", async (req, res) => {
+
+    var docRef = db.collection("articles").doc(req.params.articleID);
+
+    docRef.get().then((doc) => {
+        res.render('article', {article: doc.data()});
+    }).catch((error) => {
+        res,send(error);
+    });
 });
 
 app.post("/api/test", (req, res) => {
@@ -68,5 +90,9 @@ app.post('/api/weather', (req, res) => {
         });
     });
 });
+
+app.use((req, res, next) => {
+    res.status(404).redirect("/404");
+  })
 
 exports.app = functions.https.onRequest(app);
