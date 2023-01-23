@@ -59,7 +59,7 @@ app.get("/learn/:articleID", async (req, res) => {
     docRef.get().then((doc) => {
         res.render('article', {article: doc.data()});
     }).catch((error) => {
-        res,send(error);
+        res.redirect("/404");
     });
 });
 

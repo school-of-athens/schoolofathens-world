@@ -13,9 +13,6 @@
     <link rel="stylesheet" type="text/css" href="https://schoolofathens.world/styles/style.css">
 
     <style>
-        .card-body {
-            height: 12rem;
-        }
     </style>
 </head>
 
@@ -26,7 +23,7 @@
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
                 <div class="col-lg-6 col-md-8 mx-auto">
-                    <h1 class="fw-light">Forum Romanum</h1>
+                    <h1 class="fw-light">Share Your Insights</h1>
                     <p class="lead text-muted">This is the platform for discussion and exchange of opinions. Share your
                         stories and personal insights here.</p>
                     <p>
@@ -49,7 +46,7 @@
 
                                 <div class="card-body">
                                     <p class="card-text">
-                                        <%= articlesList[i].content.slice(0, 120) + "..." %>
+                                        <%= articlesList[i].content.substring(0, 120) + "..." %>
                                     </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">

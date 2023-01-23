@@ -18,8 +18,15 @@
         }
 
         img {
-            max-height: 50vh;
-            width: auto;
+            max-height: 65vh;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 1700px) {
+            .container {
+                max-width: 80%;
+            }
         }
     </style>
 </head>
@@ -28,12 +35,18 @@
 
     <%- include("header") -%>
 
-    <div class="container text-center my-5">
-        <h1><%= article.title %></h1>
-        <img class="my-3" src="<%= article.img_src %>">
-        <p class="text-start"><%= article.content %></p>
-        <h6 class="text-end"><%= article.publishDate %></h6>
-    </div>
+        <div class="container text-start my-5">
+            <img class="my-3" src="<%= article.img_src %>">
+            <h1>
+                <%= article.title %>
+            </h1>
+            <p>
+                <%= article.content %>
+            </p>
+            <h6 class="text-end">
+                <%= article.publishDate %>
+            </h6>
+        </div>
 
         <%- include("footer") -%>
 
