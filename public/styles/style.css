@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 100;
     background-color: #F7FAFC;
@@ -13,7 +13,6 @@ body {
 }
 
 h1 {
-    font-family: 'Noto Sans', sans-serif;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
 }
@@ -75,16 +74,8 @@ a {
 p {
     line-height: 2;
     color: black;
-    font-family: 'Lato', sans-serif;
     font-size: 1.1rem;
   }
-
-
-@media (min-width: 1700px) {
-    .container {
-        max-width: 80%;
-    }
-}
 
 @media (max-width: 992px) {
     .navbar-min-height {

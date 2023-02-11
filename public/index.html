@@ -84,6 +84,10 @@
       scroll-snap-type: y proximity;
     }
 
+    .content-first-child {
+      margin-top: 10rem;
+    }
+
     .inside-text {
       padding: 2rem;
     }
@@ -91,7 +95,6 @@
     .frontface.sect {
       margin-bottom: 0;
     }
-
   </style>
 
 </head>
@@ -101,7 +104,8 @@
     <div class="frontface sect">
       <div class="frontImg"></div>
       <div class="frontTitle px-3">
-        <h1 class="text-white" style="margin-left: auto; margin-right: auto; margin-bottom: 10px; text-align: center;">Welcome to the
+        <h1 class="text-white" style="margin-left: auto; margin-right: auto; margin-bottom: 10px; text-align: center;">
+          Welcome to the
           School
           Of Athens!</h1>
         <p class="lead container"
@@ -111,7 +115,7 @@
           scientists
           from Ancient Greece, including Plato, Aristotle, Pythagoras, Archimedes, and Heraclitus.</p>
         <p class="lead">
-          <a href="#" class="btn btn-lg btn-light border-white bg-white">Learn more</a>
+          <a href="404" class="btn btn-lg btn-light border-white bg-white">Learn more</a>
         </p>
       </div>
     </div>
@@ -147,7 +151,7 @@
                 <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="todo">To Do</a>
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="development">Development</a>
               </li>
             </ul>
 
@@ -163,37 +167,24 @@
     </nav>
 
     <div class="container justify-content-center content">
-      <div class="row sect">
-        <h1 style="margin-bottom: 4rem; text-align: center;">Welcome to the School Of Athens!</h1>
+      <div class="row sect content-first-child">
         <div class="col-lg-4 col-md-5 col-12 my-auto">
           <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
         </div>
         <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
-          <h1 class="text-start">How it works.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
-            vel
-            turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
-            faucibus.
-            Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
-            tortor
-            at
-            risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
-            mi ipsum.
-            Purus non enim praesent elementum facilisis leo.</p>
+          <h1 class="text-start">Home to Modern Democracy.</h1>
+          <p>Join Home to Modern Democracy, the digital forum that uses Web3 blockchain technology for secure and
+            transparent voting. Our decentralized platform fosters democratic decision-making and high-quality
+            discussions on pressing issues, inspired by Athenian democracy. Join us to be a part of the
+            movement to build a more democratic and inclusive world.</p>
         </div>
       </div>
       <div class="row sect">
         <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
-          <h1 class="text-end">The world needs more perspectives.</h1>
-          <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
-            sagittis
-            aliquam
-            malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-            Vulputate
-            enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
-            eu
-            consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.</p>
+          <h1 class="text-end">The World Needs More Perspectives.</h1>
+          <p>In today's polarized world, it's more important than ever to engage in reasoned dialogue and see issues
+            from multiple perspectives. Our platform provides a safe space for high-quality discussions and democratic
+            decision-making, encouraging users to see the other side of complex issues.</p>
         </div>
         <div class="col-lg-4 col-md-5 col-12 my-auto">
           <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
@@ -202,109 +193,75 @@
 
       <div class="row sect">
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Debate.PNG" style="width:100%; height: auto; border-radius: 30px;">
         </div>
         <div class="inside-text col-lg-8 col-md-7 col-12 my-auto text-start">
-          <h1 class="text-start">Debate and vote on issues.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
-            vel
-            turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
-            faucibus.
-            Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
-            tortor
-            at
-            risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
-            mi ipsum.
-            Purus non enim praesent elementum facilisis leo.</p>
+          <h1 class="text-start">Debate and Vote on Issues, not People,</h1>
+          <p>We encourages reasoned
+            dialogue and informed decision-making by presenting well-organized arguments and evidence for both sides of
+            an issue. Let's vote on issues, not people, and build a more inclusive and democratic world together.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='forum';">Vote Now</button>
         </div>
       </div>
       <div class="row sect">
         <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
-          <h1 class="text-end">Share your insights and perspectives.</h1>
-          <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
-            sagittis
-            aliquam
-            malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-            Vulputate
-            enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
-            eu
-            consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.</p>
+          <h1 class="text-end">Share Your Insights.</h1>
+          <p>share your insights with our inclusive community. Our blog functionality lets you publish articles, create
+            podcasts, and share your stories. Your voice matters, and our platform provides a safe and inclusive space
+            to express your experiences and perspectives..</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='learn';">Learn</button>
         </div>
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Insight.jpg" style="width:100%; height: auto; border-radius: 30px;">
         </div>
       </div>
 
       <div class="row sect">
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Blockchain.png" style="width:100%; height: auto; border-radius: 30px;">
         </div>
         <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
-          <h1 class="text-start">Vote on web3 and blockchain.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
-            vel
-            turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
-            faucibus.
-            Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
-            tortor
-            at
-            risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
-            mi ipsum.
-            Purus non enim praesent elementum facilisis leo.</p>
+          <h1 class="text-start">Deployed on Web3 and Blockchain.</h1>
+          <p>Your votes are secure and transparent. The blockchain keeps an immutable record of who voted for whom, and
+            the results are stored in a decentralized way, making it nearly impossible to compromise the outcome.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='404';">Learn How You Vote on Blockchain</button>
         </div>
       </div>
       <div class="row sect">
         <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
-          <h1 class="text-end">Dencentralized management.</h1>
-          <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
-            sagittis
-            aliquam
-            malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-            Vulputate
-            enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
-            eu
-            consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.</p>
+          <h1 class="text-end">Dencentralized Management.</h1>
+          <p>The blockchains for each referendum is distributed around each user and verified with each other routinely,
+            providing a safe and secure way to vote. When a vote reaches its deadline, the result is archived, and the
+            blockchain is then deleted. Moreover, our website is
+            decentralized, with no central authority controlling it.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='404';">Learn About Decentralization</button>
         </div>
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Decentralization.svg" style="width:100%; height: auto; border-radius: 30px;">
         </div>
       </div>
 
       <div class="row sect">
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Group.jfif" style="width:100%; height: auto; border-radius: 30px;">
         </div>
         <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
-          <h1 class="text-start">Find your groups.</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus arcu bibendum at varius vel pharetra
-            vel
-            turpis nunc. Tincidunt ornare massa eget egestas purus viverra accumsan. Tempor id eu nisl nunc mi ipsum
-            faucibus.
-            Neque convallis a cras semper auctor. Volutpat blandit aliquam etiam erat. Ut sem nulla pharetra diam. Et
-            tortor
-            at
-            risus viverra adipiscing at. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Eu nisl nunc
-            mi ipsum.
-            Purus non enim praesent elementum facilisis leo.</p>
+          <h1 class="text-start">Find Your Groups.</h1>
+          <p>Connect with others who share similar interests, values, and goals. Groups can be created for schools,
+            universities, communities, and more, to discuss, debate, and vote on issues that matter.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='groups';">See Groups</button>
         </div>
       </div>
       <div class="row sect">
         <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
-          <h1 class="text-end">Join as an athen today.</h1>
-          <p>Nullam vehicula ipsum a arcu cursus vitae. Gravida arcu ac tortor dignissim convallis. Sapien nec
-            sagittis
-            aliquam
-            malesuada bibendum arcu. Nulla pharetra diam sit amet nisl suscipit. Sit amet tellus cras adipiscing enim.
-            Vulputate
-            enim nulla aliquet porttitor lacus luctus. Arcu risus quis varius quam quisque id diam vel. Vitae congue
-            eu
-            consequat ac. Feugiat in fermentum posuere urna nec tincidunt. Arcu non odio euismod lacinia at.</p>
+          <h1 class="text-end">Join as an Athen Today.</h1>
+          <p>Join the School of Athens, and become a part of modern democracy. Experience high-quality discussions, make
+            educated decisions, and be a part of a decentralized and secure platform. Let's bring back diverse
+            perspectives and become the Athenians of the 21st century.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
         </div>
         <div class="col-lg-4 col-md-5 col-12 my-auto">
-          <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+          <img src="images/Athens.jpg" style="width:100%; height: auto; border-radius: 30px;">
         </div>
       </div>
 
@@ -320,7 +277,7 @@
           </div>
 
           <div class="col-lg-4 col-md-5 col-sm-12 text-center" style="margin-bottom: 0.5rem;">
-            <p class="mb-0 text-muted">Created by Jinzhou Wu</p>
+            <p class="mb-0 text-muted">The School of Athens</p>
           </div>
 
           <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem; line-height: 2;">

@@ -15,6 +15,46 @@ const db = admin.firestore();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use(express.json());
+
+app.get('/api/devData', async (req, res) => {
+
+    let todoList = [];
+    let logList = [];
+
+    await db.collection("devTodo").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            todoList.push(data);
+        });
+    });
+
+    await db.collection("devLog").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            data.id = doc.id;
+            logList.push(data);
+        });
+    });
+
+    res.json({
+        todoData: todoList,
+        logData: logList 
+    });
+});
+
+app.post('/api/devData/todo', async (req, res) => {
+    return await db.collection("devTodo").add(req.body);
+});
+
+app.delete('/api/devData/todo', async (req, res) => {
+    return db.collection("devTodo").doc(req.body.id).delete();
+});
+
+app.post('/api/devData/log', async (req, res) => {
+    return await db.collection("devLog").add(req.body);
+});
 
 app.get("/test", (req, res) => {
     res.send(__dirname);
