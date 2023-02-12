@@ -70,6 +70,8 @@ submit.addEventListener('click', (e) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
     });
+
+    setTimeout(() => {window.location.replace("/learn");}, 0000);
 })
 
 addBtn.addEventListener('click', (e) => {
