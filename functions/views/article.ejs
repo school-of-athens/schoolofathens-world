@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Learn | The School Of Athens</title>
+  <link rel="icon" type="image/x-icon" href="https://schoolofathens.world/images/favicon.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="https://schoolofathens.world/styles/style.css">
+  <link rel="stylesheet" type="text/css" href="https://schoolofathens.world/styles/article.css">
+
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
+    <div class="container-fluid" style="padding: 0 3rem;">
+      <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
+        <img src="https://schoolofathens.world/images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+        aria-controls="offcanvasNavbar2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar2"
+        aria-labelledby="offcanvasNavbar2Label">
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="https://schoolofathens.world/">The School of
+                Athens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="https://schoolofathens.world/forum">Forum</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="https://schoolofathens.world/learn">Learn</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="https://schoolofathens.world/groups">Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="https://schoolofathens.world/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page"
+                href="https://schoolofathens.world/development">Dev</a>
+            </li>
+          </ul>
+
+          <div class="login-signup"
+            style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <button type="button" class="btn btn-outline-secondary me-2"
+              onclick="window.location.href='https://schoolofathens.world/login';">Login</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='https://schoolofathens.world/join';">Sign-up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="title-img">
+      <img src="" alt="">
+    </div>
+  
+    <div class="text-center">
+      <h1 id="title"><%= article.title %></h1>
+    </div>
+  
+  
+    <div id="content">
+
+        <% for (let i = 0; i < article.data.length; i++) { %>
+            <% if (article.data[i].type === 'paragraph') { %>
+                <p class="paragraph"><%= article.data[i].content %></p>
+            <% } %>
+            <% if (article.data[i].type === 'subtitle') { %>
+                <h2 class="subtitle"><%= article.data[i].content %></h2>
+            <% } %>
+            <% if (article.data[i].type === 'quote') { %>
+                <div class="quote">
+                    <i class="fa-solid fa-quote-left fa-2xl"></i>
+                    <p class="quote-text"><%= article.data[i].content.text %></p>
+                    
+                    <% if (article.data[i].content.source || article.data[i].content.author) { %>
+                        <div class="quote-author-source">
+                            <p>
+                                <% if (article.data[i].content.source && article.data[i].content.author) { %>
+                                    <span class="quote-author"><%= article.data[i].content.author %></span>,
+                                    <span class="quote-source"><%= article.data[i].content.source %><span></span>.
+                                <% } %>
+                                <% if (article.data[i].content.author && !article.data[i].content.source) { %>
+                                    <span class="quote-author"><%= article.data[i].content.author %></span>
+                                <% } %>
+                                <% if (article.data[i].content.source && !article.data[i].content.author) { %>
+                                    <span class="quote-source"><%= article.data[i].content.source %><span></span>
+                                <% } %>
+                            </p>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+        <% } %>
+      
+      <p id="end-mark">-END-</p>
+    </div>
+
+    
+  </div>
+
+  <div class="container footer mt-4" style="scroll-snap-align: end;">
+    <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
+      <div class="row">
+        <div class="col-lg-4 col-md-2 col-sm-12 text-center text-md-start" style="margin-bottom: 0.5rem;">
+          <a href="/">
+            <img src="https://schoolofathens.world/images/classical-building.png" style="width: 30px; height: 30px;">
+          </a>
+        </div>
+
+        <div class="col-lg-4 col-md-5 col-sm-12 text-center" style="margin-bottom: 0.5rem;">
+          <p class="mb-0 text-muted">The School of Athens</p>
+        </div>
+
+        <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem; line-height: 2;">
+          <ul class="nav justify-content-center justify-content-md-end">
+            <li class="nav-item"><a href="https://schoolofathens.world/index" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="https://schoolofathens.world/contact" class="nav-link px-2 text-muted">Contact</a></li>
+            <li class="nav-item"><a href="https://schoolofathens.world/faq" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="https://schoolofathens.world/about" class="nav-link px-2 text-muted">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://kit.fontawesome.com/57e989a526.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

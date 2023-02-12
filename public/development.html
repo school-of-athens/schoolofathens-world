@@ -25,63 +25,56 @@
 
     <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
         <div class="container-fluid" style="padding: 0 3rem;">
-            <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
-                <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
-                aria-controls="offcanvasNavbar2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar2"
-                aria-labelledby="offcanvasNavbar2Label">
-
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The
-                                School of
-                                Athens</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary navlink px-4" aria-current="page"
-                                href="forum">Forum</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary navlink px-4" aria-current="page"
-                                href="learn">Learn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary navlink px-4" aria-current="page"
-                                href="groups">Groups</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary navlink px-4" aria-current="page"
-                                href="about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary navlink px-4" aria-current="page"
-                                href="development">Development</a>
-                        </li>
-                    </ul>
-
-                    <div class="login-signup"
-                        style="text-align: center; display: flex; align-items: center; justify-content: center;">
-                        <button type="button" class="btn btn-outline-secondary me-2"
-                            onclick="window.location.href='login';">Login</button>
-                        <button type="button" class="btn btn-primary"
-                            onclick="window.location.href='join';">Sign-up</button>
-                    </div>
-                </div>
+          <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
+            <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+            aria-controls="offcanvasNavbar2">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar2"
+            aria-labelledby="offcanvasNavbar2Label">
+  
+            <div class="offcanvas-body">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The School of
+                    Athens</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="development">Dev</a>
+                </li>
+              </ul>
+  
+              <div class="login-signup"
+                style="text-align: center; display: flex; align-items: center; justify-content: center;">
+                <button type="button" class="btn btn-outline-secondary me-2"
+                  onclick="window.location.href='login';">Login</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="container">
 
         <h1 class="text-center my-5">Witness Our Progress</h1>
 
         <div class="row mb-4">
-            <div class="col-6">
+            <div class="col-md-6 col-12">
                 <h2 class="my-4">ToDo List</h2>
                 <form>
                     <div id="todo-list">
@@ -102,7 +95,7 @@
                 </form>
             </div>
 
-            <div class="col-6">
+            <div class="col-md-6 col-12">
                 <h2 class="my-4">Development Log</h2>
                 <form>
                     <div id="log-list">
@@ -124,29 +117,29 @@
     </div>
 
 
-    <div class="container footer mt-4">
-        <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
-            <div class="row">
-                <div class="col-lg-4 col-md-2 col-sm-12" style="text-align: center; margin-bottom: 0.5rem;">
-                    <a href="/">
-                        <img src="images/classical-building.png" style="width: 30px; height: 30px;">
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem;">
-                    <p class="mb-0 text-muted" style="text-align: center;">Created by Jinzhou Wu</p>
-                </div>
-
-                <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem;">
-                    <ul class="nav justify-content-center">
-                        <li class="nav-item"><a href="index" class="nav-link px-2 text-muted">Home</a></li>
-                        <li class="nav-item"><a href="contact" class="nav-link px-2 text-muted">Contact</a></li>
-                        <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="about" class="nav-link px-2 text-muted">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
+    <div class="container footer mt-4" style="scroll-snap-align: end;">
+      <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
+        <div class="row">
+          <div class="col-lg-4 col-md-2 col-sm-12 text-center text-md-start" style="margin-bottom: 0.5rem;">
+            <a href="/">
+              <img src="images/classical-building.png" style="width: 30px; height: 30px;">
+            </a>
+          </div>
+  
+          <div class="col-lg-4 col-md-5 col-sm-12 text-center" style="margin-bottom: 0.5rem;">
+            <p class="mb-0 text-muted">The School of Athens</p>
+          </div>
+  
+          <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem; line-height: 2;">
+            <ul class="nav justify-content-center justify-content-md-end">
+              <li class="nav-item"><a href="index" class="nav-link px-2 text-muted">Home</a></li>
+              <li class="nav-item"><a href="contact" class="nav-link px-2 text-muted">Contact</a></li>
+              <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
+              <li class="nav-item"><a href="about" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="https://kit.fontawesome.com/57e989a526.js" crossorigin="anonymous"></script>

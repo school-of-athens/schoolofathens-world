@@ -13,7 +13,6 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 
   <style>
-
     .carousel {
       margin-bottom: 4rem;
     }
@@ -96,9 +95,8 @@
 
   <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
     <div class="container-fluid" style="padding: 0 3rem;">
-      <a class="navbar-brand" href="/" style="padding: 0; margin-right: 0;">
-        <img src="https://schoolofathens.world/images/classical-building.png"
-          style="width: 30px; height: 30px; margin-right: 0.75rem;">
+      <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
+        <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
         aria-controls="offcanvasNavbar2">
@@ -110,37 +108,38 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="/">The
-                School of
+              <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The School of
                 Athens</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="/forum">Forum</a>
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="/learn">Learn</a>
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="/groups">Groups</a>
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="/about">About</a>
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="/todo">To Do</a>
+              <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="development">Dev</a>
             </li>
           </ul>
 
           <div class="login-signup"
             style="text-align: center; display: flex; align-items: center; justify-content: center;">
             <button type="button" class="btn btn-outline-secondary me-2"
-              onclick="window.location.href='/login';">Login</button>
-            <button type="button" class="btn btn-primary" onclick="window.location.href='/join';">Sign-up</button>
+              onclick="window.location.href='login';">Login</button>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
           </div>
         </div>
       </div>
     </div>
   </nav>
+
+
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
@@ -220,7 +219,8 @@
           <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
         </svg>
         <h2 class="fw-normal">Could be you</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
+        </p>
         <p><a class="btn btn-primary" href="#">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
@@ -235,23 +235,23 @@
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
   </div>
-  
 
-  <div class="container footer mt-4">
+
+  <div class="container footer mt-4" style="scroll-snap-align: end;">
     <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
       <div class="row">
-        <div class="col-lg-4 col-md-2 col-sm-12" style="text-align: center; margin-bottom: 0.5rem;">
+        <div class="col-lg-4 col-md-2 col-sm-12 text-center text-md-start" style="margin-bottom: 0.5rem;">
           <a href="/">
             <img src="images/classical-building.png" style="width: 30px; height: 30px;">
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem;">
-          <p class="mb-0 text-muted" style="text-align: center;">Created by Jinzhou Wu</p>
+        <div class="col-lg-4 col-md-5 col-sm-12 text-center" style="margin-bottom: 0.5rem;">
+          <p class="mb-0 text-muted">The School of Athens</p>
         </div>
 
-        <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem;">
-          <ul class="nav justify-content-center">
+        <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem; line-height: 2;">
+          <ul class="nav justify-content-center justify-content-md-end">
             <li class="nav-item"><a href="index" class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="contact" class="nav-link px-2 text-muted">Contact</a></li>
             <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
