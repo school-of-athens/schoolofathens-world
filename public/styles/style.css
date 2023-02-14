@@ -35,7 +35,7 @@ a {
     border-color: #E2E8F0;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    z-index: 2;
+    z-index: 100;
 }
 
 .navlink {
@@ -93,4 +93,9 @@ p {
 
 .navbar-toggler {
     border: none;
+}
+
+.nav-link {
+    padding-top: 0;
+    padding-bottom: 0;
 }

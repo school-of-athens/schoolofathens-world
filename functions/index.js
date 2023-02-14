@@ -18,9 +18,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set('view engine', 'ejs');
 
-app.post('/api/compose', (req, res) => {
+app.post('/api/compose', async (req, res) => {
 
-    const response = db.collection("articles").add(req.body);
+    await db.collection("articles").add(req.body);
 
     res.redirect("/learn");
 });
@@ -50,6 +50,24 @@ app.get('/api/devData', async (req, res) => {
         todoData: todoList,
         logData: logList 
     });
+});
+
+app.get('/api/getVote/:id', async (req, res) => {
+
+    await db.collection("votes").doc(req.params.id).get()
+        .then((doc) => {
+
+            if (doc.exists) {
+                const data = doc.data();
+                return res.json(data);
+            }
+            else  {
+                res.redirect("/404");
+            }
+        })
+        .catch((error) => {
+            res.redirect("/404");
+        });
 });
 
 app.post('/api/devData/todo', async (req, res) => {
