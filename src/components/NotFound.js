@@ -1,3 +1,5 @@
+import draft from "../assets/images/draft.jpg";
+
 export default function() {
     return (
         <>

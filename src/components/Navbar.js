@@ -40,8 +40,8 @@ export default function() {
 
             <div className="login-signup"
               style={{textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"}}>
-              <button type="button" className="btn btn-outline-secondary me-2" onclick={() => {window.location.href = 'login';}}>Login</button>
-              <button type="button" className="btn btn-primary" onclick={() => {window.location.href='join';}}>Sign-up</button>
+              <button type="button" className="btn btn-outline-secondary me-2" onClick={() => {window.location.href = 'login';}}>Login</button>
+              <button type="button" className="btn btn-primary" onClick={() => {window.location.href='join';}}>Sign-up</button>
           </div>
         </div>
       </div>
