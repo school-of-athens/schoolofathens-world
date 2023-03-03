@@ -1,6 +1,7 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const https = require("https");
+const cors = require('cors');
 // const multer = require('multer');
 // const upload = multer();
 
@@ -16,6 +17,7 @@ const db = admin.firestore();
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors({origin: true}));
 app.set('view engine', 'ejs');
 
 app.post('/api/compose', async (req, res) => {

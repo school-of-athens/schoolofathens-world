@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The School of Athens - Home to Modern Democracy</title>
+
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <style>
+    .frontface {
+      width: 100vw;
+      height: 100vh;
+      box-sizing: border-box;
+      margin: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      flex-direction: column;
+    }
+
+    .frontImg {
+      background-image: url("images/School-Of-Athens-Cropped.jpg");
+
+      filter: blur(2px) brightness(0.5);
+      -webkit-filter: blur(2px) brightness(0.5);
+
+      height: 100%;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .frontTitle {
+      background-color: transparent;
+      color: black;
+      font-weight: bold;
+      position: absolute;
+      width: 100vw;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 768px) {
+      .content p {
+        font-size: 1.3rem;
+        padding: 1rem 0;
+      }
+    }
+
+    .sect {
+      justify-content: center;
+      box-sizing: border-box;
+      scroll-snap-align: center;
+      display: flex;
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
+
+    .text-secondary:hover {
+      color: #007bff !important;
+    }
+
+    a {
+      font-size: 1.1rem !important;
+    }
+
+    .scroll-snap {
+      max-height: 100vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-snap-type: y proximity;
+    }
+
+    .content-first-child {
+      margin-top: 12rem;
+    }
+
+    .inside-text {
+      padding: 2rem;
+    }
+
+    .frontface.sect {
+      margin-bottom: 0;
+    }
+
+    .inside-text h1 {
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="scroll-snap">
+    <div class="frontface sect">
+      <div class="frontImg"></div>
+      <div class="frontTitle px-3">
+        <h1 class="text-white" style="margin-left: auto; margin-right: auto; margin-bottom: 10px; text-align: center;">
+          Welcome to the
+          School
+          Of Athens!</h1>
+        <p class="lead container"
+          style="color: white; font-weight: normal; margin-left: auto; margin-right: auto; max-width: 1000px;">The
+          School of Athens is a fresco by the
+          Italian Renaissance artist Raphael. It depicts a congregation of philosophers, mathematicians, and
+          scientists
+          from Ancient Greece, including Plato, Aristotle, Pythagoras, Archimedes, and Heraclitus.</p>
+        <p class="lead">
+          <a href="404" class="btn btn-lg btn-light border-white bg-white">Learn more</a>
+        </p>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navb navbar-min-height" style="padding: 0;">
+      <div class="container-fluid" style="padding: 0 3rem;">
+        <a class="navbar-brand" href="#" style="padding: 0; margin-right: 0;">
+          <img src="images/classical-building.png" style="width: 30px; height: 30px; margin-right: 0.75rem;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
+          aria-controls="offcanvasNavbar2">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end text-bg-light" tabindex="-1" id="offcanvasNavbar2"
+          aria-labelledby="offcanvasNavbar2Label">
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a id="site-name" class="nav-link text-secondary px-2" aria-current="page" href="index">The School of
+                  Athens</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-secondary navlink px-4" aria-current="page" href="development">Dev</a>
+              </li>
+            </ul>
+
+            <div class="login-signup"
+              style="text-align: center; display: flex; align-items: center; justify-content: center;">
+              <button type="button" class="btn btn-outline-secondary me-2"
+                onclick="window.location.href='login';">Login</button>
+              <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container justify-content-center content">
+      <div class="row sect content-first-child">
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Plato.jpg" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+        <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
+          <h1 class="text-start">Home to Modern Democracy.</h1>
+          <p>Join Home to Modern Democracy, the digital forum that uses Web3 blockchain technology for secure and
+            transparent voting. Our decentralized platform fosters democratic decision-making and high-quality
+            discussions on pressing issues, inspired by Athenian democracy. Join us to be a part of the
+            movement to build a more democratic and inclusive world.</p>
+        </div>
+      </div>
+      <div class="row sect">
+        <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
+          <h1 class="text-end">The World Needs More Perspectives.</h1>
+          <p>In today's polarized world, it's more important than ever to engage in reasoned dialogue and see issues
+            from multiple perspectives. Our platform provides a safe space for high-quality discussions and democratic
+            decision-making, encouraging users to see the other side of complex issues.</p>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Aristotle.jpg" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+      </div>
+
+      <div class="row sect">
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Debate.PNG" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+        <div class="inside-text col-lg-8 col-md-7 col-12 my-auto text-start">
+          <h1 class="text-start">Debate and Vote on Issues, not People.</h1>
+          <p>We encourages reasoned
+            dialogue and informed decision-making by presenting well-organized arguments and evidence for both sides of
+            an issue. Let's vote on issues, not people, and build a more inclusive and democratic world together.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='forum';">Vote Now</button>
+        </div>
+      </div>
+      <div class="row sect">
+        <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
+          <h1 class="text-end">Share Your Insights.</h1>
+          <p>share your insights with our inclusive community. Our blog functionality lets you publish articles, create
+            podcasts, and share your stories. Your voice matters, and our platform provides a safe and inclusive space
+            to express your experiences and perspectives.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='learn';">Learn</button>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Insight.jpg" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+      </div>
+
+      <div class="row sect">
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Blockchain.png" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+        <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
+          <h1 class="text-start">Deployed on Web3 and Blockchain.</h1>
+          <p>Your votes are secure and transparent. The blockchain keeps an immutable record of who voted for whom, and
+            the results are stored in a decentralized way, making it nearly impossible to compromise the outcome.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='404';">Learn How You Vote on Blockchain</button>
+        </div>
+      </div>
+      <div class="row sect">
+        <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
+          <h1 class="text-end">Dencentralized Management.</h1>
+          <p>The blockchains for each referendum is distributed around each user and verified with each other routinely,
+            providing a safe and secure way to vote. When a vote reaches its deadline, the result is archived, and the
+            blockchain is then deleted. Moreover, our website is
+            decentralized, with no central authority controlling it.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='404';">Learn About Decentralization</button>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Decentralization.svg" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+      </div>
+
+      <div class="row sect">
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Group.jfif" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+        <div class="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
+          <h1 class="text-start">Find Your Groups.</h1>
+          <p>Connect with others who share similar interests, values, and goals. Groups can be created for schools,
+            universities, communities, and more, to discuss, debate, and vote on issues that matter.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='groups';">See Groups</button>
+        </div>
+      </div>
+      <div class="row sect">
+        <div class="inside-text inside-text col-lg-8 col-md-7 col-12 my-auto text-end">
+          <h1 class="text-end">Join as an Athen Today.</h1>
+          <p>Join the School of Athens, and become a part of modern democracy. Experience high-quality discussions, make
+            educated decisions, and be a part of a decentralized and secure platform. Let's bring back diverse
+            perspectives and become the Athenians of the 21st century.</p>
+            <button type="button" class="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12 my-auto">
+          <img src="images/Athens.jpg" style="width:100%; height: auto; border-radius: 30px;">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container footer mt-4" style="scroll-snap-align: end;">
+      <footer class="flex-wrap py-3" style="border-top: medium solid #E2E8F0">
+        <div class="row">
+          <div class="col-lg-4 col-md-2 col-sm-12 text-center text-md-start" style="margin-bottom: 0.5rem;">
+            <a href="/">
+              <img src="images/classical-building.png" style="width: 30px; height: 30px;">
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-5 col-sm-12 text-center" style="margin-bottom: 0.5rem;">
+            <p class="mb-0 text-muted">The School of Athens</p>
+          </div>
+
+          <div class="col-lg-4 col-md-5 col-sm-12" style="margin-bottom: 0.5rem; line-height: 2;">
+            <ul class="nav justify-content-center justify-content-md-end">
+              <li class="nav-item"><a href="index" class="nav-link px-2 text-muted">Home</a></li>
+              <li class="nav-item"><a href="contact" class="nav-link px-2 text-muted">Contact</a></li>
+              <li class="nav-item"><a href="faq" class="nav-link px-2 text-muted">FAQs</a></li>
+              <li class="nav-item"><a href="about" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="scripts/index.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadEl = document.querySelector('#load');
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      // // The Firebase SDK is initialized and available here!
+      //
+      // firebase.auth().onAuthStateChanged(user => { });
+      // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+      // firebase.firestore().doc('/foo/bar').get().then(() => { });
+      // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+      // firebase.messaging().requestPermission().then(() => { });
+      // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+      // firebase.analytics(); // call to activate
+      // firebase.analytics().logEvent('tutorial_completed');
+      // firebase.performance(); // call to activate
+      //
+      // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+      try {
+        let app = firebase.app();
+        let features = [
+          'auth',
+          'database',
+          'firestore',
+          'functions',
+          'messaging',
+          'storage',
+          'analytics',
+          'remoteConfig',
+          'performance',
+        ].filter(feature => typeof app[feature] === 'function');
+        loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+      } catch (e) {
+        console.error(e);
+        loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+      }
+    });
+  </script>
+</body>
+
+</html>

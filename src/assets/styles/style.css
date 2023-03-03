@@ -99,3 +99,8 @@ p {
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.pnf {
+    width: 100vw;
+    text-align: center;
+}

@@ -1,21 +1,4 @@
 {
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**",
-      "localhost",
-      "bootstrap-examples",
-      ".git",
-      ".gitignore"
-    ],
-    "cleanUrls": true,
-    "rewrites": [ {
-      "source": "**",
-      "function": "app"
-    } ]
-  },
   "functions": [
     {
       "source": "functions",
@@ -27,5 +10,13 @@
         "firebase-debug.*.log"
       ]
     }
-  ]
+  ],
+  "hosting": {
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }
