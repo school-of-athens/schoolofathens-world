@@ -11,6 +11,7 @@
 # production
 /build
 /secret
+firebase_config.js
 
 # misc
 .DS_Store
