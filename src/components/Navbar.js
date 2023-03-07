@@ -1,13 +1,14 @@
-import logo from "../assets/images/classical-building.png";
+
+import { logo } from "../projectFiles";
 
 
 export default function() {
   return (
     <>
-    <nav className="navbar navbar-expand-lg navb navbar-min-height" style={{padding: "0"}}>
+    <nav className="navbar navbar-expand-lg navbar-min-height" style={{padding: "0"}}>
       <div className="container-fluid" style={{padding: "0 3rem"}}>
-        <a className="navbar-brand" href="#" style={{padding: "0", marginRight: "0"}}>
-          <img src={logo} style={{width: "30px", height: "30px", marginRight: "0.75rem"}} />
+        <a className="navbar-brand" href="/">
+          <img src={logo} />
         </a>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2"
           aria-controls="offcanvasNavbar2">
@@ -23,26 +24,25 @@ export default function() {
                   Athens</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active text-secondary navlink px-4" aria-current="page" href="forum">Forum</a>
+                <a className="nav-link text-secondary px-4" aria-current="page" href="forum">Forum</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active text-secondary navlink px-4" aria-current="page" href="learn">Learn</a>
+                <a className="nav-link text-secondary px-4" aria-current="page" href="learn">Learn</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active text-secondary navlink px-4" aria-current="page" href="groups">Groups</a>
+                <a className="nav-link text-secondary px-4" aria-current="page" href="groups">Groups</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active text-secondary navlink px-4" aria-current="page" href="about">About</a>
+                <a className="nav-link text-secondary px-4" aria-current="page" href="about">About</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active text-secondary navlink px-4" aria-current="page" href="development">Dev</a>
+                <a className="nav-link text-secondary px-4" aria-current="page" href="development">Dev</a>
               </li>
             </ul>
 
-            <div className="login-signup"
-              style={{textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center"}}>
-              <button type="button" className="btn btn-outline-secondary me-2" onClick={() => {window.location.href = 'login';}}>Login</button>
-              <button type="button" className="btn btn-primary" onClick={() => {window.location.href='join';}}>Sign-up</button>
+            <div className="signIn-signUp">
+              <button type="button" className="btn btn-grey me-2" onClick={() => {window.location.href = 'login';}}>Sign In</button>
+              <button type="button" className="btn btn-blue" onClick={() => {window.location.href='join';}}>Sign Up</button>
           </div>
         </div>
       </div>

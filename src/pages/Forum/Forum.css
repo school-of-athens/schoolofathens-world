@@ -1,0 +1,122 @@
+.footer {
+    bottom: 0;
+}
+
+.single-vote {
+    padding: 2rem 2rem 1rem 2rem;
+    /* background-color: rgba(226, 232, 240, 0.5); */
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    border: 3px solid var(--border-grey);
+}
+
+.single-vote:hover {
+    background-color: rgba(226, 232, 240, 0.25);
+}
+
+.option {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vote-title {
+    font-weight: bold;
+}
+
+.vote-bar {
+    height: 2rem;
+    background-color: white;
+    width: 100%;
+    position: relative;
+    border-radius: 0.25rem;
+}
+
+
+.vote-bar-multiple {
+    height: 2rem;
+    position: relative;
+    border-radius: 0.25rem 1rem 1rem 0.25rem;
+    padding-left: 1rem;
+}
+
+.vote-multiple-1 {
+    width: 80%;
+    background-color: teal;
+}
+
+.vote-multiple-2 {
+    width: 60%;
+    background-color: aquamarine;
+}
+
+.vote-multiple-3 {
+    width: 50%;
+    background-color: #A7727D;
+}
+
+.single-vote h3 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-weight: bold;
+}
+
+.vote-stats {
+    margin-bottom: 2rem;
+    margin-top: 0.75rem;
+    width: 100%;
+    text-align: center;
+}
+
+.vote-note {
+    margin-left: 0.25rem;
+    margin-top: 1rem;
+}
+
+.option:last-child {
+    margin-bottom: 0;
+}
+
+.forum-title {
+    background-color: var(--border-grey);
+    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fpericles_funeral_oration.png?alt=media&token=812d8736-8ae3-47b5-96f5-d04927061cf1);
+    background-size: cover; */
+    margin-bottom: 3rem;
+}
+
+.vote-bar-left {
+    border-radius: 0.25rem 0 0 0.25rem;
+    height: 100%;
+    width: 50%;
+    min-width: 10% !important;
+    background-color: #EDDBC7;
+    position: absolute;
+    left: 0;
+    padding-left: 1rem;
+    text-align: start;
+}
+
+.vote-bar-left:hover {
+    background-color: #CFB997;
+}
+
+.vote-bar-right {
+    border-radius: 0 0.25rem 0.25rem 0;
+    height: 100%;
+    width: 50%;
+    min-width: 10% !important;
+    background-color: #A7727D;
+    position: absolute;
+    right: 0;
+    padding-right: 1rem;
+    text-align: end;
+}
+
+.vote-bar-right:hover {
+    background-color: #820000;
+}
+
+.vote-text {
+    display: flex;
+    font-weight: bold;
+}

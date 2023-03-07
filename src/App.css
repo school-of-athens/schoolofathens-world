@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --body-grey: #F7FAFC;
+    --body-grey-dark: #EDF2F7;
+    --border-grey: #E2E8F0;
+    --border-grey-dark: #CBD5E0;
+    --background-grey-light: #A0AEC0;
+    --background-grey: #718096;
+    --background-grey-dark: #4A5568;
+    --contrast-light: #2D3748;
+    --contrast: #1A202C;
+    --contrast-dark: #171923;
+    --background-blue: #2A84EE;
+    --background-blue-dark: #007bff;
+    --background-blue-hover: #1E66CC;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--body-grey);
+    margin: 0;
+}
+
+p {
+    line-height: 2;
+    color: black;
+    font-size: 1.1rem;
+}
+
+a {
+    font-size: 1.1rem !important;
+}
+
+input, textarea, select {
+    border: 2px solid var(--border-grey-dark) !important;
+}
+
+label {
+    margin-left: 0.25rem;
+}
+
+.notice {
+    text-align: center;
+    height: 80vh;
+}
+
+.text-secondary:hover {
+    color: #007bff !important;
+}
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    border-bottom: 3px solid #E2E8F0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    z-index: 100;
+}
+
+.navbar-brand {
+    padding: 0;
+    margin-right: 0;
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.75rem;
+}
+
+.nav-link {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    border-bottom: 0.2rem solid #007bff;
+    padding-bottom: 0.8rem !important;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.signIn-signUp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#site-name {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding-top: 1.1rem;
+    padding-bottom: 0.9rem;
+    margin-bottom: 0;
+    margin-right: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#site-name:hover {
+    color: inherit;
+    border-bottom: 0.2rem solid #007bff;
+    padding-bottom: 0.7rem !important;
+}
+
+@media (max-width: 992px) {
+    .navbar-min-height {
+        min-height: 4rem;
+    }
+
+    .login-signup {
+        margin-bottom: 1rem;
+    }
+
+    .offcanvas-end {
+        max-width: 80%;
+    }
+}
+
+/* Footer Styles */
+
+.footer {
+    width: 100%;
+    background-color: var(--background-blue);
+}
+
+.footer--logo {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.footer--logo img {
+    position: relative;
+    top: -3px;
+    width: 30px;
+    height: 30px;
+}
+
+.footer--logo img:hover {
+    opacity: 0.8;
+}
+
+.footer--logo a {
+    color: var(--body-grey);
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    margin-left: 1rem;
+    text-decoration: none;
+    line-height: 2;
+}
+
+.footer--links {
+    padding-right: 2rem;
+}
+
+.footer--links a {
+    color: var(--body-grey);
+    line-height: 2;
+    padding: 0 0.5rem !important;
+}
+
+.footer a:hover {
+    color: var(--border-grey-dark);
+}
+
+.progress_bar {
+    width: 100%;
+    height: 5px;
+    position: fixed;
+    background-color: green;
+    z-index: 101;
+}
+
+/* Custom Button Styles */
+
+.btn-blue {
+    background-color: var(--background-blue);
+    color: var(--body-grey) !important;
+}
+
+.btn-blue:hover {
+    background-color: var(--background-blue-hover);
+}
+
+.btn-grey{
+    background-color: transparent;
+    border: 2px solid var(--border-grey-dark) !important;
+}
+
+.btn-grey:hover {
+    background-color: var(--body-grey-dark);
+}

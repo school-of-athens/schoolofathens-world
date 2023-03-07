@@ -1,0 +1,179 @@
+
+:root {
+    --body-grey: #F7FAFC;
+    --body-grey-dark: #EDF2F7;
+    --border-grey: #E2E8F0;
+    --border-grey-dark: #CBD5E0;
+    --background-grey-light: #A0AEC0;
+    --background-grey: #718096;
+    --background-grey-dark: #4A5568;
+    --contrast-light: #2D3748;
+    --contrast: #1A202C;
+    --contrast-dark: #171923;
+    --background-blue: #2A84EE;
+    --background-blue-dark: #007bff;
+    --background-blue-hover: #1E66CC;
+}
+
+.signUp {
+    width: 100vw;
+    height: 90vh;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_entry_of_king_othon_of_greece_in_athens.jpg?alt=media&token=1ff2e9b7-39ab-418a-982e-7a04ec257152);
+    background-size: cover;
+    position: relative;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.signUp--form {
+    height: 100%;
+    z-index: 3;
+    background-color: var(--body-grey);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 3px solid var(--border-grey);
+}
+
+.signUp--form h1 {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.signUp--form input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.signUp--form label {
+    align-self: start;
+    margin-left: 3px;
+}
+
+.signUp button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.signUp--google img {
+    margin-right: 1rem;
+}
+
+.signUp--divide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.signUp--divide hr {
+    width: 25%;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top: 2px solid var(--border-grey-darker);
+    opacity: 1;
+}
+
+.img-caption {
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.img_caption:hover {
+    background-color: var(--body-dark-grey-hover);
+}
+
+.footer {
+    margin-top: 0 !important;
+}
+
+.verify {
+    height: 90vh;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verify h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.icon_wrapper {
+    font-size: 4rem;
+    color: var(--body-blue);
+    background-color: var(--body-blue-muted);
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+    margin-bottom: 2rem;
+}
+
+.verify--verified-btn {
+    background-color: var(--body-blue);
+    color: white;
+    margin-top: 1rem;
+}
+
+.verify--verified-btn:hover {
+    background-color: var(--body-blud-hover);
+    color: white;
+}
+
+.verify--resend-btn {
+    border: 2px solid var(--border-grey-darker);
+    margin-top: 1rem;
+}
+
+.verify--resend-btn:hover {
+    border: 2px solid var(--border-grey-darker);
+    background-color: var(--body-grey-hover);
+}
+
+.set_up {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+.set_up h1 {
+    font-weight: bold;
+}
+
+.set_up input {
+    margin-bottom: 1rem;
+}
+
+.submit--btn {
+    margin-top: 1rem;
+    background-color: var(--body-blue);
+    color: white;
+}
+
+.submit--btn:hover {
+    background-color: var(--body-blud-hover);
+    color: white;
+}
+
+.profile_photo {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--body-blue);
+    margin-bottom: 1rem;
+    border-radius: 5rem;
+}

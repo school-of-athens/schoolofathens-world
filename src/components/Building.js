@@ -1,8 +1,10 @@
-import "../assets/styles/building.css";
 
-export default function () {
+
+
+
+export default function Building() {
     return (
-        <div className="notice row align-items-center">
+        <div className="notice">
             <h1>This page is still being built...</h1>
         </div>
     );

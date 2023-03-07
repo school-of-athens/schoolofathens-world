@@ -1,0 +1,9 @@
+.pageNotFound {
+    width: 100vw;
+    text-align: center;
+}
+
+.pageNotFound h1 {
+    marginBottom: 2rem;
+    margin-top: 3rem;
+}
