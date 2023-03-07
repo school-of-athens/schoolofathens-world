@@ -1,28 +1,191 @@
-html {
+:root {
+    --body-grey: #F7FAFC;
+    --border-grey: #E2E8F0;
+    --border-grey-darker: #cbd5e0;
+    --body-blue: #2A84EE;
+    --body-blud-hover: #1e66cc;
+    --body-grey-hover: #EDF2F7;
+    --body-dark-grey: #171923;
+    --body-blue-muted: #E5F6FF;
+    --body-dark-grey-hover: #1A202C;
+}
+
+.sign_up {
+    width: 100vw;
     height: 100vh;
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_entry_of_king_othon_of_greece_in_athens.jpg?alt=media&token=1ff2e9b7-39ab-418a-982e-7a04ec257152);
+    background-size: cover;
+    position: relative;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.sign_up--form {
+    height: 100%;
+    z-index: 3;
+    background-color: var(--body-grey);
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 3px solid var(--border-grey);
+}
+
+.sign_up--form h1 {
+    font-weight: bold;
+}
+
+.sign_up--form input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--border-grey-darker);
+}
+
+.sign_up--form label {
+    align-self: start;
+    margin-left: 3px;
+}
+
+.sign_up--btn {
+    margin-top: 1rem;
+    background-color: var(--body-blue);
+    color: white;
+    width: 100%;
+}
+
+.sign_up--btn:hover {
+    background-color: var(--body-blud-hover);
+    color: white;
+}
+
+.sign_up--google_btn {
+    background-color: var(--body-grey);
+    border: 2px solid var(--border-grey-darker);
+    width: 100%;
+}
+
+.sign_up--google_btn img {
+    margin-right: 1rem;
+}
+
+.sign_up--google_btn:hover {
+    background-color: var(--body-grey-hover);
+    border: 2px solid var(--border-grey-darker);
+}
+
+.sign_up--divide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.sign_up--divide hr {
+    width: 25%;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-top: 2px solid var(--border-grey-darker);
+    opacity: 1;
+}
+
+.img_caption {
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.img_caption:hover {
+    background-color: var(--body-dark-grey-hover);
 }
 
 .footer {
-    bottom: 0;
+    margin-top: 0 !important;
 }
 
-.form-signin {
-    max-width: 500px;
-    padding: 15px;
+.verify {
+    height: 90vh;
+    padding-top: 25vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.form-signin .form-floating:focus-within {
-    z-index: 2;
+.verify h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.icon_wrapper {
+    font-size: 4rem;
+    color: var(--body-blue);
+    background-color: var(--body-blue-muted);
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4rem;
+    margin-bottom: 2rem;
 }
 
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.verify--verified-btn {
+    background-color: var(--body-blue);
+    color: white;
+    margin-top: 1rem;
+}
+
+.verify--verified-btn:hover {
+    background-color: var(--body-blud-hover);
+    color: white;
+}
+
+.verify--resend-btn {
+    border: 2px solid var(--border-grey-darker);
+    margin-top: 1rem;
+}
+
+.verify--resend-btn:hover {
+    border: 2px solid var(--border-grey-darker);
+    background-color: var(--body-grey-hover);
+}
+
+.set_up {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+.set_up h1 {
+    font-weight: bold;
+}
+
+.set_up input {
+    margin-bottom: 1rem;
+}
+
+.submit--btn {
+    margin-top: 1rem;
+    background-color: var(--body-blue);
+    color: white;
+}
+
+.submit--btn:hover {
+    background-color: var(--body-blud-hover);
+    color: white;
+}
+
+.profile_photo {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--body-blue);
+    margin-bottom: 1rem;
+    border-radius: 5rem;
 }

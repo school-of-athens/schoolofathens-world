@@ -1,4 +1,3 @@
-import draft from "../assets/images/draft.jpg";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NotFound from "../components/NotFound";

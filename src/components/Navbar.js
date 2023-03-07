@@ -3,6 +3,7 @@ import logo from "../assets/images/classical-building.png";
 
 export default function() {
   return (
+    <>
     <nav className="navbar navbar-expand-lg navb navbar-min-height" style={{padding: "0"}}>
       <div className="container-fluid" style={{padding: "0 3rem"}}>
         <a className="navbar-brand" href="#" style={{padding: "0", marginRight: "0"}}>
@@ -46,7 +47,9 @@ export default function() {
         </div>
       </div>
     </div>
-    </nav >
-
+    
+    </nav>
+    {/* <div className="progress_bar"></div> */}
+    </>
     );
 }

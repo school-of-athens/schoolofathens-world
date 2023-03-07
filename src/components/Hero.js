@@ -1,10 +1,3 @@
-import Plato from "../assets/images/Plato.jpg";
-import Aristotle from "../assets/images/Aristotle.jpg";
-import Debate from "../assets/images/Debate.png";
-import Blockchain from "../assets/images/Blockchain.png";
-import Group from "../assets/images/Group.jfif";
-import Insight from "../assets/images/Insight.jpg";
-import Athens from "../assets/images/Athens.jpg";
 // import Decentralization from "../assets/images/Decentralization.svg";
 
 
@@ -14,7 +7,7 @@ const Hero = () => {
         <div className="container justify-content-center content">
       <div className="row sect content-first-child">
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Plato} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fplato_in_soa.jpg?alt=media&token=a9b6650d-99d9-42c5-b0ec-f4adbc0fe474" className="hero-image" />
         </div>
         <div className="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
           <h1 className="text-start">Home to Modern Democracy.</h1>
@@ -32,13 +25,13 @@ const Hero = () => {
             decision-making, encouraging users to see the other side of complex issues.</p>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Aristotle} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Faristotle_in_soa.jpg?alt=media&token=c4401049-f1e3-43f4-a67a-e1eb846f6868" className="hero-image" />
         </div>
       </div>
 
       <div className="row sect">
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Debate} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fpericles_funeral_oration.png?alt=media&token=812d8736-8ae3-47b5-96f5-d04927061cf1" className="hero-image" />
         </div>
         <div className="inside-text col-lg-8 col-md-7 col-12 my-auto text-start">
           <h1 className="text-start">Debate and Vote on Issues, not People.</h1>
@@ -57,13 +50,13 @@ const Hero = () => {
             <button type="button" className="btn btn-primary" onclick="window.location.href='learn';">Learn</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Insight} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fdeath_of_socrates.jpg?alt=media&token=cc487709-5d1b-48e7-bc06-d1ba4dc2818e" className="hero-image" />
         </div>
       </div>
 
       <div className="row sect">
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Blockchain} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fblockchain.png?alt=media&token=af76a06e-d900-4ba7-8226-ff5d767ce335" className="hero-image" />
         </div>
         <div className="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
           <h1 className="text-start">Deployed on Web3 and Blockchain.</h1>
@@ -82,13 +75,13 @@ const Hero = () => {
             <button type="button" className="btn btn-primary" onclick="window.location.href='404';">Learn About Decentralization</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Athens} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fdecentralization.svg?alt=media&token=584b0cfb-b8b5-4407-b611-09cac2b3aaac" className="hero-image" />
         </div>
       </div>
 
       <div className="row sect">
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Group} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fgroup.jfif?alt=media&token=9e003796-3195-4de4-9a52-e0463ca95765" className="hero-image" />
         </div>
         <div className="inside-text col-lg-8 col-md-7 col-12 text-start my-auto">
           <h1 className="text-start">Find Your Groups.</h1>
@@ -106,7 +99,7 @@ const Hero = () => {
             <button type="button" className="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
-          <img src={Athens} className="hero-image" />
+          <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Facropolis_of_athens.jpg?alt=media&token=0d3b78b9-07b4-4493-8287-f8c4364eb138" className="hero-image" />
         </div>
       </div>
 

@@ -21,7 +21,8 @@ import Development from "./pages/Development";
 import Compose from "./pages/Compose";
 import Article from "./pages/Article";
 import About from "./pages/about/About";
-
+import EmailVerification from "./pages/EmailVerification";
+import Apply from "./pages/Apply";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -34,17 +35,16 @@ root.render(
             <Route path="faq" element={<FAQ />} />
             <Route path="login" element={<Login />} />
             <Route path="join" element={<Join />} />
+            <Route path="verify" element={<EmailVerification />} />
+            <Route path="apply" element={<Apply />} />
             <Route path="about" element={<About />} />
             <Route path="groups" element={<Groups />} />
             <Route path="contact" element={<Contact />} />
             <Route path="devlopment" element={<Development />} />
             <Route path="compose" element={<Compose />} />
             <Route path="article" element={<Article />} />
+            {/* <Route path="test" element={<Storage />} /> */}
             <Route path="*" element={<PageNotFound />} />
         </Routes>
     </BrowserRouter>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

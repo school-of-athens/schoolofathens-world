@@ -104,3 +104,11 @@ p {
     width: 100vw;
     text-align: center;
 }
+
+.progress_bar {
+    width: 100%;
+    height: 5px;
+    position: fixed;
+    background-color: gold;
+    z-index: 101;
+}
