@@ -1,0 +1,80 @@
+.user-profile {
+    background-color: var(--body-grey-dark);
+}
+
+.user-profile p {
+    margin: 0;
+}
+
+.user-profile--title {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.user-profile--photo {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 5rem;
+}
+
+.user-profile--follow {
+    display: flex;
+    align-items: center;
+}
+
+
+.user-profile--follow button {
+    margin-left: 1rem;
+}
+
+.user-history {
+    padding: 2rem 1rem;
+    min-height: 70vh;
+}
+
+.user-profile--name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-history--categories {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-history--categories a {
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--border-grey);
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.user-history--categories a:first-child {
+    border-top: 2px solid var(--border-grey);
+}
+
+.user-history--categories a:hover {
+    border: 2px solid var(--body-blue) !important;
+}
+
+
+.user-history--categories a:hover {
+    background-color: var(--body-grey-dark);
+}
+
+.user-history--display {
+    padding: 0 5rem;
+}
+
+.user-history--display label {
+    font-size: 1.5rem;
+    margin-top: 0;
+}
+
+.user-history--display input {
+    font-size: 1.5rem;
+}
