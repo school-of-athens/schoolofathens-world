@@ -1,11 +1,11 @@
 import { logo, aristotle } from "../project-files";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../config";
-import { useContext } from "react";
-import { getAuth } from "firebase/auth";
+import { MessageContext } from "../config";
+import { useContext, useState } from "react";
+import { getAuth, signOut } from "firebase/auth";
 import { app } from "../config";
 
-const signInSignUp = () => {
+const SignInSignUp = () => {
   return (
     <div className="signIn-signUp">
       <button
@@ -30,20 +30,40 @@ const signInSignUp = () => {
   );
 };
 
-const userPortrait = (userId, userName, photoURL) => {
-  return (
-    <Link to={`/dashboard/${userId}`}>
-    <button className="btn btn-grey nav-user">
-      <img src={photoURL} referrerPolicy="no-referrer" />
-      <p>{userName}</p>
-    </button>
-    </Link>
-  );
-};
 
 export default function () {
 
   const auth = getAuth(app);
+  const { sendMessage } = useContext(MessageContext);
+  const [showAction, setShowAction] = useState(false);
+
+  const UserPortrait = () => {
+    return (
+      <Link to={`/dashboard/${auth?.currentUser?.uid}`} onMouseEnter={() => setShowAction(true)} onMouseLeave={() => setShowAction(false)}>
+        <img src={auth?.currentUser?.photoURL} referrerPolicy="no-referrer" />
+      </Link>
+    );
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      sendMessage("success", "Successfully signed out.");
+    }
+    catch(error) {
+      sendMessage("error", `An error has occured: ${error.message}`);
+    }
+    
+    
+  };
+
+  const UserAction = () => {
+    <div className="user-action">
+        <Link className="link-light" to={`/dashboard/${auth?.currentUser?.uid}`}>My Profile</Link>
+        <Link className="link-light" onClick={handleSignOut} >Log out</Link>
+    </div>
+  };
+  
 
   return (
     <>
@@ -129,11 +149,14 @@ export default function () {
                 </li>
               </ul>
 
-              {(auth.currentUser) ? userPortrait(auth?.currentUser?.uid, auth?.currentUser?.displayName, auth?.currentUser?.photoURL) : signInSignUp()}
+              {(auth.currentUser) ? <UserPortrait /> : <SignInSignUp />}
             </div>
           </div>
         </div>
       </nav>
+
+      {showAction && <UserAction />}
+      
     </>
   );
 }
