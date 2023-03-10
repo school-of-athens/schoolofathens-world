@@ -254,3 +254,46 @@ label {
 .toast-body {
     font-size: 1rem;
 }
+
+.user-action {
+    z-index: 101;
+    right: 3rem;
+    top: 4rem;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    background-color: var(--body-grey);
+    border: 2px solid var(--border-grey-dark);
+}
+
+.link-light {
+    background-color: transparent;
+    color: black !important;
+    border-bottom: 2px solid var(--border-grey);
+    text-align: center;
+    padding: 0.75rem 2rem;
+}
+
+.link-light:hover {
+    background-color: var(--body-grey-dark);
+    color: black !important;
+}
+
+.link-light:active {
+    border-bottom: 2px solid var(--background-blue);
+}
+
+.link-col:first-child {
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+.link-col:last-child {
+    border-radius: 0 0 0.75rem 0.75rem !important;
+    border-bottom: none;
+}
+
+.link-row {
+    
+}
