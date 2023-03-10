@@ -16,6 +16,14 @@
     height: 32rem;
 }
 
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    filter: brightness(.6);
+    -webkit-filter: brightness(.6);
+    object-fit: cover;
+}
+
 
 /* MARKETING CONTENT
 -------------------------------------------------- */

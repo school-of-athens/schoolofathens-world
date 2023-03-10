@@ -3,9 +3,11 @@
 }
 
 .card {
-    border: none;
+    border: 3px solid var(--border-grey);
+    border-radius: 0.5rem;
 }
 
 .card:hover {
-    box-shadow: 0 .125rem .25rem rgba(var(--bs-body-color-rgb),.25) !important;
+    border-color: var(--body-blue);
+    background-color: var(--body-grey);
 }

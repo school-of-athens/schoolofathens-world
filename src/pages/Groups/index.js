@@ -1,9 +1,12 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import Building from "../../components/Building";
+import GroupsTitle from "./GroupsTitle";
 
 export default function() {
     return (
-            <Building />
+        <>
+        <GroupsTitle />
+        <Building />
+        </>
+            
     );
 };

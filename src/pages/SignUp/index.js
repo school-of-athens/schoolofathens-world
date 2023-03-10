@@ -1,6 +1,5 @@
 
-import { useEffect, useReducer, useState } from "react";
-
+import React, { useState } from "react";
 import "./SignUp.css";
 import SignUp from "./SignUp";
 import EmailVerification from "./EmailVerification";
@@ -10,16 +9,22 @@ import SetUp from "./SetUp";
 
 export default function () {
 
-    const [mode, setMode] = useState("NEW_SIGN_UP");
+    const [page, setPage] = useState(1);
+    const [newUser, setNewUser] = useState({
+    userId: "",
+    email: "",
+    displayName: "",
+    photoURL: "",
+    firstName: "",
+    lastName: "",
+    profile: ""
+  });
 
-    switch (mode) {
-        case "NEW_SIGN_UP":
-            return <SignUp setMode={setMode} />;
-        case "EMAIL_VERIFICATION":
-            return <EmailVerification setMode={setMode} />;
-        case "SET_UP":
-            return <SetUp setMode={setMode} />;
-        default:
-            return <SignUp setMode={setMode} />;
-    }
+    return (
+        <>
+            {page === 1 && <SignUp setPage={setPage} newUser={newUser} setNewUser={setNewUser} />}
+            {page === 2 && <EmailVerification setPage={setPage} />}
+            {page === 3 && <SetUp newUser={newUser} setNewUser={setNewUser} />}
+        </>
+    );
 };

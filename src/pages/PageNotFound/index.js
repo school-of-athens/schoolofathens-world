@@ -1,6 +1,7 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+
 import NotFound from "./NotFound";
+
+import "./PageNotFound.css"
 
 export default function () {
   return <NotFound />;

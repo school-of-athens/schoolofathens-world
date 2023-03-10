@@ -1,17 +1,48 @@
-.footer {
-    bottom: 0;
+.query-selector {
+    position: sticky;
+    top: 6rem;
+}
+
+.form-check {
+    margin-bottom: 0.5rem;
+}
+
+.search {
+    display: flex;
+}
+
+.search input {
+    margin-left: 0 !important;
+}
+
+.query-selector h5 {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.query-selector label {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+}
+
+.query-selector input {
+    margin-left: 0.25rem;
 }
 
 .single-vote {
     padding: 2rem 2rem 1rem 2rem;
-    /* background-color: rgba(226, 232, 240, 0.5); */
-    border-radius: 1rem;
-    margin-bottom: 3rem;
-    border: 3px solid var(--border-grey);
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-grey);
+    border-top: 2px solid var(--border-grey);
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
 }
 
 .single-vote:hover {
     background-color: rgba(226, 232, 240, 0.25);
+    border-radius: 1rem;
+    border: 2px solid var(--body-blue);
+    border-bottom: 2px solid var(--body-blue);
 }
 
 .option {
@@ -77,12 +108,7 @@
     margin-bottom: 0;
 }
 
-.forum-title {
-    background-color: var(--border-grey);
-    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fpericles_funeral_oration.png?alt=media&token=812d8736-8ae3-47b5-96f5-d04927061cf1);
-    background-size: cover; */
-    margin-bottom: 3rem;
-}
+
 
 .vote-bar-left {
     border-radius: 0.25rem 0 0 0.25rem;

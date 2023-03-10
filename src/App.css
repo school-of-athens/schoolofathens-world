@@ -14,6 +14,19 @@
     --background-blue: #2A84EE;
     --background-blue-dark: #007bff;
     --background-blue-hover: #1E66CC;
+    --success: #2F7037;
+    --error: #BD312E;
+    --success-light: #DAF8DF;
+    --error-light: #FDE9E6;
+}
+
+h1, h2, h3, h4, h5  {
+    font-weight: bold;
+}
+
+.page-title {
+    background-color: var(--border-grey);
+    margin-bottom: 3rem;
 }
 
 body {
@@ -30,6 +43,7 @@ p {
 
 a {
     font-size: 1.1rem !important;
+    text-decoration: none;
 }
 
 input, textarea, select {
@@ -42,7 +56,10 @@ label {
 
 .notice {
     text-align: center;
-    height: 80vh;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .text-secondary:hover {
@@ -155,7 +172,6 @@ label {
     color: var(--body-grey);
     display: inline-block;
     font-family: 'Merriweather', serif;
-    margin-left: 1rem;
     text-decoration: none;
     line-height: 2;
 }
@@ -194,10 +210,47 @@ label {
 }
 
 .btn-grey{
-    background-color: transparent;
+    background-color: var(--body-grey);
     border: 2px solid var(--border-grey-dark) !important;
 }
 
 .btn-grey:hover {
     background-color: var(--body-grey-dark);
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.nav-user p {
+    margin-bottom:  0;
+    margin-left: 0.75rem;
+}
+
+.nav-user img {
+    height: 2rem;
+    width: 2rem;
+    box-sizing: content-box;
+    border-radius: 2rem;
+}
+
+.offcanvas-body {
+    align-items: center;
+}
+
+.toast-success {
+    background-color: var(--success-light);
+    border: 2px solid var(--success);
+}
+
+.toast-error {
+    background-color: var(--error-light);
+    border: 2px solid var(--error);
+}
+
+.toast-body {
+    font-size: 1rem;
 }

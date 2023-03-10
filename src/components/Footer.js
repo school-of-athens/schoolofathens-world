@@ -1,4 +1,3 @@
-import { logo } from "../projectFiles";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

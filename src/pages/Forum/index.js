@@ -1,15 +1,17 @@
 import "./Forum.css";
 
 import ForumTitle from "./ForumTitle";
-import VoteSampleBinary from "./VoteSampleBinary";
-import VoteSampleMultiple from "./VoteSampleMultiple";
+import VoteList from "./VoteList";
+import QuerySelector from "./QuerySelector";
 
 export default function () {
-    return (
-        <>
-            <ForumTitle />
-            <VoteSampleBinary />
-            <VoteSampleMultiple />
-        </>
-    );
-};
+  return (
+    <>
+      <ForumTitle />
+      <div className="row px-3 vote-list mb-4">
+        <QuerySelector />
+        <VoteList />
+      </div>
+    </>
+  );
+}

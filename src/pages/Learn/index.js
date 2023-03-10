@@ -1,41 +1,75 @@
 import React, { useEffect, useState } from 'react';
 import "./Learn.css";
-import Card from './ArticleCard';
-import Carousel from "./Carousel";
+import Card from './Card';
+import LearnTitle from "./LearnTitle";
+import QuerySelector from './QuerySelector';
 import Loading from '../../components/Loading';
+import { app } from "../../config";
+import { getDocs, collection, doc, getFirestore } from "firebase/firestore";
+import LinearProgress from '@mui/material/LinearProgress';
 
 
-function App() {
+export default function() {
 
   const [articlesList, setArticlesList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const db = getFirestore(app);
+  const articlesCollectionRef = collection(db, "articles");
+
+  const getArticles = async () => {
+    const data = await getDocs(articlesCollectionRef);
+    const filteredData = data.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id
+    }));
+    console.log(filteredData);
+    setArticlesList(filteredData);
+  }
 
   useEffect(() => {
- 
-    fetch("https://schoolofathens.world/api/getArticles")
-      .then((response) => response.json())
-      .then((data) => {
-        setArticlesList(data.articlesList);
-        setLoading(false);
-      })
-  }, []);
+    const timer = setInterval(() => {
+      setProgress((oldProgress) => {
+        const diff = Math.random() * 10;
+        return Math.min(oldProgress + diff, 80);
+      });
+    }, 500);
 
-  console.log('rerender');
+    getArticles();
+    setProgress(100);
+    setIsLoading(false);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
 
   return (
     <>
-      <Carousel />
-      {loading && <Loading />}
-      <div className="album mb-5 bg-light">
+      {isLoading && <LinearProgress variant='determinate' value={progress} />}
+      <LearnTitle />
+      <div className="row px-3">
+        <QuerySelector />
+        <div className="col-lg-9 col-md-8 px-5 col-12">
+        <div className="album mb-5">
         <div className="container">
-          <div id="display-articles" className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3">
-            {articlesList.map((article) => <Card article={article} key={article.id} />)}
+          <div id="display-articles" className="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-3">
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            {!isLoading && articlesList.map((article) => <Card article={article} key={article.id} />)}
+            
           </div>
         </div>
       </div>
+        </div>
+      </div>
+      
 
     </>
   );
-}
-
-export default App;
+};

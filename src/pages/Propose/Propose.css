@@ -1,0 +1,27 @@
+
+
+
+.new-vote--form label {
+    font-size: 1.15rem;
+    margin-top: 1rem;
+}
+
+.new-vote {
+    min-height: 90vh;
+}
+
+.new-vote h3 {
+    margin-left: 1rem;
+}
+
+.new-vote .todo-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+.todo-list--item {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1rem;
+}

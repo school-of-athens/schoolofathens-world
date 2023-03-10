@@ -1,14 +1,17 @@
+
+import { Link } from "react-router-dom";
+
 export default function () {
     return (
-        <section className="py-5 text-center container-fluid forum-title">
-            <div className="row">
-                <div className="col-lg-6 col-md-8 mx-auto">
-                    <h1 className="fw-light">Forum Romanum</h1>
+        <section className="page-title py-5">
+            <div className="container">
+                <div className="mx-auto text-start">
+                    <h1 className="fw-bold">Forum Romanum</h1>
                     <p className="lead text-muted">This is the platform for discussion and exchange of opinions. Share your
                         stories and personal insights here.</p>
                     <p>
-                        <a href="/compose" className="btn btn-primary my-2 me-3">Compose</a>
-                        <a href="#" className="btn btn-secondary my-2">Forum Rules</a>
+                        <Link to="/404" className="btn btn-grey my-2 me-3">Forum Rules</Link>
+                        <Link to="/forum/propose" className="btn btn-blue my-2g n">Propose a Vote</Link>
                     </p>
                 </div>
             </div>

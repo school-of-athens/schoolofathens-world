@@ -1,3 +1,6 @@
+
+import { entryOfKingOthon, acropolisAtAthens, bazarOfAthens } from "../../project-files";
+
 export default function () {
     return (
         <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
@@ -9,39 +12,30 @@ export default function () {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
+                    <img src={entryOfKingOthon} />
                     <div className="container">
                         <div className="carousel-caption text-start">
-                            <h1>We need you.</h1>
+                            <h1>Join Us</h1>
                             <p>Some representative placeholder content for the first slide of the carousel.</p>
                             <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
+                <img src={acropolisAtAthens} />
                     <div className="container">
                         <div className="carousel-caption">
-                            <h1>Read our story.</h1>
+                            <h1>Read Our Story</h1>
                             <p>Some representative placeholder content for the second slide of the carousel.</p>
                             <p><a className="btn btn-lg btn-primary" href="#">Learn more</a></p>
                         </div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <rect width="100%" height="100%" fill="#777" />
-                    </svg>
+                <img src={bazarOfAthens} />
                     <div className="container">
                         <div className="carousel-caption text-end">
-                            <h1>One more for good measure.</h1>
+                            <h1>Learn About the Development Process</h1>
                             <p>Some representative placeholder content for the third slide of this carousel.</p>
                             <p><a className="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
                         </div>
