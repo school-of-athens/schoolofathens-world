@@ -4,7 +4,7 @@ import "./Home.css";
 import Welcome from "./Welcome";
 import Navbar from "../../components/Navbar";
 import Hero from "./Hero";
-import Footer from "../../components/Footer";
+import HomeFooter from "./HomeFooter";
 
 
 
@@ -15,7 +15,7 @@ const Home = () => {
             <Welcome />
             <Navbar />
             <Hero />
-            <Footer />
+            <HomeFooter />
         </div>
     );
 }

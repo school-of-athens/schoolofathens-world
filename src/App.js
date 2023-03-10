@@ -42,8 +42,6 @@ export default function App() {
         const userSnapshot = await getDoc(doc(db, "userDetails", String(currentUser.uid)));
         const userDetails = userSnapshot.data();
         setUserData(userDetails);
-        console.log(userDetails);
-        console.log(userDetails.joinDate.toDate());
       }
     });
   }, []);

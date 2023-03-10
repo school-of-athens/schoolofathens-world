@@ -20,6 +20,10 @@
     --error-light: #FDE9E6;
 }
 
+html {
+    background-color: var(--background-blue);
+}
+
 h1, h2, h3, h4, h5  {
     font-weight: bold;
 }
@@ -150,6 +154,20 @@ label {
 .footer {
     width: 100%;
     background-color: var(--background-blue);
+    
+}
+
+.footer-home {
+    padding-top: 2rem;
+    width: 100%;
+    background-color: var(--background-blue);
+    scroll-snap-align: end;
+    color: white;
+}
+
+.footer-home p {
+    color: white;
+    padding: 1rem 0;
 }
 
 .footer--logo {

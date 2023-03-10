@@ -36,7 +36,6 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
 
         setPage((prev) => prev + 1);
       } catch (error) {
-        console.log(error);
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           sendMessage(
             "error",

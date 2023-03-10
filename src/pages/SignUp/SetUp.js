@@ -32,7 +32,6 @@ export default function ({ newUser, setNewUser }) {
       setNewUser((prev) => {
         return { ...prev, photoURL: fileURL };
       });
-      console.log(`Photo uploaded. URL: ${fileURL}`);
 
       const allTempFiles = await listAll(
         ref(storage, `userFiles/${newUser.userId}/temp`)

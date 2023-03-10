@@ -23,7 +23,6 @@ export default function() {
       ...doc.data(),
       id: doc.id
     }));
-    console.log(filteredData);
     setArticlesList(filteredData);
   }
 
