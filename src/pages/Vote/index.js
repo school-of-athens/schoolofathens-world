@@ -3,11 +3,38 @@ import VoteToolbar from "./VoteToolbar";
 import VoteHead from "./VoteHead";
 import { aristotle } from "../../project-files";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useParams } from "react-router-dom";
+import { db, AuthContext, StyleContext } from "../../config";
+import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState, useContext } from "react";
+import NewOpinion from "./NewOpinion";
 
 export default function () {
+
+  const { voteId } = useParams();
+  const { sendToast } = useContext(StyleContext);
+  const [voteData, setVoteData] = useState({introduction: "", title: "", options: [{title: "", summary: "", votes: 0}, {title: "", summary: "", votes: 0}]});
+  const [opinions, setOpinions] = useState([{}, {}]);
+
+  const getVoteData = async () => {
+    try {
+      const voteDoc = await getDoc(doc(db, "votes", voteId));
+      setVoteData(voteDoc.data());
+      sendToast("success", "Vote data loaded successfully.");
+    }
+    catch(error) {
+      sendToast("error", `An error has occured: ${error.message}`)
+    }
+  };
+
+  useEffect(() => {
+    getVoteData();
+  }, []);
+
   return (
     <>
-      <VoteHead />
+      <NewOpinion voteOptions={voteData.options} />
+      <VoteHead voteData={voteData} />
       <VoteToolbar />
       <div className="container vote-body">
         <div className="row">

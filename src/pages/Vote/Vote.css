@@ -9,6 +9,15 @@
 
 .vote-head h1 {
     margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.vote-intro {
+    /* background-color: blue; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -177,4 +186,13 @@
 .opinion-card--upvote:hover {
     background-color: var(--border-grey);
     
+}
+
+.modal-body label {
+    margin-top: 0.75rem;
+    margin-left: 0.25rem;
+}
+
+.modal-header {
+    border-bottom: 2px solid var(--border-grey-dark);
 }

@@ -6,10 +6,26 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 // '@fortawesome/free-brands-svg-icons' "@fortawesome/free-solid-svg-icons"
-import { faRightFromBracket, faUser, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup, faCircleUp as faCircleUpSolid, faCircleExclamation, faPlay, faArrowLeft, faArrowRight, faPause } from "@fortawesome/free-solid-svg-icons";
-import { faPenToSquare, faCircleUp as faCircleUpRegular } from "@fortawesome/free-regular-svg-icons";
+import {
+  faRightFromBracket,
+  faUser,
+  faThumbsUp,
+  faCheckToSlot,
+  faCommentDots,
+  faFeather,
+  faUserGroup,
+  faCircleUp,
+  faCircleExclamation,
+  faPlay,
+  faArrowLeft,
+  faArrowRight,
+  faPause,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenToSquare,
+} from "@fortawesome/free-regular-svg-icons";
 
 // Pages
 import SharedLayout from "./components/SharedLayout";
@@ -33,7 +49,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
 
 export default function App() {
-
   const auth = getAuth(app);
   const [userData, setUserData] = useState(null);
   const [toasts, setToasts] = useState([]);
@@ -41,10 +56,27 @@ export default function App() {
 
   useEffect(() => {
     document.title = "The School of Athens | Home to Modern Democracy";
-    library.add(faRightFromBracket, faUser, faPenToSquare, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup, faCircleUpSolid, faCircleUpRegular, faCircleExclamation, faPlay, faPause, faArrowLeft, faArrowRight);
+    library.add(
+      faRightFromBracket,
+      faUser,
+      faPenToSquare,
+      faThumbsUp,
+      faCheckToSlot,
+      faCommentDots,
+      faFeather,
+      faUserGroup,
+      faCircleUp,
+      faCircleExclamation,
+      faPlay,
+      faPause,
+      faArrowLeft,
+      faArrowRight
+    );
     onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser && currentUser.emailVerified) {
-        const userSnapshot = await getDoc(doc(db, "userDetails", String(currentUser.uid)));
+        const userSnapshot = await getDoc(
+          doc(db, "userDetails", String(currentUser.uid))
+        );
         const userDetails = userSnapshot.data();
         setUserData(userDetails);
       }
@@ -85,7 +117,7 @@ export default function App() {
           <Route path="login" element={<SignIn />} />
           <Route path="join" element={<SignUp />} />
           <Route path="forum/propose" element={<Propose />} />
-          <Route path="forum/vote" element={<Vote />} />
+          <Route path="vote/:voteId" element={<Vote />} />
           <Route path="article" element={<Article />} />
           <Route path="user/:userId" element={<UserProfile />} />
           <Route path="test" element={<Test />} />

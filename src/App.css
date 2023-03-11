@@ -21,6 +21,8 @@
     --gold: #FFBE17;
 }
 
+
+
 html {
     background-color: var(--background-blue);
 }
@@ -93,7 +95,7 @@ label {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    border-bottom: 3px solid var(--border-grey-dark);
+    border-bottom: 2px solid var(--border-grey-dark);
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     z-index: 100;
