@@ -1,6 +1,6 @@
 import { google } from "../../project-files";
 import { useState, useContext } from "react";
-import { AuthContext, MessageContext, db } from "../../config";
+import { AuthContext, StyleContext, db } from "../../config";
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
@@ -15,7 +15,7 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const { sendMessage } = useContext(MessageContext);
+  const { sendToast } = useContext(StyleContext);
   const { auth, setUserData} = useContext(AuthContext);
 
   const verifyEmail = async () => {
@@ -28,7 +28,7 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
         });
 
         sendEmailVerification(auth.currentUser).then(() => {
-          sendMessage(
+          sendToast(
             "success",
             `Email verification sent to ${newUser.email}. Please check your inbox.`
           );
@@ -37,18 +37,18 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
         setPage((prev) => prev + 1);
       } catch (error) {
         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-          sendMessage(
+          sendToast(
             "error",
             "There is already an account associated with this email. Please sign"
           );
         } else {
-          sendMessage("error", `An error has occured: ${error.message}`);
+          sendToast("error", `An error has occured: ${error.message}`);
         }
       }
     } else if (!newUser.email) {
-      sendMessage("error", "Email cannot be empty.");
+      sendToast("error", "Email cannot be empty.");
     } else if (!newUser.password) {
-      sendMessage("error", "Password cannot be empty.");
+      sendToast("error", "Password cannot be empty.");
     }
   };
 
@@ -97,16 +97,16 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
             doc(db, "userDetails", auth.currentUser.uid),
             newUserDetails
           );
-          sendMessage("success", "Sign up successful.");
+          sendToast("success", "Sign up successful.");
 
-          navigate(`/u/${auth.currentUser.uid}`);
+          navigate(`/user/${auth.currentUser.uid}`);
         } catch (error) {
-          sendMessage("error", `An error has occured: ${error.message}`);
+          sendToast("error", `An error has occured: ${error.message}`);
         }
       }
       else {
-        sendMessage("success", "Sign up successful.");
-        navigate(`/u/${auth.currentUser.uid}`);
+        sendToast("success", "Sign up successful.");
+        navigate(`/user/${auth.currentUser.uid}`);
       }
 
       

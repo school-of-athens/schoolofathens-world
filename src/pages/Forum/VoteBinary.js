@@ -1,6 +1,12 @@
+
+import { useNavigate } from "react-router-dom";
+
 export default function () {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="single-vote container">
+    <div className="single-vote container" onClick={() => navigate("/forum/vote")}>
       <h2 className="text-center vote-title">
         Vote Binary Title
       </h2>

@@ -10,13 +10,13 @@ import {
     deleteUser
   } from "firebase/auth";
 import {app, db} from "../../config";
-import { MessageContext, AuthContext } from "../../config";
+import { StyleContext, AuthContext } from "../../config";
 import { doc, Timestamp, setDoc, getDoc } from "firebase/firestore";
 
 export default function() {
 
     const navigate = useNavigate();
-    const { sendMessage } = useContext(MessageContext);
+    const { sendToast } = useContext(StyleContext);
     const { auth, setUserData} = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -66,16 +66,16 @@ export default function() {
               doc(db, "userDetails", auth.currentUser.uid),
               newUserDetails
             );
-            sendMessage("success", "Sign up successful.");
+            sendToast("success", "Sign up successful.");
   
-            navigate(`/u/${auth.currentUser.uid}`);
+            navigate(`/user/${auth.currentUser.uid}`);
           } catch (error) {
-            sendMessage("error", `An error has occured: ${error.message}`);
+            sendToast("error", `An error has occured: ${error.message}`);
           }
         }
         else {
-          sendMessage("success", "Sign up successful.");
-          navigate(`/u/${auth.currentUser.uid}`);
+          sendToast("success", "Sign up successful.");
+          navigate(`/user/${auth.currentUser.uid}`);
         }
   
         
@@ -87,28 +87,28 @@ export default function() {
             signInWithEmailAndPassword(auth, email, password)
             .then(() => {
               if (!auth.currentUser.emailVerified) {
-                sendMessage("error", "Your email has not been verified. Please sign up again.");
+                sendToast("error", "Your email has not been verified. Please sign up again.");
                 deleteUser(auth.currentUser);
               }
               else {
-                sendMessage("success", "Sign in successful!");
-                navigate(`/u/${auth.currentUser.uid}`);
+                sendToast("success", "Sign in successful!");
+                navigate(`/user/${auth.currentUser.uid}`);
               }
                 
             })
             .catch((error) => {
               switch (error.message) {
                 case "Firebase: Error (auth/user-not-found).":
-                  sendMessage("error", "User not found. Please sign up.");
+                  sendToast("error", "User not found. Please sign up.");
                   break;
                 case "Firebase: Password should be at least 6 characters (auth/weak-password).":
-                  sendMessage("error", "Password should be at least 6 characters.");
+                  sendToast("error", "Password should be at least 6 characters.");
                   break;
                 case "Firebase: Error (auth/wrong-password).":
-                  sendMessage("error", "Wrong password. Please try again.");
+                  sendToast("error", "Wrong password. Please try again.");
                   break;
                 default:
-                  sendMessage("error", `An error has occured: ${error.message}`)
+                  sendToast("error", `An error has occured: ${error.message}`)
               }
             });
         }

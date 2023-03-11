@@ -93,7 +93,7 @@ label {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    border-bottom: 3px solid #E2E8F0;
+    border-bottom: 3px solid var(--border-grey-dark);
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     z-index: 100;
@@ -335,8 +335,16 @@ label {
     margin-right: 0.75rem;
 }
 
+.blue {
+    color: var(--background-blue-dark);
+}
+
 .user-portrait {
     width: 2rem;
     height: 2rem;
     border-radius: 1rem;
+}
+
+.modal-title {
+    margin-top: 0;
 }

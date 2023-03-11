@@ -8,8 +8,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
 import { library } from '@fortawesome/fontawesome-svg-core'
 // '@fortawesome/free-brands-svg-icons' "@fortawesome/free-solid-svg-icons"
-import { faRightFromBracket, faUser, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup } from "@fortawesome/free-solid-svg-icons";
-import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import { faRightFromBracket, faUser, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup, faCircleUp as faCircleUpSolid, faCircleExclamation, faPlay, faArrowLeft, faArrowRight, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faCircleUp as faCircleUpRegular } from "@fortawesome/free-regular-svg-icons";
 
 // Pages
 import SharedLayout from "./components/SharedLayout";
@@ -21,7 +21,6 @@ import About from "./pages/About";
 import Development from "./pages/Development";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import NewArticle from "./pages/NewArticle";
 import Article from "./pages/Article";
 import UserProfile from "./pages/UserProfile";
 import PageNotFound from "./pages/PageNotFound";
@@ -37,11 +36,12 @@ export default function App() {
 
   const auth = getAuth(app);
   const [userData, setUserData] = useState(null);
-  const [messages, setMessages] = useState([]);
+  const [toasts, setToasts] = useState([]);
+  const [modals, setModals] = useState([]);
 
   useEffect(() => {
     document.title = "The School of Athens | Home to Modern Democracy";
-    library.add(faRightFromBracket, faUser, faPenToSquare, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup);
+    library.add(faRightFromBracket, faUser, faPenToSquare, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup, faCircleUpSolid, faCircleUpRegular, faCircleExclamation, faPlay, faPause, faArrowLeft, faArrowRight);
     onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser && currentUser.emailVerified) {
         const userSnapshot = await getDoc(doc(db, "userDetails", String(currentUser.uid)));
@@ -51,27 +51,29 @@ export default function App() {
     });
   }, []);
 
-  const sendMessage = (type, message) => {
-    setMessages((prev) => [...prev, { type, message }]);
+  const sendToast = (type, message) => {
+    setToasts((prev) => [...prev, { type, message }]);
 
     setTimeout(() => {
-      setMessages((prev) => prev.slice(1));
+      setToasts((prev) => prev.slice(1));
     }, 4500);
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home sendMessage={sendMessage} />} />
+        <Route path="/" element={<Home sendToast={sendToast} />} />
         <Route
           path="/"
           element={
             <SharedLayout
               auth={auth}
-              messages={messages}
-              sendMessage={sendMessage}
+              toasts={toasts}
+              sendToast={sendToast}
               userData={userData}
               setUserData={setUserData}
+              modals={modals}
+              setModals={setModals}
             />
           }
         >
@@ -85,7 +87,7 @@ export default function App() {
           <Route path="forum/propose" element={<Propose />} />
           <Route path="forum/vote" element={<Vote />} />
           <Route path="article" element={<Article />} />
-          <Route path="u/:userId" element={<UserProfile />} />
+          <Route path="user/:userId" element={<UserProfile />} />
           <Route path="test" element={<Test />} />
           <Route path="auth/action/*" element={<SignIn />} />
           <Route path="*" element={<PageNotFound />} />

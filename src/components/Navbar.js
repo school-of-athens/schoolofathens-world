@@ -6,7 +6,7 @@ import { app } from "../config";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function ({ sendMessage }) {
+export default function ({ sendToast }) {
   const auth = getAuth(app);
   const [showAction, setShowAction] = useState(false);
   const navigate = useNavigate();
@@ -39,10 +39,10 @@ export default function ({ sendMessage }) {
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      sendMessage("success", "Successfully signed out. Haha!");
+      sendToast("success", "You have successfully logged out");
       navigate("/");
     } catch (error) {
-      sendMessage("error", `An error has occured: ${error.message}`);
+      sendToast("error", `An error has occured: ${error.message}`);
     }
   };
 
@@ -52,7 +52,7 @@ export default function ({ sendMessage }) {
         <div className="user-action--btn">
         <Link
           className="link-light link-col"
-          to={`/u/${auth?.currentUser?.uid}`}
+          to={`/user/${auth?.currentUser?.uid}`}
         >
           <FontAwesomeIcon icon="fa-solid fa-user" className="icon-grey"/>
           My Profile

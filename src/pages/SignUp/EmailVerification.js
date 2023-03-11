@@ -1,13 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import { sendEmailVerification } from "firebase/auth";
-import { AuthContext, MessageContext } from "../../config";
+import { AuthContext, StyleContext } from "../../config";
 import { useContext } from "react";
 
 export default function ({ setPage, newUser, setNewUser }) {
 
 
-  const { sendMessage } = useContext(MessageContext);
+  const { sendToast } = useContext(StyleContext);
   const { auth } = useContext(AuthContext);
 
   const setUpProfile = async () => {
@@ -15,18 +15,18 @@ export default function ({ setPage, newUser, setNewUser }) {
     await auth.currentUser.reload();
 
     if (auth.currentUser.emailVerified) {
-      sendMessage("success", "Your email has been verified!");
+      sendToast("success", "Your email has been verified!");
       setPage(prev => prev + 1);
     }
     else {
-      sendMessage("error", "Your email has not been verified. Try resendind the verification email.");
+      sendToast("error", "Your email has not been verified. Try resendind the verification email.");
     }
     
   };
 
   const resendEmail = () => {
     sendEmailVerification(auth.currentUser).then(() => {
-      sendMessage("success", `Email verification sent to ${newUser.email}. Please check your inbox.`);
+      sendToast("success", `Email verification sent to ${newUser.email}. Please check your inbox.`);
     });
   }
 

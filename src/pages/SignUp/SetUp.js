@@ -8,7 +8,7 @@ import {
   deleteObject,
   listAll,
 } from "firebase/storage";
-import { AuthContext, MessageContext } from "../../config";
+import { AuthContext, StyleContext } from "../../config";
 import { signOut, updateProfile } from "firebase/auth";
 import { setDoc, Timestamp, doc } from "firebase/firestore";
 
@@ -17,7 +17,7 @@ export default function ({ newUser, setNewUser }) {
   const navigate = useNavigate();
 
   const { auth } = useContext(AuthContext);
-  const { sendMessage } = useContext(MessageContext);
+  const { sendToast } = useContext(StyleContext);
 
   const completeSignUp = async () => {
     try {
@@ -66,13 +66,13 @@ export default function ({ newUser, setNewUser }) {
       await setDoc(doc(db, "userInfo", newUser.userId), newUserInfo);
       await setDoc(doc(db, "userDetails", newUser.userId), newUserDetails);
       await signOut(auth);
-      sendMessage(
+      sendToast(
         "success",
         "User information upload successful. Please sign in again."
       );
       navigate(`/login`);
     } catch (error) {
-      sendMessage("error", `An error has occured: ${error.message}`);
+      sendToast("error", `An error has occured: ${error.message}`);
     }
   };
 
@@ -84,7 +84,7 @@ export default function ({ newUser, setNewUser }) {
       ),
       e.target.files[0]
     ).then((snapShot) => {
-      sendMessage("success", "Image uploaded successfully.");
+      sendToast("success", "Image uploaded successfully.");
       getDownloadURL(snapShot.ref).then((url) => {
         setNewUser((prev) => {
           return { ...prev, photoURL: url };

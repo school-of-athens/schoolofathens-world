@@ -15,7 +15,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const AuthContext = createContext(null);
-const MessageContext = createContext(null);
+const StyleContext = createContext(null);
 
 const storage = getStorage(app);
 const db = getFirestore(app);
@@ -52,4 +52,4 @@ const projectFiles = {
     "https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_school_of_athens_draft.jpg?alt=media&token=5212af2c-470f-4324-9086-8df86e7a6863",
 };
 
-export { app, storage, db, AuthContext, MessageContext, projectFiles };
+export { app, storage, db, AuthContext, StyleContext, projectFiles };

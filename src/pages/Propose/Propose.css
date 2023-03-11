@@ -23,5 +23,22 @@
 .todo-list--item {
     width: 100%;
     display: flex;
-    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.todo-list--item h3 {
+    margin-bottom: 0;
+}
+
+.todo-list--item:hover {
+    background-color: var(--border-grey);
+    
+
+}
+
+.todo-list--active {
+    border-bottom: 2px solid var(--background-blue);
 }

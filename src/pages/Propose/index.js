@@ -1,7 +1,13 @@
 import "./Propose.css";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { Icon1CircleFill, Icon2CircleFill, Icon3CircleFill, CheckCircleFill } from 'react-bootstrap-icons';
+import {
+  Icon1CircleFill,
+  Icon2CircleFill,
+  Icon3CircleFill,
+  CheckCircleFill,
+} from "react-bootstrap-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PageOne = ({ nextPage }) => {
   return (
@@ -16,7 +22,11 @@ const PageOne = ({ nextPage }) => {
       </label>
       <textarea className="form-control" id="introduction" rows="5"></textarea>
       <div className="text-center">
-        <button type="button" className="btn submit--btn px-4" onClick={() => nextPage()}>
+        <button
+          type="button"
+          className="btn submit--btn px-4"
+          onClick={() => nextPage()}
+        >
           Next
         </button>
       </div>
@@ -28,13 +38,42 @@ const PageTwo = ({ nextPage }) => {
   return (
     <div className="new-vote--form px-2 px-md-5">
       <h1 className="">Set Up the Options of Your Vote</h1>
-
-      <label for="options" className="form-label">
-        Vote Options
+      <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <FontAwesomeIcon
+          icon="fa-solid fa-circle-exclamation"
+          className="me-3"
+        />
+        Sorry, currently we only support vote with two options.
+      </div>
+      <label for="option1" className="form-label">
+        Vote Option 1
       </label>
-      <input className="form-control" type="text" id="options" />
+      <input className="form-control" type="text" id="option1" />
+      <label for="introduction" className="form-label">
+        Give a Brief Summary of Opinions
+      </label>
+      <textarea className="form-control" id="introduction" rows="5"></textarea>
+      <label for="option2" className="form-label">
+        Vote Option 2
+      </label>
+      <input className="form-control" type="text" id="option2" />
+      <label for="introduction" className="form-label">
+        Give a Brief Summary of Opinions
+      </label>
+      <textarea className="form-control" id="introduction" rows="5"></textarea>
       <div className="text-center">
-        <button type="button" className="btn submit--btn px-4" onClick={() => nextPage()}>
+      <button
+          type="button"
+          className="btn btn-primary px-4 me-3 submit--btn"
+          disabled
+        >
+          Add Option <i>(disabled)</i>
+        </button>
+        <button
+          type="button"
+          className="btn submit--btn px-4"
+          onClick={() => nextPage()}
+        >
           Next
         </button>
       </div>
@@ -46,34 +85,38 @@ const PageThree = ({ nextPage }) => {
   return (
     <div className="new-vote--form px-2 px-md-5">
       <h1 className="">Vote & View Restrictions</h1>
+      <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <FontAwesomeIcon
+          icon="fa-solid fa-circle-exclamation"
+          className="me-3"
+        />
+        Sorry, this function is still under development. If you have set up your vote, please click propose.
+      </div>
 
-     
       <label for="vote-restriction" className="form-label">
         View Restrictions
       </label>
-      <select className="form-select" aria-label="Default select example">
+      <select className="form-select" disabled>
         <option selected>Public</option>
-        <option value="1">Members of CM</option>
-        <option value="2">Members of AP CSA</option>
-        <option value="3">Members of Nowhere</option>
       </select>
 
       <label for="vote-restriction" className="form-label">
         Vote Restrictions
       </label>
-      <select className="form-select" aria-label="Default select example">
+      <select className="form-select" disabled>
         <option selected>Public</option>
-        <option value="1">Members of CM</option>
-        <option value="2">Members of AP CSA</option>
-        <option value="3">Members of Nowhere</option>
       </select>
 
       <label for="options" className="form-label">
         Due Date
       </label>
-      <input className="form-control" type="date" id="options" />
+      <input className="form-control" type="date" id="options" disabled/>
       <div className="text-center">
-        <button type="button" className="btn submit--btn px-4" onClick={() => nextPage()}>
+        <button
+          type="button"
+          className="btn submit--btn px-4"
+          onClick={() => nextPage()}
+        >
           Propose
         </button>
       </div>
@@ -82,34 +125,43 @@ const PageThree = ({ nextPage }) => {
 };
 
 export default function NewVote() {
-
   const [currentPage, setCurrentPage] = useState(1);
 
   const nextPage = () => {
     setCurrentPage((prev) => prev + 1);
-  }
+  };
 
   return (
     <div className="container-fluid new-vote py-5 px-2 px-md-5">
       <div className="row">
         <div className="col-lg-3 col-md-4 col-12">
           <div className="todo-list">
-            <div className="todo-list--item">
-              {(currentPage > 1) ? <CheckCircleFill color="#007bff" size={30} /> : <Icon1CircleFill color="#007bff" size={30} />}
-            <h3>Basic Info</h3>
+            <div className="todo-list--item" onClick={(e) => setCurrentPage(1)}>
+              {currentPage > 1 ? (
+                <CheckCircleFill color="#007bff" size={30} />
+              ) : (
+                <Icon1CircleFill color="#007bff" size={30} />
+              )}
+              <h3>Basic Info</h3>
             </div>
 
-            <div className="todo-list--item">
-            {(currentPage > 2) ? <CheckCircleFill color="#007bff" size={30} /> : <Icon2CircleFill color="#007bff" size={30} />}
-            <h3>Options</h3>
+            <div className="todo-list--item" onClick={(e) => setCurrentPage(2)}>
+              {currentPage > 2 ? (
+                <CheckCircleFill color="#007bff" size={30} />
+              ) : (
+                <Icon2CircleFill color="#007bff" size={30} />
+              )}
+              <h3>Options</h3>
             </div>
 
-            <div className="todo-list--item">
-            {(currentPage > 3) ? <CheckCircleFill color="#007bff" size={30} /> : <Icon3CircleFill color="#007bff" size={30} />}
-            <h3>Restrictions</h3>
+            <div className="todo-list--item" onClick={(e) => setCurrentPage(3)}>
+              {currentPage > 3 ? (
+                <CheckCircleFill color="#007bff" size={30} />
+              ) : (
+                <Icon3CircleFill color="#007bff" size={30} />
+              )}
+              <h3>Restrictions</h3>
             </div>
-          
-
           </div>
         </div>
         <div className="col-lg-9 col-md-8 col-12">

@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 export default function () {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="single-vote container" id="OHkvwMNc8HjLfz5NjQfe">
+    <div className="single-vote container" id="" onClick={() => navigate("/forum/vote")}>
       <h2 className="text-center vote-title">Vote Multiple Title</h2>
     <div className="vote-stats">
         0 votes | 0 opinions
