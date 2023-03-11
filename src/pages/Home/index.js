@@ -8,12 +8,12 @@ import HomeFooter from "./HomeFooter";
 
 
 
-const Home = () => {
+const Home = ({ sendMessage }) => {
 
     return (
         <div className="scroll-snap">
             <Welcome />
-            <Navbar />
+            <Navbar sendMessage={sendMessage} />
             <Hero />
             <HomeFooter />
         </div>

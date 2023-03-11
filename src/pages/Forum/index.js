@@ -8,7 +8,7 @@ export default function () {
   return (
     <>
       <ForumTitle />
-      <div className="row px-3 vote-list mb-4">
+      <div className="row ps-3 vote-list mb-4">
         <QuerySelector />
         <VoteList />
       </div>

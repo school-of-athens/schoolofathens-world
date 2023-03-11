@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function () {
     return (
-        <section className="page-title py-5">
-        <div className="container">
+        <section className="page-title py-5 px-sm-5 px-3">
+        <div className="container-fluid px-0">
             <div className="mx-auto text-start">
             <h1>Share Your Insights</h1>
                     <p className="lead text-muted">This is the platform for discussion and exchange of opinions. Share your

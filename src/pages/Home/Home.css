@@ -19,8 +19,8 @@ h1 {
 .frontImg {
     background-image: url("https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_school_of_athens_cropped.jpg?alt=media&token=693a8941-6bf4-44fc-a1d0-b0e159af9039");
 
-    filter: blur(2px) brightness(0.5);
-    -webkit-filter: blur(2px) brightness(0.5);
+    filter: blur(1px) brightness(0.5);
+    -webkit-filter: blur(1px) brightness(0.5);
 
     height: 100%;
 

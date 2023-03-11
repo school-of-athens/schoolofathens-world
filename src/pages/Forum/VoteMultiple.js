@@ -1,9 +1,9 @@
 export default function () {
   return (
     <div className="single-vote container" id="OHkvwMNc8HjLfz5NjQfe">
-      <h2 className="text-center vote-title">What is the Best Programming Language?</h2>
+      <h2 className="text-center vote-title">Vote Multiple Title</h2>
     <div className="vote-stats">
-        21043 people voted | 3421 people expressed their opinions
+        0 votes | 0 opinions
     </div>
 
       <div className="option">
@@ -11,7 +11,7 @@ export default function () {
             <p>0% (0/0)</p>
         </div>
 
-        <h3>C++</h3>
+        <h3>Option 1</h3>
       </div>
 
       <div className="option">
@@ -19,7 +19,7 @@ export default function () {
             <p>0% (0/0)</p>
         </div>
 
-        <h3>Python</h3>
+        <h3>Option 2</h3>
       </div>
 
       <div className="option">
@@ -28,7 +28,7 @@ export default function () {
             <p>0% (0/0)</p>
         </div>
 
-        <h3>Java</h3>
+        <h3>Option 3</h3>
       </div>
       <div className="vote-note">
         Public | No Due Date

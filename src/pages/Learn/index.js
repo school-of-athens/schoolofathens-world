@@ -49,7 +49,7 @@ export default function() {
       <LearnTitle />
       <div className="row px-3">
         <QuerySelector />
-        <div className="col-lg-9 col-md-8 px-5 col-12">
+        <div className="col-lg-9 col-md-8 px-sm-5 col-12">
         <div className="album mb-5">
         <div className="container">
           <div id="display-articles" className="row row-cols-1 row-cols-sm-1 row-cols-lg-2 row-cols-xl-3 g-3">

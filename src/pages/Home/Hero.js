@@ -1,7 +1,9 @@
 
-
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+
+    const navigate = useNavigate();
 
     return (
         <div className="container justify-content-center content">
@@ -38,7 +40,7 @@ const Hero = () => {
           <p>We encourages reasoned
             dialogue and informed decision-making by presenting well-organized arguments and evidence for both sides of
             an issue. Let's vote on issues, not people, and build a more inclusive and democratic world together.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='forum';">Vote Now</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/forum")}>Vote Now</button>
         </div>
       </div>
       <div className="row sect">
@@ -47,7 +49,7 @@ const Hero = () => {
           <p>share your insights with our inclusive community. Our blog functionality lets you publish articles, create
             podcasts, and share your stories. Your voice matters, and our platform provides a safe and inclusive space
             to express your experiences and perspectives.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='learn';">Learn</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/learn")}>Learn</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
           <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fdeath_of_socrates.jpg?alt=media&token=cc487709-5d1b-48e7-bc06-d1ba4dc2818e" className="hero-image" />
@@ -62,7 +64,7 @@ const Hero = () => {
           <h1 className="text-start">Deployed on Web3 and Blockchain.</h1>
           <p>Your votes are secure and transparent. The blockchain keeps an immutable record of who voted for whom, and
             the results are stored in a decentralized way, making it nearly impossible to compromise the outcome.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='404';">Learn How You Vote on Blockchain</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/404")}>Learn How You Vote on Blockchain</button>
         </div>
       </div>
       <div className="row sect">
@@ -72,7 +74,7 @@ const Hero = () => {
             providing a safe and secure way to vote. When a vote reaches its deadline, the result is archived, and the
             blockchain is then deleted. Moreover, our website is
             decentralized, with no central authority controlling it.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='404';">Learn About Decentralization</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/404")}>Learn About Decentralization</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
           <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fdecentralization.svg?alt=media&token=584b0cfb-b8b5-4407-b611-09cac2b3aaac" className="hero-image" />
@@ -87,7 +89,7 @@ const Hero = () => {
           <h1 className="text-start">Find Your Groups.</h1>
           <p>Connect with others who share similar interests, values, and goals. Groups can be created for schools,
             universities, communities, and more, to discuss, debate, and vote on issues that matter.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='groups';">See Groups</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/groups")}>See Groups</button>
         </div>
       </div>
       <div className="row sect">
@@ -96,7 +98,7 @@ const Hero = () => {
           <p>Join the School of Athens, and become a part of modern democracy. Experience high-quality discussions, make
             educated decisions, and be a part of a decentralized and secure platform. Let's bring back diverse
             perspectives and become the Athenians of the 21st century.</p>
-            <button type="button" className="btn btn-primary" onclick="window.location.href='join';">Sign-up</button>
+            <button type="button" className="btn btn-primary" onClick={() => navigate("/join")}>Sign-up</button>
         </div>
         <div className="col-lg-4 col-md-5 col-12 my-auto">
           <img src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Facropolis_of_athens.jpg?alt=media&token=0d3b78b9-07b4-4493-8287-f8c4364eb138" className="hero-image" />

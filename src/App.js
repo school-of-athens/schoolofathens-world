@@ -1,11 +1,15 @@
 // Libraries
-import React, { useEffect, createContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 // Stylesheets
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./App.css";
+import { library } from '@fortawesome/fontawesome-svg-core'
+// '@fortawesome/free-brands-svg-icons' "@fortawesome/free-solid-svg-icons"
+import { faRightFromBracket, faUser, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 // Pages
 import SharedLayout from "./components/SharedLayout";
@@ -30,13 +34,14 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getDoc, doc } from "firebase/firestore";
 
 export default function App() {
+
   const auth = getAuth(app);
   const [userData, setUserData] = useState(null);
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     document.title = "The School of Athens | Home to Modern Democracy";
-
+    library.add(faRightFromBracket, faUser, faPenToSquare, faThumbsUp, faCheckToSlot, faCommentDots, faFeather, faUserGroup);
     onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser && currentUser.emailVerified) {
         const userSnapshot = await getDoc(doc(db, "userDetails", String(currentUser.uid)));
@@ -57,7 +62,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home sendMessage={sendMessage} />} />
         <Route
           path="/"
           element={
@@ -74,13 +79,13 @@ export default function App() {
           <Route path="learn" element={<Learn />} />
           <Route path="groups" element={<Groups />} />
           <Route path="about" element={<About />} />
-          <Route path="devlopment" element={<Development />} />
+          <Route path="development" element={<Development />} />
           <Route path="login" element={<SignIn />} />
           <Route path="join" element={<SignUp />} />
           <Route path="forum/propose" element={<Propose />} />
           <Route path="forum/vote" element={<Vote />} />
           <Route path="article" element={<Article />} />
-          <Route path="dashboard/:userId" element={<UserProfile />} />
+          <Route path="u/:userId" element={<UserProfile />} />
           <Route path="test" element={<Test />} />
           <Route path="auth/action/*" element={<SignIn />} />
           <Route path="*" element={<PageNotFound />} />

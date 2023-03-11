@@ -68,14 +68,14 @@ export default function() {
             );
             sendMessage("success", "Sign up successful.");
   
-            navigate(`/dashboard/${auth.currentUser.uid}`);
+            navigate(`/u/${auth.currentUser.uid}`);
           } catch (error) {
             sendMessage("error", `An error has occured: ${error.message}`);
           }
         }
         else {
           sendMessage("success", "Sign up successful.");
-          navigate(`/dashboard/${auth.currentUser.uid}`);
+          navigate(`/u/${auth.currentUser.uid}`);
         }
   
         
@@ -92,7 +92,7 @@ export default function() {
               }
               else {
                 sendMessage("success", "Sign in successful!");
-                navigate(`/dashboard/${auth.currentUser.uid}`);
+                navigate(`/u/${auth.currentUser.uid}`);
               }
                 
             })
@@ -121,7 +121,7 @@ export default function() {
                     Edward Dodwell. <i>Bazar of Athens.</i>
                 </div>
             
-                <div className="signIn--form col-11 col-lg-4 col-md-6 px-lg-5 px-2">
+                <div className="signIn--form col-11 col-xl-4 col-lg-5 col-md-6 px-lg-5 px-2">
                     <h1>Sign Up</h1>
                     <button type="button" className="btn btn-grey signIn--google-btn" onClick={signInWithGoogle}>
                         <img src={google} height="18" width="18"/>

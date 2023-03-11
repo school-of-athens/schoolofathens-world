@@ -2,15 +2,15 @@ export default function () {
   return (
     <div className="single-vote container">
       <h2 className="text-center vote-title">
-        Is Democracy a Means or an End?
+        Vote Binary Title
       </h2>
 
       <div className="vote-stats">
-        21043 people voted | 3421 people expressed their opinions
+        0 votes | 0 opinions
       </div>
       <div className="vote-text justify-content-between">
-        <h3>A Means</h3>
-        <h3>An End</h3>
+        <h3>Option 1</h3>
+        <h3>Option 2</h3>
       </div>
       <div className="vote-bar">
         <div className="vote-bar-left">

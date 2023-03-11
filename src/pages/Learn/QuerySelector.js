@@ -7,7 +7,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 export default function() {
     return (
         
-        <div className="col-lg-3 col-md-4 px-5 col-12 pb-4">
+        <div className="col-lg-3 col-md-4 px-sm-5 px-3 col-12 pb-4">
           <div className="query-selector">
             <h5>Search</h5>
             <div className="search">

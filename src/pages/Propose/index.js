@@ -92,7 +92,7 @@ export default function NewVote() {
   return (
     <div className="container-fluid new-vote py-5 px-2 px-md-5">
       <div className="row">
-        <div className="col-2">
+        <div className="col-lg-3 col-md-4 col-12">
           <div className="todo-list">
             <div className="todo-list--item">
               {(currentPage > 1) ? <CheckCircleFill color="#007bff" size={30} /> : <Icon1CircleFill color="#007bff" size={30} />}
@@ -112,7 +112,7 @@ export default function NewVote() {
 
           </div>
         </div>
-        <div className="col-10">
+        <div className="col-lg-9 col-md-8 col-12">
           {currentPage === 1 && <PageOne nextPage={nextPage} />}
           {currentPage === 2 && <PageTwo nextPage={nextPage} />}
           {currentPage === 3 && <PageThree nextPage={nextPage} />}

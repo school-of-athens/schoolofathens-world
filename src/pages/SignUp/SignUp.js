@@ -99,14 +99,14 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
           );
           sendMessage("success", "Sign up successful.");
 
-          navigate(`/dashboard/${auth.currentUser.uid}`);
+          navigate(`/u/${auth.currentUser.uid}`);
         } catch (error) {
           sendMessage("error", `An error has occured: ${error.message}`);
         }
       }
       else {
         sendMessage("success", "Sign up successful.");
-        navigate(`/dashboard/${auth.currentUser.uid}`);
+        navigate(`/u/${auth.currentUser.uid}`);
       }
 
       

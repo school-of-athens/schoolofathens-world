@@ -14,7 +14,7 @@ export default function SharedLayout({
   return (
     <AuthContext.Provider value={{ auth, userData, setUserData }}>
       <MessageContext.Provider value={{ sendMessage }}>
-        <Navbar />
+        <Navbar sendMessage={sendMessage} />
         <Outlet />
         <Messages messages={messages} />
         <Footer />

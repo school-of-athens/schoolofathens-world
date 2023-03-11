@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="container-fluid footer-home mt-4">
-      <footer className="flex-wrap py-3">
-        <div className="container">
+    <div className="container-fluid footer-home footer mt-4 pb-3 px-5">
           <h2>About Us</h2>
           <p>
             The School of Athens is a democratic forum designed to address the
@@ -21,8 +19,7 @@ const Footer = () => {
             the School of Athens today and become a part of modern democracy.
             (Written by ChatGTP)
           </p>
-        </div>
-        <div className="row">
+          <div className="row">
           <div className="col-md-6 col-12 text-center text-md-start footer--logo">
             <Link to="/" className="mb-0">
               The School of Athens
@@ -52,9 +49,9 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
         </div>
-      </footer>
+        </div>
+        
     </div>
   );
 };
