@@ -7,7 +7,7 @@ const LoginSignUp = () => {
     <div className="signIn-signUp">
       <button
         type="button"
-        className="btn btn-grey me-2"
+        className="btn btn-gray me-2"
         onClick={() => {
           navigate("/login");
         }}

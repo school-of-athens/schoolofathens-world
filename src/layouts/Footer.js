@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
 
   return (
-    <div className="container-fluid footer mt-4">
+    <div className="container-fluid footer">
       <footer className="flex-wrap py-3" >
         <div className="row">
           <div className="col-md-6 col-12 text-center text-md-start footer--logo">

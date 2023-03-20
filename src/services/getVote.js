@@ -7,7 +7,7 @@ const getVote = async (voteId) => {
     const voteDocData = voteDoc.data();
     return voteDocData;
   } catch (error) {
-    console.log(error);
+    console.error(error.message);
   }
 };
 

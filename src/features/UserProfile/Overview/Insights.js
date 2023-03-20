@@ -15,7 +15,7 @@ export default function Insights(second) {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-thumbs-up"
-                    className="icon-grey"
+                    className="icon-gray"
                   />
                   0 Upvotes
                 </span>
@@ -33,7 +33,7 @@ export default function Insights(second) {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-thumbs-up"
-                    className="icon-grey"
+                    className="icon-gray"
                   />
                   0 Upvotes
                 </span>
@@ -54,7 +54,7 @@ export default function Insights(second) {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-thumbs-up"
-                    className="icon-grey"
+                    className="icon-gray"
                   />
                   0 Upvotes
                 </span>
@@ -72,7 +72,7 @@ export default function Insights(second) {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-thumbs-up"
-                    className="icon-grey"
+                    className="icon-gray"
                   />
                   0 Upvotes
                 </span>

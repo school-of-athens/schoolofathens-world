@@ -5,23 +5,16 @@ const useNewVote = () => {
     title: "",
     introduction: "",
     topics: [],
-    totalVotes: 0,
-    totalOpinions: 0,
     options: [
       {
         title: "",
         summary: "",
-        votes: 0,
-        opinions: []
       },
       {
         title: "",
         summary: "",
-        votes: 0,
-        opinions: []
       },
     ],
-    userId: null,
   });
 
   return [newVote, setNewVote];

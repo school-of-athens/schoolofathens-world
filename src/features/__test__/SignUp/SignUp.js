@@ -129,7 +129,7 @@ export default function SignUp({ setPage, newUser, setNewUser }) {
           <h1>Sign Up</h1>
           <button
             type="button"
-            className="btn btn-grey signUp--google"
+            className="btn btn-gray signUp--google"
             onClick={signUpWithGoogle}
           >
             <img src={google} height="18" width="18" />

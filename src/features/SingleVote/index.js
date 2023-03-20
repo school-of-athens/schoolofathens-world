@@ -1,13 +1,13 @@
-import VoteToolbar from "./components/VoteToolbar";
+import OpinionsControl from "./components/OpinionsControl";
 import VoteHead from "./components/VoteHead";
-import NewOpinionModal from "./components/NewOpinionModal";
 import OpinionCard from "./components/OpinionCard";
+import OpinionList from "./components/OpinionList";
 import useVoteAndOpinions from "./hooks/useVoteAndOpinions";
 
 export {
-  VoteToolbar,
+  OpinionsControl,
   VoteHead,
-  NewOpinionModal,
   OpinionCard,
+  OpinionList,
   useVoteAndOpinions,
 };

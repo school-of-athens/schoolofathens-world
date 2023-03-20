@@ -9,7 +9,7 @@ export default function () {
                     <p className="lead text-muted">This is the platform for discussion and exchange of opinions. Share your
                         stories and personal insights here.</p>
                     <p>
-                    <Link to="/404" className="btn btn-grey my-2 me-3">Forum Rules</Link>
+                    <Link to="/404" className="btn btn-gray my-2 me-3">Forum Rules</Link>
                     <Link to="/learn/compose" className="btn btn-blue my-2g n">Compose</Link>
                 </p>
             </div>

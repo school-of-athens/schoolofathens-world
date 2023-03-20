@@ -32,7 +32,7 @@
 }
 
 .todo-list--item:hover {
-    background-color: var(--border-grey);
+    background-color: var(--border-gray);
     
 
 }

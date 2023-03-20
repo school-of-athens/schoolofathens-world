@@ -1,13 +1,13 @@
 :root {
-    --body-grey: #F7FAFC;
-    --border-grey: #E2E8F0;
-    --border-grey-darker: #cbd5e0;
+    --body-gray: #F7FAFC;
+    --border-gray: #E2E8F0;
+    --border-gray-darker: #cbd5e0;
     --body-blue: #2A84EE;
     --body-blud-hover: #1e66cc;
-    --body-grey-hover: #EDF2F7;
-    --body-dark-grey: #171923;
+    --body-gray-hover: #EDF2F7;
+    --body-dark-gray: #171923;
     --body-blue-muted: #E5F6FF;
-    --body-dark-grey-hover: #1A202C;
+    --body-dark-gray-hover: #1A202C;
 }
 
 .signIn {
@@ -26,11 +26,11 @@
 }
 
 .signIn--form {
-    background-color: var(--body-grey);
+    background-color: var(--body-gray);
     padding-top: 3rem;
     padding-bottom: 3rem;
     border-radius: 0.75rem;
-    border: 3px solid var(--border-grey-darker);
+    border: 3px solid var(--border-gray-darker);
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@
     display: flex;
     width: 100%;
     margin-bottom: 1rem;
-    border: 2px solid var(--border-grey-darker);
+    border: 2px solid var(--border-gray-darker);
 }
 
 .signIn--form label {
@@ -65,8 +65,8 @@
 }
 
 .signIn--google_btn:hover {
-    background-color: var(--body-grey-hover);
-    border: 2px solid var(--border-grey-darker);
+    background-color: var(--body-gray-hover);
+    border: 2px solid var(--border-gray-darker);
 }
 
 .signIn--divide {
@@ -83,7 +83,7 @@
     width: 25%;
     margin-left: 0px;
     margin-right: 0px;
-    border-top: 2px solid var(--border-grey-darker);
+    border-top: 2px solid var(--border-gray-darker);
     opacity: 1;
 }
 

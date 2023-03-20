@@ -14,7 +14,7 @@ const Welcome = () => {
           Raphael. It depicts a congregation of philosophers, mathematicians,
           and scientists from Ancient Greece, including Plato, Aristotle,
           Pythagoras, Archimedes, and Heraclitus.</Text>
-        <Button bg="white" mt={3} className="btn-grey" onClick={() => navigate("/404")}>Learn More</Button>
+        <Button variant="gray" mt={3} onClick={() => navigate("/404")}>Learn More</Button>
       </div>
     </div>
   );

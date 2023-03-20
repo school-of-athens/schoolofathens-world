@@ -16,28 +16,28 @@ export default () => {
               <p>
                 <FontAwesomeIcon
                   icon="fa-solid fa-thumbs-up"
-                  className="icon-grey"
+                  className="icon-gray"
                 />
                 0 Upvotes
               </p>
               <p>
                 <FontAwesomeIcon
                   icon="fa-solid fa-check-to-slot"
-                  className="icon-grey"
+                  className="icon-gray"
                 />
                 0 Votes
               </p>
               <p>
                 <FontAwesomeIcon
                   icon="fa-solid fa-comment-dots"
-                  className="icon-grey"
+                  className="icon-gray"
                 />
                 0 Opinions
               </p>
               <p>
                 <FontAwesomeIcon
                   icon="fa-solid fa-feather"
-                  className="icon-grey"
+                  className="icon-gray"
                 />
                 0 Insights
               </p>

@@ -1,12 +1,12 @@
 
 :root {
-    --body-grey: #F7FAFC;
-    --body-grey-dark: #EDF2F7;
-    --border-grey: #E2E8F0;
-    --border-grey-dark: #CBD5E0;
-    --background-grey-light: #A0AEC0;
-    --background-grey: #718096;
-    --background-grey-dark: #4A5568;
+    --body-gray: #F7FAFC;
+    --body-gray-dark: #EDF2F7;
+    --border-gray: #E2E8F0;
+    --border-gray-dark: #CBD5E0;
+    --background-gray-light: #A0AEC0;
+    --background-gray: #718096;
+    --background-gray-dark: #4A5568;
     --contrast-light: #2D3748;
     --contrast: #1A202C;
     --contrast-dark: #171923;
@@ -28,12 +28,12 @@
 .signUp--form {
     height: 100%;
     z-index: 3;
-    background-color: var(--body-grey);
+    background-color: var(--body-gray);
     justify-content: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: 3px solid var(--border-grey);
+    border-left: 3px solid var(--border-gray);
 }
 
 .signUp--form h1 {
@@ -76,7 +76,7 @@
     width: 25%;
     margin-left: 0px;
     margin-right: 0px;
-    border-top: 2px solid var(--border-grey-darker);
+    border-top: 2px solid var(--border-gray-darker);
     opacity: 1;
 }
 
@@ -91,7 +91,7 @@
 }
 
 .img_caption:hover {
-    background-color: var(--body-dark-grey-hover);
+    background-color: var(--body-dark-gray-hover);
 }
 
 .footer {
@@ -137,13 +137,13 @@
 }
 
 .verify--resend-btn {
-    border: 2px solid var(--border-grey-darker);
+    border: 2px solid var(--border-gray-darker);
     margin-top: 1rem;
 }
 
 .verify--resend-btn:hover {
-    border: 2px solid var(--border-grey-darker);
-    background-color: var(--body-grey-hover);
+    border: 2px solid var(--border-gray-darker);
+    background-color: var(--body-gray-hover);
 }
 
 .set_up {

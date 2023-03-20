@@ -1,10 +1,10 @@
 
 
 .vote-head {
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
     padding-top: 3rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--border-grey-dark);
+    border-bottom: 2px solid var(--border-gray-dark);
 }
 
 .vote-head h1 {
@@ -26,7 +26,7 @@
     justify-content: space-between;
     padding: 0.75rem 2rem;
     background-color: white;
-    border-bottom: 2px solid var(--border-grey-dark);
+    border-bottom: 2px solid var(--border-gray-dark);
     position: -webkit-sticky;
     position: sticky;
     top: 8vh;
@@ -44,7 +44,9 @@
 }
 
 .vote-body {
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+    background-color: var(--body-gray);
 }
 
 .vote-summary {
@@ -55,7 +57,7 @@
 
 .vote-summary--left {
     display: flex;
-    border-right: 3px dashed var(--border-grey-dark);
+    border-right: 3px dashed var(--border-gray-dark);
     flex-direction: column;
     align-items: start;
     padding-right: 1.5rem;
@@ -85,7 +87,7 @@
     color: black !important;
     font-size: 1.5rem !important;
     font-weight: bold !important;
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
     border: none;
     box-shadow: none;
     width: 100%;
@@ -113,13 +115,13 @@
 }
 
 .vote-summary .accordion-button:hover {
-    background-color: var(--border-grey-dark);
+    background-color: var(--border-gray-dark);
 }
 
 .opinion-list {
     margin-top: 2rem;
     margin-bottom: 2rem;
-    border-right: 3px dashed var(--border-grey);
+    border-right: 3px dashed var(--border-gray);
 }
 
 .opinion-list:last-child {
@@ -131,15 +133,15 @@
     padding: 1rem;
     margin-top: 1rem;
     padding: 1rem 1rem 0.5rem 1rem;
-    border: 2px solid var(--border-grey-dark);
+    border: 2px solid var(--border-gray-dark);
     border-radius: 0.75rem;
     background-color: white;
     cursor: pointer;
 }
 
 .opinion-card:hover {
-    background-color: var(--body-grey-dark);
-    border: 2px solid var(--body-blue);
+    background-color: var(--body-gray-dark);
+    border: 2px solid var(--background-blue);
     
 }
 
@@ -150,18 +152,20 @@
 }
 
 .opinion-card--user:hover {
-    background-color: var(--border-grey);
+    background-color: var(--border-gray);
 }
 
-.opinion-card--user img {
+.opinion-card--user span {
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 50%;
     margin-right: 1rem;
+    display: inherit;
 }
 
 .opinion-card--text {
     margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
     padding: 0 1rem;
 }
 
@@ -170,7 +174,7 @@
 }
 
 .opinion-card--info {
-    border-top: 2px solid var(--border-grey-dark);
+    border-top: 2px solid var(--border-gray-dark);
     margin-top: 0.5rem;
     padding: 0.5rem 1rem 0 1rem;
     border-radius: 0 0 0.7rem 0.7rem;
@@ -184,7 +188,7 @@
 }
 
 .opinion-card--upvote:hover {
-    background-color: var(--border-grey);
+    background-color: var(--border-gray);
     
 }
 
@@ -194,5 +198,5 @@
 }
 
 .modal-header {
-    border-bottom: 2px solid var(--border-grey-dark);
+    border-bottom: 2px solid var(--border-gray-dark);
 }

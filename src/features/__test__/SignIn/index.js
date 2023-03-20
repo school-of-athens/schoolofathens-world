@@ -123,7 +123,7 @@ export default function () {
         <h1>Sign In</h1>
         <button
           type="button"
-          className="btn btn-grey signIn--google-btn"
+          className="btn btn-gray signIn--google-btn"
           onClick={signInWithGoogle}
         >
           <img src={google} height="18" width="18" />

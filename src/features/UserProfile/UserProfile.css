@@ -1,7 +1,7 @@
 .profile-head {
     padding-top: 3rem;
-    background-color: var(--body-grey-dark);
-    border-bottom: 3px solid var(--border-grey-dark);
+    background-color: var(--body-gray-dark);
+    border-bottom: 3px solid var(--border-gray-dark);
 }
 
 .profile-head--wrapper {
@@ -55,7 +55,7 @@
 }
 
 .profile-link a:hover {
-    background-color: var(--border-grey);
+    background-color: var(--border-gray);
 }
 
 .profile-link--active {
@@ -84,7 +84,7 @@
     margin-top: 1rem;
     padding: 1rem;
     width: 100%;
-    border: 2px solid var(--border-grey-dark);
+    border: 2px solid var(--border-gray-dark);
     border-radius: 0.75rem;
     background-color: white;
 }
@@ -117,7 +117,7 @@
     justify-content: space-between;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-bottom: 2px solid var(--border-grey);
+    border-bottom: 2px solid var(--border-gray);
 }
 
 .profile-body--vote:last-child {
@@ -129,20 +129,20 @@
 }
 
 .profile-body--vote:hover {
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
 }
 
 .profile-body--opinion {
     margin-top: 1rem;
     padding: 1rem 1rem 0.5rem 1rem ;
-    border: 2px solid var(--border-grey-dark);
+    border: 2px solid var(--border-gray-dark);
     border-radius: 0.75rem;
     background-color: white;
     cursor: pointer;
 }
 
 .profile-body--opinion:hover {
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
     border: 2px solid var(--body-blue);
 }
 
@@ -150,14 +150,14 @@
     margin-top: 1rem;
     padding: 0;
     padding-bottom: 0.5rem;
-    border: 2px solid var(--border-grey-dark);
+    border: 2px solid var(--border-gray-dark);
     border-radius: 0.75rem;
     background-color: white;
     cursor: pointer;
 }
 
 .profile-body--insight:hover {
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
     border: 2px solid var(--body-blue);
 }
 
@@ -167,7 +167,7 @@
 
 
 .profile-body--info {
-    border-top: 2px solid var(--border-grey);
+    border-top: 2px solid var(--border-gray);
     margin-top: 0.5rem;
     padding-top: 0.25rem;
     border-radius: 0 0 0.7rem 0.7rem;
@@ -186,14 +186,14 @@
     margin-top: 1rem;
     padding: 0;
     padding-bottom: 0.5rem;
-    border: 2px solid var(--border-grey-dark);
+    border: 2px solid var(--border-gray-dark);
     border-radius: 0.75rem;
     background-color: white;
     cursor: pointer;
 }
 
 .profile-body--group:hover {
-    background-color: var(--body-grey-dark);
+    background-color: var(--body-gray-dark);
     border: 2px solid var(--body-blue);
 }
 

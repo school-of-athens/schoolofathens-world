@@ -18,8 +18,8 @@ const UserPortrait = () => {
         <Avatar size="sm" name="Jinzhou Wu" src="" />
       </MenuButton>
       <MenuList>
-        <MenuItem><FontAwesomeIcon icon={faUser} className="icon-grey" />My Profile</MenuItem>
-        <MenuItem><FontAwesomeIcon icon={faRightFromBracket} className="icon-grey" />Log out</MenuItem>
+        <MenuItem><FontAwesomeIcon icon={faUser} className="icon-gray" />My Profile</MenuItem>
+        <MenuItem><FontAwesomeIcon icon={faRightFromBracket} className="icon-gray" />Log out</MenuItem>
       </MenuList>
     </Menu>
   );

@@ -1,23 +1,30 @@
+import { Progress } from "@chakra-ui/react";
 import "../assets/Forum.css";
 import {
   ForumTitle,
   ForumBody,
   VoteList,
   QuerySelector,
-  useVoteList
+  useVoteList,
 } from "../features/Forum";
-import { useState, useEffect } from "react";
 
 const Forum = () => {
-
-    const voteList = useVoteList();
+  const [voteList, isLoading] = useVoteList();
 
   return (
     <>
+      {isLoading && (
+        <Progress
+          size="xs"
+          colorScheme="blue"
+          isIndeterminate
+          className="under-nav"
+        />
+      )}
       <ForumTitle />
       <ForumBody>
-      <QuerySelector />
-        <VoteList voteList={voteList} />
+        <QuerySelector />
+        {voteList ? <VoteList voteList={voteList} /> : <></>}
       </ForumBody>
     </>
   );

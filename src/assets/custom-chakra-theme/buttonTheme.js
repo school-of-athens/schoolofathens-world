@@ -1,6 +1,6 @@
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
-const grey = defineStyle({
+const gray = defineStyle({
   background: 'gray.50',
   color: 'black',
   fontWeight: '500',
@@ -32,7 +32,7 @@ const blue = defineStyle({
 });
 
 const buttonTheme = defineStyleConfig({
-  variants: { grey, blue },
+  variants: { gray, blue },
 });
 
 export default buttonTheme;

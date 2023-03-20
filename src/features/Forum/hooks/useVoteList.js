@@ -4,6 +4,7 @@ import { db } from "../../../services/firebase";
 
 const useVoteList = () => {
   const [voteList, setVoteList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getVotes = async () => {
     try {
@@ -11,18 +12,20 @@ const useVoteList = () => {
       const voteListFiltered = voteListUnfiltered.docs.map((doc) => {
         return { ...doc.data(), id: doc.id };
       });
-
       setVoteList(voteListFiltered);
+
+      setIsLoading(false);
     } catch (error) {
       console.log(error.message);
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getVotes();
-  });
+  }, []);
 
-  return voteList;
+  return [voteList, isLoading];
 };
 
 export default useVoteList;

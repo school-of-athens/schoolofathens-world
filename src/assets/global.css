@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
 
 :root {
-  --body-grey: #f7fafc;
-  --body-grey-dark: #edf2f7;
-  --border-grey: #e2e8f0;
-  --border-grey-dark: #cbd5e0;
-  --background-grey-light: #a0aec0;
-  --background-grey: #718096;
-  --background-grey-dark: #4a5568;
+  --body-gray: #f7fafc;
+  --body-gray-dark: #edf2f7;
+  --border-gray: #e2e8f0;
+  --border-gray-dark: #cbd5e0;
+  --background-gray-light: #a0aec0;
+  --background-gray: #718096;
+  --background-gray-dark: #4a5568;
   --contrast-light: #2d3748;
   --contrast: #1a202c;
   --contrast-dark: #171923;
@@ -40,13 +40,13 @@ span {
 }
 
 /* .page-title {
-    background-color: var(--border-grey);
+    background-color: var(--border-gray);
     margin-bottom: 3rem;
 } */
 
 body {
   font-family: "DM Sans", sans-serif;
-  background-color: var(--body-grey);
+  background-color: var(--body-gray);
   margin: 0 !important;
   width: 100%;
   overflow-x: hidden;
@@ -74,7 +74,7 @@ a:visited {
 input,
 textarea,
 select {
-  border: 2px solid var(--border-grey-dark) !important;
+  border: 2px solid var(--border-gray-dark) !important;
 }
 
 .notice {
@@ -96,7 +96,7 @@ select {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  border-bottom: 2px solid var(--border-grey-dark);
+  border-bottom: 2px solid var(--border-gray-dark);
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   z-index: 100;
@@ -182,7 +182,7 @@ select {
 
 .footer--logo a {
   padding-left: 2rem;
-  color: var(--body-grey);
+  color: var(--body-gray);
   display: inline-block;
   font-family: "Merriweather", serif;
   text-decoration: none;
@@ -198,7 +198,7 @@ select {
 }
 
 .footer--links a {
-  color: var(--body-grey);
+  color: var(--body-gray);
   line-height: 2;
   padding: 0 0.5rem !important;
 }
@@ -208,7 +208,7 @@ select {
 }
 
 .footer a:hover {
-  color: var(--border-grey-dark);
+  color: var(--border-gray-dark);
 }
 
 .progress_bar {
@@ -223,20 +223,20 @@ select {
 
 .btn-blue {
   background-color: var(--background-blue);
-  color: var(--body-grey) !important;
+  color: var(--body-gray) !important;
 }
 
 .btn-blue:hover {
   background-color: var(--background-blue-hover);
 }
 
-.btn-grey {
-  background-color: var(--body-grey);
-  border: 2px solid var(--border-grey-dark) !important;
+.btn-gray {
+  background-color: var(--body-gray);
+  border: 2px solid var(--border-gray-dark) !important;
 }
 
-.btn-grey:hover {
-  background-color: var(--body-grey-dark);
+.btn-gray:hover {
+  background-color: var(--body-gray-dark);
 }
 
 .nav-user {
@@ -290,7 +290,7 @@ select {
   flex-direction: column;
   border-radius: 0.5rem;
   background-color: var(white);
-  border: 2px solid var(--border-grey-dark);
+  border: 2px solid var(--border-gray-dark);
 }
 
 .user-action a {
@@ -300,13 +300,13 @@ select {
 .link-light {
   background-color: transparent;
   color: black !important;
-  border-bottom: 2px solid var(--border-grey);
+  border-bottom: 2px solid var(--border-gray);
   text-align: center;
   padding: 0.5rem 1.5rem;
 }
 
 .link-light:hover {
-  background-color: var(--body-grey-dark);
+  background-color: var(--body-gray-dark);
   color: black !important;
 }
 
@@ -328,8 +328,8 @@ select {
   border-bottom: none;
 }
 
-.icon-grey {
-  color: var(--background-grey-light);
+.icon-gray {
+  color: var(--background-gray-light);
   margin-right: 0.75rem;
 }
 
@@ -345,4 +345,11 @@ select {
 
 .modal-title {
   margin-top: 0;
+}
+
+
+.under-nav {
+  position: sticky !important;
+  top: 8vh;
+  z-index: 100;
 }

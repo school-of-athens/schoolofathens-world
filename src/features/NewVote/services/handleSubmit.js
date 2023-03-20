@@ -23,7 +23,27 @@ const handleSubmit = async (newVote, setCurrentPage, toast) => {
 
     if (valid) {
       try {
-        await addDoc(collection(db, "votes"), newVote);
+        const newVoteReformat = {
+          title: newVote.title,
+          introduction: newVote.introduction,
+          topics: newVote.topics,
+          totalVotes: 0,
+          totalOpinions: 0,
+          options: {
+            [newVote.options[0].title]: {
+              summary: newVote.options[0].summary,
+              votes: 0,
+              opinions: [],
+            },
+            [newVote.options[1].title]: {
+              summary: newVote.options[1].summary,
+              votes: 0,
+              opinions: [],
+            },
+          },
+        };
+
+        await addDoc(collection(db, "votes"), newVoteReformat);
         toast({
           status: "success",
           variant: "left-accent",

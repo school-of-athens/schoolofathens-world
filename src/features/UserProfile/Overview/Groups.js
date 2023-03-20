@@ -12,7 +12,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members
@@ -31,7 +31,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members
@@ -50,7 +50,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members
@@ -69,7 +69,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members
@@ -88,7 +88,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members
@@ -107,7 +107,7 @@ export default function Groups() {
                 <span>
                   <FontAwesomeIcon
                     icon="fa-solid fa-user-group"
-                    className="icon-grey"
+                    className="icon-gray"
                     size="xs"
                   />
                   0 Members

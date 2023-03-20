@@ -1,5 +1,4 @@
-
-import useFirestore from "./useFirestore";
+import { db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 /**
@@ -8,15 +7,10 @@ import { doc, getDoc } from "firebase/firestore";
  * @returns an object representing the user info if the user exists, else false
  */
 export default async function getUserInfo(userId) {
-
-  const db = useFirestore();
-
-  const userSnapshot = await getDoc(
-    doc(db, "userInfo", userId)
-  );
+  const userSnapshot = await getDoc(doc(db, "userInfo", userId));
 
   if (userSnapshot.exists()) {
-    return userSnapshot.data();
+    return { ...userSnapshot.data(), id: userSnapshot.id };
   }
 
   return false;

@@ -19,7 +19,7 @@ export default function () {
           {/* description */}
           {/* button groups */}
           <ButtonGroup spacing={4}>
-            <Button variant="grey" fontSize="lg">Forum Rules</Button>
+            <Button variant="gray" fontSize="lg">Forum Rules</Button>
             <Button variant="blue" fontSize="lg" onClick={() => navigate("new")}>Propose a Vote</Button>
           </ButtonGroup>
       </div>
