@@ -15,5 +15,6 @@ const schoolOfAthens = "https://firebasestorage.googleapis.com/v0/b/school-of-at
 const schoolOfAthensCropped = "https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_school_of_athens_cropped.jpg?alt=media&token=693a8941-6bf4-44fc-a1d0-b0e159af9039";
 const schoolOfAthensDraft = "https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_school_of_athens_draft.jpg?alt=media&token=5212af2c-470f-4324-9086-8df86e7a6863";
 const viewOfRomanForumCropped = "https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fview-of-the-roman-forum-cropped.jpg?alt=media&token=01c431a2-c386-45d9-82fc-f088e0347e02";
+const jinzhou = "https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fhead.jpg?alt=media&token=80050b1f-4925-4170-ad98-3ca295bac21b";
 
-export { logo, acropolisAtAthens, aristotle, bazarOfAthens, blockchain, deathOfSocrates, decentralization, google, groups, periclesFuneralOration, plato, entryOfKingOthon, schoolOfAthens, schoolOfAthensCropped, schoolOfAthensDraft, viewOfRomanForumCropped };
+export { logo, acropolisAtAthens, aristotle, bazarOfAthens, blockchain, deathOfSocrates, decentralization, google, groups, periclesFuneralOration, plato, entryOfKingOthon, schoolOfAthens, jinzhou, schoolOfAthensCropped, schoolOfAthensDraft, viewOfRomanForumCropped };

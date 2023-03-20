@@ -1,5 +1,5 @@
 
-import { entryOfKingOthon, acropolisAtAthens, bazarOfAthens } from "../../data/projectFiles";
+import { entryOfKingOthon, acropolisAtAthens, bazarOfAthens } from "../../../data/projectFiles";
 
 export default function () {
     return (

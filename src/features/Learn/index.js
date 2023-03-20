@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import "./Learn.css";
 import ArticleCard from '../../components/ArticleCard';
-import LearnTitle from "./LearnTitle";
-import QuerySelector from './QuerySelector';
+import LearnTitle from "./components/LearnTitle";
+import QuerySelector from './components/QuerySelector';
 import { getDocs, collection, doc, getFirestore } from "firebase/firestore";
 import LinearProgress from '@mui/material/LinearProgress';
 import useFirestore from '../../hooks/useFirestore';

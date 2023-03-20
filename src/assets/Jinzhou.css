@@ -1,0 +1,18 @@
+
+
+.jinzhou-bg {
+    background-color: var(--body-gray);
+    padding: 5rem;
+    min-height: 80vh;
+}
+
+.jinzhou-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.jinzhou-body {
+    padding-left: 1rem;
+}

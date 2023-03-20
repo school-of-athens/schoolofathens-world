@@ -29,7 +29,7 @@
     border-bottom: 2px solid var(--border-gray-dark);
     position: -webkit-sticky;
     position: sticky;
-    top: 8vh;
+    top: 4rem;
 }
 
 .vote-toolbar--sortby {

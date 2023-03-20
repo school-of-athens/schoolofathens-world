@@ -13,6 +13,8 @@ import Home from "./pages/Home";
 import Forum from "./pages/Forum";
 import Propose from "./pages/Propose";
 import SingleVote from "./pages/SingleVote";
+import About from "./pages/About";
+import Jinzhou from "./pages/Jinzhou";
 
 export default function App() {
   useEffect(() => {
@@ -33,6 +35,10 @@ export default function App() {
             <Route index element={<Forum />} />
             <Route path="new" element={<Propose />} />
             <Route path=":voteId" element={<SingleVote />} />
+          </Route>
+          <Route path="about">
+            <Route index element={<About />} />
+            <Route path="jinzhou" element={<Jinzhou />} />
           </Route>
           {/* <Route path="learn" element={<Learn />} />
           <Route path="groups" element={<Groups />} />
