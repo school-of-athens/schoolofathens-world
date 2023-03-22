@@ -1,6 +1,7 @@
 // Libraries
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 // Stylesheets
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +14,11 @@ import Home from "./pages/Home";
 import Forum from "./pages/Forum";
 import Propose from "./pages/Propose";
 import SingleVote from "./pages/SingleVote";
+import Learn from "./pages/Learn";
+import SingleArticle from "./pages/SingleArticle";
 import About from "./pages/About";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import Jinzhou from "./pages/Jinzhou";
 
 export default function App() {
@@ -27,7 +32,9 @@ export default function App() {
         <Route
           path="/"
           element={
+            <AuthProvider>
               <Home />
+            </AuthProvider>
           }
         />
         <Route path="/" element={<Layout />}>
@@ -36,10 +43,16 @@ export default function App() {
             <Route path="new" element={<Propose />} />
             <Route path=":voteId" element={<SingleVote />} />
           </Route>
+          <Route path="learn">
+            <Route index element={<Learn />} />
+            <Route path=":articleId" element={<SingleArticle />} />
+          </Route>
           <Route path="about">
             <Route index element={<About />} />
             <Route path="jinzhou" element={<Jinzhou />} />
           </Route>
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
           {/* <Route path="learn" element={<Learn />} />
           <Route path="groups" element={<Groups />} />
           <Route path="about" element={<About />} />

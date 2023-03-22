@@ -9,12 +9,11 @@ import {
 } from "../features/NewVote";
 
 const Propose = () => {
-  const { auth, authRedirect } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const [currentPage, setCurrentPage] = useState(1);
   const [newVote, setNewVote] = useNewVote();
 
   useEffect(() => {
-    authRedirect();
     setNewVote((prev) => {
       return { ...prev, userId: auth?.currentUser?.uid };
     });

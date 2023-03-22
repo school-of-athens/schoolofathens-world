@@ -1,0 +1,97 @@
+:root {
+  --body-gray: #f7fafc;
+  --border-gray: #e2e8f0;
+  --border-gray-darker: #cbd5e0;
+  --body-blue: #2a84ee;
+  --body-blud-hover: #1e66cc;
+  --body-gray-hover: #edf2f7;
+  --body-dark-gray: #171923;
+  --body-blue-muted: #e5f6ff;
+  --body-dark-gray-hover: #1a202c;
+}
+
+.signIn {
+  width: 100vw;
+  height: calc(100vh - 4rem);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fbazar_of_athens.jpg?alt=media&token=4ceeb8ca-1a4c-4ef0-b2fe-77d821f7b323);
+  background-size: cover;
+  position: relative;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  align-items: center;
+}
+
+.signIn--form {
+  background-color: var(--body-gray);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  border-radius: 0.75rem;
+  border: 3px solid var(--border-gray-darker);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signIn--form h1 {
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.signIn--form input {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 2px solid var(--border-gray-darker);
+}
+
+.signIn--form label {
+  align-self: start;
+  margin-left: 3px;
+}
+
+.signIn button {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.signIn--google-btn img {
+  margin-right: 1rem;
+}
+
+.signIn--google_btn:hover {
+  background-color: var(--body-gray-hover);
+  border: 2px solid var(--border-gray-darker);
+}
+
+.signIn--divide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.signIn--divide hr {
+  width: 25%;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-top: 2px solid var(--border-gray-darker);
+  opacity: 1;
+}
+
+.signIn--forget_password {
+  margin-top: 1rem;
+  color: var(--body-blud-hover);
+}
+
+.signIn--forget_password:hover {
+  color: var(--body-blue);
+}

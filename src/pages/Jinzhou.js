@@ -19,7 +19,7 @@ const Jinzhou = () => {
           <Image borderRadius="full" boxSize="10rem" src={jinzhou} />
           <Heading mt={5}>Jinzhou Wu</Heading>
           <Link
-            href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2FFAANGPath_Simple_Template.pdf?alt=media&token=af2ba282-e605-4147-9749-2d3ade3b8863"
+            href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FCV.pdf?alt=media&token=1a6a2d2a-666c-4f20-8bb7-cafc024c23c7"
             isExternal
             colorScheme="blue"
           >
@@ -115,7 +115,7 @@ const Jinzhou = () => {
             Writings & Publications
           </Heading>
           <Box className="d-flex justify-content-between">
-            <Link>
+            <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FWriting_Sample.pdf?alt=media&token=45d766ee-d817-433e-962f-a1551e393677">
               <Heading size="sm" lineHeight={2}>
                 Andrew Jackson and the Nullification Crisis
                 <ExternalLinkIcon mx="2px" mb="4px" />
@@ -126,22 +126,21 @@ const Jinzhou = () => {
             </Text>
           </Box>
           <Text>
-            <b>Abstract</b>
           </Text>
           <Box className="d-flex justify-content-between">
-            <Heading size="sm" lineHeight={2}>
-              Truman and the Decision to Neutralize the Taiwan Strait (Still
-              working on it)
-            </Heading>
+            <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FTaiwan.pdf?alt=media&token=34a28705-7a7a-4137-8728-b23c2c5c5b6a">
+              <Heading size="sm" lineHeight={2}>
+                President Truman and the Decisioin to Neutralize the Taiwan Strait
+                <ExternalLinkIcon mx="2px" mb="4px" />
+              </Heading>
+            </Link>
             <Text fontSize="sm" mt={0}>
               AP U.S. History
             </Text>
           </Box>
-          <Text>
-            <b>Abstract</b>
-          </Text>
+          <Text>{/* <b>Abstract</b> */}</Text>
           <Box className="d-flex justify-content-between">
-            <Link>
+            <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FNIPS2022submission__Final_.pdf?alt=media&token=916ee185-808c-4905-890e-efded0edeada">
               <Heading size="sm" lineHeight={2}>
                 Learn Complementary Pseudo-label for Source-free Domain Adaptive
                 Medical Segmentation
@@ -152,11 +151,9 @@ const Jinzhou = () => {
               NeurIPS 2022 workshop
             </Text>
           </Box>
-          <Text>
-            <b>Abstract</b>
-          </Text>
+          <Text>{/* <b>Abstract</b>:  */}</Text>
           <Box className="d-flex justify-content-between">
-            <Link>
+            <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FIPMI2023_dataaugFL_.pdf?alt=media&token=f2f9ad24-9179-4074-bb77-f347d2980e88">
               <Heading size="sm" lineHeight={2}>
                 Vicinal Feature Statistics Augmentation for Federated 3D Medical
                 Volume Segmentation
@@ -167,11 +164,9 @@ const Jinzhou = () => {
               IPMI 2023
             </Text>
           </Box>
-          <Text>
-            <b>Abstract</b>
-          </Text>
+          <Text>{/* <b>Abstract</b> */}</Text>
           <Box className="d-flex justify-content-between">
-            <Link>
+            <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2Fmiccai2023_COST_.pdf?alt=media&token=6e20ffba-2c27-48ae-89ad-87a8c00af575">
               <Heading size="sm" lineHeight={2}>
                 Balanced Complementary Self-Training for Source-free Domain
                 Adaptive Segmentation
@@ -182,9 +177,7 @@ const Jinzhou = () => {
               Submitted to MICCAI 2023
             </Text>
           </Box>
-          <Text>
-            <b>Abstract</b>
-          </Text>
+          <Text>{/* <b>Abstract</b> */}</Text>
         </div>
       </div>
     </div>

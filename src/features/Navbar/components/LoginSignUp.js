@@ -1,3 +1,4 @@
+import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const LoginSignUp = () => {
@@ -5,24 +6,25 @@ const LoginSignUp = () => {
 
   return (
     <div className="signIn-signUp">
-      <button
-        type="button"
-        className="btn btn-gray me-2"
-        onClick={() => {
-          navigate("/login");
-        }}
-      >
-        Sign In
-      </button>
-      <button
-        type="button"
-        className="btn btn-blue"
-        onClick={() => {
-          navigate("/join");
-        }}
-      >
-        Sign Up
-      </button>
+      <ButtonGroup spacing={3}>
+        <Button
+          variant="gray"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </Button>
+
+        <Button
+          variant="blue"
+          onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          Sign Up
+        </Button>
+      </ButtonGroup>
     </div>
   );
 };

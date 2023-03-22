@@ -31,8 +31,19 @@ const blue = defineStyle({
   }
 });
 
+const ghostGray = defineStyle({
+  background: 'transparent',
+  color: 'black',
+  fontWeight: '500',
+  height: "fit-content",
+
+  _hover: {
+    background: 'gray.300'
+  }
+});
+
 const buttonTheme = defineStyleConfig({
-  variants: { gray, blue },
+  variants: { gray, blue, ghostGray },
 });
 
 export default buttonTheme;

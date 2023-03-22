@@ -5,6 +5,8 @@ import tabsTheme from "./tabsTheme";
 import buttonTheme from "./buttonTheme";
 import inputTheme from "./inputTheme";
 import selectTheme from "./selectTheme";
+import cardTheme from "./cardTheme";
+import dividerTheme from "./dividerTheme";
 
 const theme = extendTheme({
     components: {
@@ -12,7 +14,9 @@ const theme = extendTheme({
         Tabs: tabsTheme,
         Button: buttonTheme,
         Input: inputTheme,
-        Select: selectTheme
+        Select: selectTheme,
+        Card: cardTheme,
+        Divider: dividerTheme
     },
     fonts: {
         body: "DM Sans, sans-serif",

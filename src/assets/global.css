@@ -49,11 +49,14 @@ body {
   background-color: var(--body-gray);
   margin: 0 !important;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+}
+
+.row {
+  width: 100%;
 }
 
 p {
-  line-height: 2;
   font-size: 1.1rem;
 }
 
@@ -79,7 +82,7 @@ select {
 
 .notice {
   text-align: center;
-  height: 90vh;
+  height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -346,7 +349,6 @@ select {
 .modal-title {
   margin-top: 0;
 }
-
 
 .under-nav {
   position: sticky !important;

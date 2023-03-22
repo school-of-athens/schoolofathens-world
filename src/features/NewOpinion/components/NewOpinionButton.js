@@ -1,16 +1,14 @@
-import { AuthContext } from "../../../context/AuthContext";
-import { useContext } from "react";
 import { Button } from "@chakra-ui/react";
+import useAuthRequired from "../../../hooks/useAuthRequired";
 
 const NewOpinionButtton = ({ onOpen }) => {
-  const { authRedirect } = useContext(AuthContext);
+  const authRequired = useAuthRequired();
 
   return (
     <Button
       variant="blue"
       onClick={() => {
-        authRedirect();
-        onOpen();
+        authRequired(onOpen);
       }}
     >
       Share Your Opinion

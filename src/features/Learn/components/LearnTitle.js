@@ -1,19 +1,34 @@
-import { Link } from "react-router-dom";
+import { Heading, Button, ButtonGroup } from "@chakra-ui/react";
+import useAuthRedirect from "../../../hooks/useAuthRedirect";
+import { funeralOrnationCropped } from "../../../data/projectFiles";
 
 export default function () {
-    return (
-        <section className="page-title py-5 px-sm-5 px-3">
-        <div className="container-fluid px-0">
-            <div className="mx-auto text-start">
-            <h1>Share Your Insights</h1>
-                    <p className="lead text-muted">This is the platform for discussion and exchange of opinions. Share your
-                        stories and personal insights here.</p>
-                    <p>
-                    <Link to="/404" className="btn btn-gray my-2 me-3">Forum Rules</Link>
-                    <Link to="/learn/compose" className="btn btn-blue my-2g n">Compose</Link>
-                </p>
-            </div>
-        </div>
-    </section>
-    );
+  const authRedirect = useAuthRedirect();
+
+  return (
+    <div className="page-title">
+      <img src={funeralOrnationCropped} />
+      {/* container with paddings */}
+      <div className="container-fluid page-title--body px-3 px-sm-5">
+        {/* title */}
+        <Heading my={10} color="white">
+          Share Your Insights
+        </Heading>
+        {/* description */}
+        {/* button groups */}
+        <ButtonGroup spacing={4}>
+          <Button variant="gray" fontSize="lg">
+            Community Rules
+          </Button>
+          <Button
+            variant="blue"
+            fontSize="lg"
+            onClick={() => authRedirect("compose")}
+          >
+            Compose
+          </Button>
+        </ButtonGroup>
+      </div>
+    </div>
+  );
 }

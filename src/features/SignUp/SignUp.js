@@ -1,6 +1,6 @@
-import { google } from "../../../data/projectFiles";
+import { google } from "../../data/projectFiles";
 import { useState, useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { ToastContext } from "../../context/ToastContext";
 import useFirestore from "../../hooks/useFirestore";
 
