@@ -3,7 +3,7 @@ import {
   NavbarBody,
   NavbarContainer,
   OffcanvasButton,
-  UserProtrait,
+  UserMenu,
 } from "../features/Navbar";
 import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
@@ -16,7 +16,7 @@ export default function () {
       <OffcanvasButton />
       <NavbarBody />
       {auth.currentUser ? (
-        <UserProtrait user={auth?.currentUser} />
+        <UserMenu user={auth?.currentUser} />
       ) : (
         <LoginSignUp />
       )}

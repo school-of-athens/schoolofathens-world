@@ -1,69 +1,87 @@
 import { google } from "../../../data/projectFiles";
 import useSignInWithEmail from "../hooks/useSignInWithEmail";
-import useSignInWithGoogle from "../hooks/useSignInWithGoogle";
+import useSignInWithGoogle from "../../../hooks/useSignInWithGoogle";
+import {
+  Button,
+  Heading,
+  Box,
+  Input,
+  InputGroup,
+  InputRightElement,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
 import { useState } from "react";
-import { AuthContext } from "../../../context/AuthContext";
-import { useContext } from "react";
-import { Button, Heading } from "@chakra-ui/react";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { setUserData } = useContext(AuthContext);
-  const signInWithGoogle = useSignInWithGoogle(setUserData);
-  const signInWithEmail = useSignInWithEmail();
+  const signInWithGoogle = useSignInWithGoogle();
+  const [setEmail, setPassword, signInWithEmail] = useSignInWithEmail();
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="row signIn">
-      <div className="img-caption">
+    <Box className="row signIn">
+      <Box className="img-caption">
         Edward Dodwell. <i>Bazar of Athens.</i>
-      </div>
+      </Box>
 
-      <div className="signIn--form col-11 col-xl-4 col-lg-5 col-md-6 px-lg-5 px-2">
+      <Box className="signIn--form col-11 col-xl-4 col-lg-5 col-md-6 px-lg-5 px-2">
         <Heading>Sign In</Heading>
-        <Button variant="gray">
+        <Button variant="gray" width="100%" onClick={signInWithGoogle} mt={5}>
           <img src={google} height="18" width="18" className="me-3" />
           Sign in with Google
         </Button>
 
-        <div className="signIn--divide">
+        <Box className="signIn--divide">
           <hr />
           Or sign in with email
           <hr />
-        </div>
+        </Box>
+        <FormControl>
+          <FormLabel>Email</FormLabel>
+          <Input
+            type="email"
+            placeholder="name@example.com"
+            onChange={(e) => setEmail(e.target.value)}
+            bgColor="white"
+          />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Password</FormLabel>
+          <InputGroup>
+            <Input
+              type={showPassword ? "text" : "password"}
+              bgColor="white"
+              placeholder="choose a password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <InputRightElement>
+              <Button
+                variant="light"
+                minWidth="fit-content"
+                minHeight="fit-content"
+                position="absolute"
+                right="0"
+                py={0}
+                px={1}
+                mt={0}
+                me={2}
+                height="fit-content"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? "Hide" : "Show"}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+        </FormControl>
 
-        <label htmlFor="email" className="form-label">
-          Email address
-        </label>
-        <input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="name@example.com"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password" className="form-label">
-          Password
-        </label>
-        <input
-          type="password"
-          className="form-control"
-          id="password"
-          placeholder="your password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          type="button"
-          className="btn btn-blue"
-          onClick={() => signInWithEmail(email, password)}
-        >
+        <Button mt={5} variant="blue" onClick={signInWithEmail}>
           Sign In
-        </button>
-        <button type="button" className="btn signIn--forget_password">
+        </Button>
+        <Button mt={4} variant="ghostGray" color="blue.600">
           Don't remember your password?
-        </button>
-      </div>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

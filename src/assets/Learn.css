@@ -1,13 +1,35 @@
 .card-text {
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 .card {
-    border: 3px solid var(--border-gray);
-    border-radius: 0.5rem;
+  border: 3px solid var(--border-gray);
+  border-radius: 0.5rem;
 }
 
 .card:hover {
-    border-color: var(--body-blue);
-    background-color: var(--body-gray);
+  border-color: var(--body-blue);
+  background-color: var(--body-gray);
+}
+
+.learn-body {
+  background-color: var(--body-gray);
+}
+
+.masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -1.5rem; /* gutter size offset */
+  width: auto;
+}
+.masonry-grid--col {
+  padding-left: 1.5rem; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.masonry-grid--col > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 1.5rem;
 }

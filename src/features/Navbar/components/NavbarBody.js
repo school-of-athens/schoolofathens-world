@@ -1,15 +1,13 @@
-
 import { logo } from "../../../data/projectFiles";
 import { Link } from "react-router-dom";
-
 
 const NavbarBody = () => {
   return (
     <div
       className="offcanvas offcanvas-start text-bg-light"
       tabIndex="-1"
-      id="offcanvasNavbar2"
-      aria-labelledby="offcanvasNavbar2Label"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel"
     >
       <div className="offcanvas-body">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -65,18 +63,18 @@ const NavbarBody = () => {
             <Link
               className="nav-link text-secondary px-4"
               aria-current="page"
-              to="about"
+              to="community"
             >
-              About
+              Community
             </Link>
           </li>
           <li className="nav-item">
             <Link
               className="nav-link text-secondary px-4"
               aria-current="page"
-              to="development"
+              to="about"
             >
-              Dev
+              About
             </Link>
           </li>
         </ul>

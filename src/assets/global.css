@@ -129,6 +129,7 @@ select {
 
 .navbar-toggler {
   border: none;
+  padding: 0;
 }
 
 .signIn-signUp {
@@ -354,4 +355,8 @@ select {
   position: sticky !important;
   top: 4rem;
   z-index: 100;
+}
+
+.row {
+  margin: 0;
 }

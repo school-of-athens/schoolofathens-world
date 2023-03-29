@@ -4,8 +4,8 @@ const OffcanvasButton = () => {
       className="navbar-toggler"
       type="button"
       data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasNavbar2"
-      aria-controls="offcanvasNavbar2"
+      data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar"
     >
       <span className="navbar-toggler-icon"></span>
     </button>

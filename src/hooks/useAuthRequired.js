@@ -1,11 +1,11 @@
 import { useToast } from "@chakra-ui/react";
 import { auth } from "../services/firebase";
 
-const useAuthRequired = (callback) => {
+const useAuthRequired = () => {
   const toast = useToast();
 
-  const authRequired = () => {
-    if (auth.currentUser) {
+  const authRequired = (callback) => {
+    if (auth?.currentUser?.emailVerified) {
       callback();
     } else {
       toast({

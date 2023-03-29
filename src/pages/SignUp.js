@@ -1,8 +1,9 @@
 import "../assets/SignUp.css";
 import Bulletin from "../components/Bulletin";
+import { SignUpComponent } from "../features/SignUp";
 
 const SignUp = () => {
-  return <Bulletin text="This page is still under development" />;
+  return <SignUpComponent />;
 };
 
 export default SignUp;

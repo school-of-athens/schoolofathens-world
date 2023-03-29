@@ -13,7 +13,7 @@ import "../assets/Jinzhou.css";
 
 const Jinzhou = () => {
   return (
-    <div className="jinzhou-bg">
+    <div className="jinzhou-bg px-2 px-sm-5">
       <div className="row">
         <div className="col-12 col-md-4 col-lg-3 jinzhou-nav">
           <Image borderRadius="full" boxSize="10rem" src={jinzhou} />
@@ -125,12 +125,12 @@ const Jinzhou = () => {
               AP U.S. History
             </Text>
           </Box>
-          <Text>
-          </Text>
+          <Text></Text>
           <Box className="d-flex justify-content-between">
             <Link href="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fjinzhou%2FTaiwan.pdf?alt=media&token=34a28705-7a7a-4137-8728-b23c2c5c5b6a">
               <Heading size="sm" lineHeight={2}>
-                President Truman and the Decisioin to Neutralize the Taiwan Strait
+                President Truman and the Decisioin to Neutralize the Taiwan
+                Strait
                 <ExternalLinkIcon mx="2px" mb="4px" />
               </Heading>
             </Link>

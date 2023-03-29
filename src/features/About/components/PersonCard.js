@@ -1,27 +1,29 @@
-import { Button } from "@chakra-ui/react";
+import { Avatar, Button, Card, Heading, Image, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-const PersonCard = () => {
+const PersonCard = ({ url, photoURL, name, intro }) => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleClick = () => {
+    if (url) {
+      navigate(`/about/${url}`);
+    }
+    else {
+      navigate("/community");
+    }
+  };
 
   return (
-    <div className="col-lg-4 d-flex flex-column align-items-center">
-      <img
-        className="bd-placeholder-img rounded-circle mb-3"
-        width="140"
-        height="140"
-        src="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fhead.jpg?alt=media&token=80050b1f-4925-4170-ad98-3ca295bac21b"
-      />
-      <h2 className="fw-normal">Jinzhou Wu</h2>
-      <p>
-        Founder of schoolofathens.world.
-      </p>
-      <p>
-        <Button variant="blue" onClick={() => navigate("/about/jinzhou")}>
-            View details
-        </Button>
-      </p>
+    <div className="d-flex flex-column align-items-center">
+      <Card className="people-card" onClick={handleClick}>
+        <Avatar borderRadius="full" boxSize="10rem" src={photoURL} border="solid" borderWidth="2px" borderColor="red" />
+        <Heading size="md" mt="3">
+          {name ? name : "Could Be You"}
+        </Heading>
+        <Text mt="1" textAlign="center">
+          {intro ? intro : "Become a developer"}
+        </Text>
+      </Card>
     </div>
   );
 };

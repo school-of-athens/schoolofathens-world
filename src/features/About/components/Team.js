@@ -1,34 +1,70 @@
-
+import { Heading } from "@chakra-ui/react";
+import Masonry from "react-masonry-css";
 import PersonCard from "./PersonCard";
 
-export default function () {
-    return (
-        <PersonCard />
-        // <div className="container">
-        //     <div className="row text-center">
-                
-        //         <div className="col-lg-4">
-        //             <svg className="bd-placeholder-img rounded-circle mb-3" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-        //                 role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-        //                 <title>Placeholder</title>
-        //                 <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-        //             </svg>
-        //             <h2 className="fw-normal">Could be you</h2>
-        //             <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.
-        //             </p>
-        //             <p><a className="btn btn-primary" href="#">View details &raquo;</a></p>
-        //         </div>
-        //         <div className="col-lg-4">
-        //             <svg className="bd-placeholder-img rounded-circle mb-3" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-        //                 role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-        //                 <title>Placeholder</title>
-        //                 <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-        //             </svg>
-        //             <h2 className="fw-normal">Could be you</h2>
-        //             <p>And lastly this, the third column of representative placeholder content.</p>
-        //             <p><a className="btn btn-primary" href="#">View details &raquo;</a></p>
-        //         </div>
-        //     </div>
-        // </div>
-    );
+const breakpointColumnsObj = {
+  default: 4,
+  992: 2,
+  576: 1,
 };
+
+export default function () {
+  return (
+    <>
+      <Heading mb={4}>Developer Team</Heading>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid--col"
+      >
+        <PersonCard
+          url="jinzhou"
+          photoURL="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fhead.jpg?alt=media&token=80050b1f-4925-4170-ad98-3ca295bac21b"
+          name="Jinzhou Wu"
+          intro="Founder"
+        />
+        <PersonCard url="cole-bulger" name="Cole Bulger" intro="Developer" />
+        <PersonCard
+          url="mario-evengjeli"
+          name="Mario Evangjeli"
+          intro="Developer"
+        />
+        <PersonCard url="ewen-wang" name="Ewen Wang" intro="Developer" />
+        {/* <PersonCard /> */}
+      </Masonry>
+      <Heading mb={4} mt={6}>Content Generation Team</Heading>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid--col"
+      >
+        
+        <PersonCard
+          url="author-yang"
+          photoURL="https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fmisc%2Fauthor-yang.jpg?alt=media&token=99bf1792-014c-4c2e-b75c-cf6c84021dfd"
+          name="Author Yang"
+          intro="Environmentalist"
+        />
+        <PersonCard intro="Become an editor" />
+      </Masonry>
+      <Heading mb={4} mt={6}>Design Team</Heading>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid--col"
+      >
+        
+        <PersonCard intro="Become a designer" />
+      </Masonry>
+      <Heading mb={4} mt={6}>Outreach Team</Heading>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid--col"
+      >
+        
+        <PersonCard intro="Become an influencer" />
+      </Masonry>
+    </>
+  );
+}

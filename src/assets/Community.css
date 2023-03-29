@@ -1,0 +1,13 @@
+.community-title {
+    text-align: center;
+    background-color: var(--body-gray-dark);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+.community-body {
+    min-height: 60vh;
+    padding: 5rem 1rem;
+}
+

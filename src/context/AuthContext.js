@@ -11,22 +11,23 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser && !currentUser.emailVerified) {
-        navigate("/auth/verify");
-      } else {
-        const userDataTemp = getUserData(currentUser?.uid);
+    onAuthStateChanged(auth, async (currentUser) => {
 
-        if (!userDataTemp) {
-          navigate("user/edit");
+      if (currentUser) {
+        if (!currentUser.emailVerified) {
+          navigate("/user/verify");
         } else {
-          setUserData(userDataTemp);
+          const userDataTemp = await getUserData(currentUser.uid);
+
+          if (!userDataTemp) {
+            navigate("/user/setup");
+          } else {
+            setUserData(userDataTemp);
+          }
         }
       }
     });
   }, []);
-
-  // TODO: auth required protection component
 
   const value = {
     auth,

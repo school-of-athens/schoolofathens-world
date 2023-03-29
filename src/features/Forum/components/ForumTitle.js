@@ -36,7 +36,7 @@ export default function () {
           <Button
             variant="blue"
             fontSize="lg"
-            onClick={() => authRedirect("new")}
+            onClick={() => authRedirect("/forum/new")}
           >
             Propose a Vote
           </Button>

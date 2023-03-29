@@ -19,7 +19,15 @@ import SingleArticle from "./pages/SingleArticle";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Groups from "./pages/Groups";
+import Community from "./pages/Community";
+import Compose from "./pages/Compose";
+import Verify from "./pages/Verify";
+import UserProfile from "./pages/UserProfile";
 import Jinzhou from "./pages/Jinzhou";
+import Bulletin from "./components/Bulletin";
+import SetUp from "./pages/SetUp";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   useEffect(() => {
@@ -46,6 +54,10 @@ export default function App() {
           <Route path="learn">
             <Route index element={<Learn />} />
             <Route path=":articleId" element={<SingleArticle />} />
+            <Route path="compose" element={<Compose />} />
+          </Route>
+          <Route path="groups">
+            <Route index element={<Groups />} />
           </Route>
           <Route path="about">
             <Route index element={<About />} />
@@ -53,19 +65,15 @@ export default function App() {
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
-          {/* <Route path="learn" element={<Learn />} />
-          <Route path="groups" element={<Groups />} />
-          <Route path="about" element={<About />} />
-          <Route path="development" element={<Development />} />
-          <Route path="login" element={<SignIn />} />
-          <Route path="join" element={<SignUp />} />
-          <Route path="forum/propose" element={<Propose />} />
-          <Route path="vote/:voteId" element={<Vote />} />
-          <Route path="article" element={<Article />} />
-          <Route path="user/:userId" element={<UserProfile />} />
-          <Route path="test" element={<Test />} />
-          <Route path="auth/action/*" element={<SignIn />} />
-          <Route path="*" element={<PageNotFound />} /> */}
+          <Route path="user">
+            <Route path="verify" element={<Verify />} />
+            <Route path="setup" element={<SetUp />} />
+            <Route path=":userId" element={<UserProfile />} />
+          </Route>
+          <Route path="test">
+          </Route>
+          <Route path="community" element={<Community />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

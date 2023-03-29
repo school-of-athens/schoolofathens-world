@@ -16,8 +16,8 @@
 }
 
 .signUp {
-    width: 100vw;
-    height: 90vh;
+    width: 100%;
+    height: calc(100vh - 4rem);
     background-image: url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fthe_entry_of_king_othon_of_greece_in_athens.jpg?alt=media&token=1ff2e9b7-39ab-418a-982e-7a04ec257152);
     background-size: cover;
     position: relative;
@@ -51,11 +51,6 @@
 .signUp--form label {
     align-self: start;
     margin-left: 3px;
-}
-
-.signUp button {
-    margin-top: 1rem;
-    width: 100%;
 }
 
 .signUp--google img {
@@ -99,7 +94,7 @@
 }
 
 .verify {
-    height: 90vh;
+    height: calc(100vh - 4rem);
     justify-content: center;
     width: 100%;
     display: flex;
@@ -150,13 +145,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
+    margin-top: 3rem;
 }
 .set_up h1 {
     font-weight: bold;
-}
-
-.set_up input {
-    margin-bottom: 1rem;
 }
 
 .submit--btn {

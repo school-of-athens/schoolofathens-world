@@ -1,9 +1,11 @@
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const gray = defineStyle({
-  borderWidth: "2px", // change the width of the border
+  borderWidth: "3px", // change the width of the border
   borderStyle: "solid", // change the style of the border
-  borderColor: "gray.300"
+  borderColor: "gray.300",
+  mt: "3",
+  mb: "1"
 });
 
 const dividerTheme = defineStyleConfig({
