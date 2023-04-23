@@ -29,7 +29,7 @@ import Mario from "./pages/Mario";
 import Bulletin from "./components/Bulletin";
 import SetUp from "./pages/SetUp";
 import PageNotFound from "./pages/PageNotFound";
-
+import Tomomi from "./pages/Tomomi";
 export default function App() {
   useEffect(() => {
     document.title = "The School of Athens | Home to Modern Democracy";
@@ -63,6 +63,7 @@ export default function App() {
           <Route path="about">
             <Route index element={<About />} />
             <Route path="jinzhou" element={<Jinzhou />} />
+            <Route path="tomomi" element={<Tomomi />} />
             <Route
               path="mario-evangjeli"
               element={<Mario />}
