@@ -35,8 +35,6 @@ export default function App() {
     document.title = "The School of Athens | Home to Modern Democracy";
   }, []);
 
-  console.log("Welcome to the School of Athens!");
-
   return (
     <BrowserRouter>
       <Routes>
