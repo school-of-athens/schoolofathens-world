@@ -32,8 +32,6 @@ import PageNotFound from "./pages/PageNotFound";
 import Tomomi from "./pages/Tomomi";
 export default function App() {
 
-  console.log("Welcome to the School of Athens!");
-
   return (
     <BrowserRouter>
       <Routes>
