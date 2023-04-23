@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, Heading, Image, Text } from "@chakra-ui/react";
+import { Avatar, Box, Card, Heading, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const PersonCard = ({ url, photoURL, name, intro }) => {
@@ -14,9 +14,9 @@ const PersonCard = ({ url, photoURL, name, intro }) => {
   };
 
   return (
-    <div className="d-flex flex-column align-items-center">
+    <Box className="d-flex flex-column align-items-center">
       <Card className="people-card" onClick={handleClick}>
-        <Avatar borderRadius="full" boxSize="10rem" src={photoURL} border="solid" borderWidth="2px" borderColor="red" />
+        <Avatar referrerPolicy="no-referrer" borderRadius="full" boxSize="10rem" src={photoURL} border="solid" borderWidth="2px" borderColor="red" />
         <Heading size="md" mt="3">
           {name ? name : "Could Be You"}
         </Heading>
@@ -24,7 +24,7 @@ const PersonCard = ({ url, photoURL, name, intro }) => {
           {intro ? intro : "Become a developer"}
         </Text>
       </Card>
-    </div>
+    </Box>
   );
 };
 
