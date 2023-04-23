@@ -30,6 +30,17 @@ export default function () {
           name="Mario Evangjeli"
           intro="Co-Founder"
         />
+        <PersonCard
+          url="tomomi"
+          photoURL="https://lh3.googleusercontent.com/a-/AOh14GgwnyRM6J4xedzFNBVAYs5aDVCWuKXbsXFIFV8p=s96-c"
+          name="Tomomi N"
+          intro="Co-Founder"
+        />
+        <PersonCard
+          url="michael-clinton"
+          name="Michael Clinton"
+          intro="Co-Founder"
+        />
         <PersonCard url="ewen-wang" name="Ewen Wang" intro="Developer" />
         {/* <PersonCard /> */}
       </Masonry>
