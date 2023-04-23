@@ -48,7 +48,7 @@ export default function ({ voteOptions, voteId, isOpen, onClose }) {
         >
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Share Your Opinion {option}</ModalHeader>
+            <ModalHeader>Share Your Opinion</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
               <FormControl>

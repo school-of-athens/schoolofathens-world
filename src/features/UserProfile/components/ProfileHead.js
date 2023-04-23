@@ -3,10 +3,9 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import { Avatar, Badge, Box, Button, Heading, Text } from "@chakra-ui/react";
 
 export default function ProfileHead({ userData }) {
-
   return (
-    <Box className="profile-head">
-      <Box className="container">
+    <Box  pt={12} bgColor="gray.100" borderBottom="3px solid" borderColor="gray.300">
+      <Box className="container" my={10} px={{base: 2, xl: 10}}>
         <Box className="profile-head--wrapper flex-column flex-md-row">
           <Avatar
             // src={auth.currentUser.photoURL}
@@ -24,56 +23,32 @@ export default function ProfileHead({ userData }) {
                     Developer
                   </Badge>
                 )}
+                {userData?.groups?.includes("artist") && (
+                  <Badge colorScheme="purple" ml={3} fontSize="lg">
+                    Artist
+                  </Badge>
+                )}
+                {userData?.groups?.includes("editor") && (
+                  <Badge colorScheme="cyan" ml={3} fontSize="lg">
+                    Editor
+                  </Badge>
+                )}
               </Box>
 
               <Text mb={2}>
-                Joined in {userData?.joinDate?.toDate().toLocaleString("default", { month: "short" })},{" "}
-                {userData?.joinDate?.toDate().getFullYear()}
+                Joined in{" "}
+                {userData?.joinDate
+                  ?.toDate()
+                  .toLocaleString("default", { month: "short" })}
+                , {userData?.joinDate?.toDate().getFullYear()}
               </Text>
-              <Text>{userData?.followers?.length} Followers | {userData?.following?.length} Following</Text>
+              <Text>
+                {userData?.followers?.length} Followers |{" "}
+                {userData?.following?.length} Following
+              </Text>
             </Box>
-            {/* <Button variant="blue">
-              <FontAwesomeIcon icon={faPenToSquare} className="me-2" />
-              Edit Profile
-            </Button> */}
           </Box>
         </Box>
-
-        {/* <Box
-          className="col-12 profile-link"
-          //  onClick={switchPage}
-        >
-          <Link
-            className={currentPage === "Overview" ? "profile-link--active" : ""}
-          >
-            Overview
-          </Link>
-          <Link
-            className={currentPage === "Votes" ? "profile-link--active" : ""}
-          >
-            Votes
-          </Link>
-          <Link
-            className={currentPage === "Opinions" ? "profile-link--active" : ""}
-          >
-            Opinions
-          </Link>
-          <Link
-            className={currentPage === "Insights" ? "profile-link--active" : ""}
-          >
-            Insights
-          </Link>
-          <Link
-            className={currentPage === "Groups" ? "profile-link--active" : ""}
-          >
-            Groups
-          </Link>
-          <Link
-            className={currentPage === "Badges" ? "profile-link--active" : ""}
-          >
-            Badges
-          </Link>
-        </Box> */}
       </Box>
     </Box>
   );

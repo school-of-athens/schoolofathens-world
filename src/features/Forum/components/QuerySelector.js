@@ -1,77 +1,50 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import {
-  Button,
-  Checkbox,
-  CheckboxGroup,
-  Heading,
-  Input,
-  Select,
-  Stack,
-} from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Button, Heading, Select, Stack, Flex } from "@chakra-ui/react";
+import useAuthRedirect from "../../../hooks/useAuthRedirect";
 
 export default function () {
-  const [topicList, setTopicList] = useState([]);
+  const authRedirect = useAuthRedirect();
 
   return (
-    <div className="col-lg-3 col-md-4 px-sm-5 px-3 col-12 py-4">
-      <div className="query-selector">
-        <h5>Search</h5>
+    <Box
+      className="col-lg-3 col-md-4 col-12 py-4"
+      px={{ base: 5, md: 7, xl: 10 }}
+    >
+      <Box className="query-selector">
+        <Heading size="sm" my={2} ms={1}>
+          Search
+        </Heading>
 
-        <div className="search">
+        <Flex mb={5}>
           <input
             className="form-control me-2"
             type="search"
             placeholder="Search (Disabled)"
             disabled
           />
-          <Button colorScheme="blue"><FontAwesomeIcon icon={faMagnifyingGlass} /></Button>
-        </div>
-        <h5>Sort by</h5>
-        <Select defaultValue="DEFAULT">
+          <Button colorScheme="blue">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </Button>
+        </Flex>
+        <Heading size="sm" my={2} ms={1}>
+          Sort by
+        </Heading>
+        <Select defaultValue="DEFAULT" mb={5}>
           <option value="DEFAULT">Default</option>
           <option value="NEWEST">Newest</option>
           <option value="VOTES">Votes</option>
           <option value="OPINIONS">Opinions</option>
           <option value="DUE_DATE">Due Date</option>
         </Select>
-        <h5>Topics</h5>
-        <CheckboxGroup onChange={(e) => setTopicList(e)}>
-          <Stack spacing={2} ml={1} direction="column">
-            <Checkbox size="md" value="current-events">
-              Current Events
-            </Checkbox>
-            <Checkbox size="md" value="international">
-              International
-            </Checkbox>
-            <Checkbox size="md" value="domestic">
-              Domestic
-            </Checkbox>
-            <Checkbox size="md" value="politics">
-              Politics
-            </Checkbox>
-            <Checkbox size="md" value="society">
-              Society
-            </Checkbox>
-            <Checkbox size="md" value="history">
-              History
-            </Checkbox>
-            <Checkbox size="md" value="science">
-              Science
-            </Checkbox>
-            <Checkbox size="md" value="art">
-              Art
-            </Checkbox>
-            <Checkbox size="md" value="education">
-              Education
-            </Checkbox>
-            <Checkbox size="md" value="health">
-              Health
-            </Checkbox>
-          </Stack>
-        </CheckboxGroup>
-      </div>
-    </div>
+
+        <Stack direction="column" alignItems="start" my={2} spacing={3}>
+          <Button variant="gray">Forum Rules</Button>
+          <Button variant="blue" onClick={() => authRedirect("/forum/new")}>
+            Propose a Vote
+          </Button>
+        </Stack>
+      </Box>
+    </Box>
   );
 }

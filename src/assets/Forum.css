@@ -108,7 +108,7 @@
     height: 100%;
     width: 50%;
     min-width: 10% !important;
-    background-color: #EDDBC7;
+    background-color: var(--chakra-colors-gray-200);
     position: absolute;
     left: 0;
     padding-left: 1rem;
@@ -120,7 +120,7 @@
     height: 100%;
     width: 50%;
     min-width: 10% !important;
-    background-color: #A7727D;
+    background-color: var(--chakra-colors-blue-200);
     position: absolute;
     right: 0;
     padding-right: 1rem;

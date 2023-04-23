@@ -1,9 +1,10 @@
 import { NewOpinionButtton } from "../../NewOpinion";
+import { Box } from "@chakra-ui/react";
 
 export default function OpinionsControl({ onOpen }) {
   return (
-    <div className="vote-toolbar">
-      <div className="vote-toolbar--sortby">
+    <Box className="vote-toolbar">
+      <Box className="vote-toolbar--sortby">
         <h5>Sort by</h5>
         <select className="form-select" aria-label="select" defaultValue="NEWEST">
           <option value="NEWEST">
@@ -12,8 +13,8 @@ export default function OpinionsControl({ onOpen }) {
           <option value="VOTES">Most Upvotes</option>
           <option value="OPINIONS">Oldest</option>
         </select>
-      </div>
+      </Box>
       <NewOpinionButtton onOpen={onOpen} />
-    </div>
+    </Box>
   );
 }

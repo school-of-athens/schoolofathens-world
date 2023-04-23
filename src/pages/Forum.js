@@ -7,9 +7,11 @@ import {
   QuerySelector,
   useVoteList,
 } from "../features/Forum";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Forum = () => {
   const [voteList, isLoading] = useVoteList();
+  const { width } = useWindowDimensions();
 
   return (
     <>
@@ -23,8 +25,17 @@ const Forum = () => {
       )}
       <ForumTitle />
       <ForumBody>
-        <QuerySelector />
-        {voteList ? <VoteList voteList={voteList} /> : <></>}
+        {width > 768 ? (
+          <>
+            {voteList ? <VoteList voteList={voteList} /> : <></>}
+            <QuerySelector />
+          </>
+        ) : (
+          <>
+            <QuerySelector />
+            {voteList ? <VoteList voteList={voteList} /> : <></>}
+          </>
+        )}
       </ForumBody>
     </>
   );

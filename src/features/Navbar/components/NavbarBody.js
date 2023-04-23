@@ -1,26 +1,17 @@
 import { logo } from "../../../data/projectFiles";
 import { Link } from "react-router-dom";
+import { Box, Image } from "@chakra-ui/react";
 
 const NavbarBody = () => {
   return (
-    <div
+    <Box
       className="offcanvas offcanvas-start text-bg-light"
       tabIndex="-1"
       id="offcanvasNavbar"
       aria-labelledby="offcanvasNavbarLabel"
     >
-      <div className="offcanvas-body">
+      <Box className="offcanvas-body">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <Link
-              id="site-name"
-              className="nav-link text-secondary px-2"
-              aria-current="page"
-              to="/"
-            >
-              <img src={logo} className="navbar-brand" />
-            </Link>
-          </li>
 
           <li className="nav-item">
             <Link
@@ -29,6 +20,7 @@ const NavbarBody = () => {
               aria-current="page"
               to="/"
             >
+              <Image src={logo} className="navbar-brand" me={4} />
               The School of Athens
             </Link>
           </li>
@@ -78,8 +70,8 @@ const NavbarBody = () => {
             </Link>
           </li>
         </ul>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 
   /* {user ? <UserPortrait /> : <SignInSignUp />} */

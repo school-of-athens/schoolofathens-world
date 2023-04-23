@@ -18,9 +18,8 @@ import {
 import Masonry from "react-masonry-css";
 
 const breakpointColumnsObj = {
-  default: 3,
-  1600: 2,
-  576: 1,
+  default: 2,
+  992: 1,
 };
 
 export default function Insights({ userData }) {

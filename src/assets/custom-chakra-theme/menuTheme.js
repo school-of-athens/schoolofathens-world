@@ -7,7 +7,10 @@ const baseStyle = definePartsStyle({
     list: {
         border: "solid",
         borderColor: "gray.300",
-        borderWidth: "2px",
+        borderTopWidth: "2px",
+        borderRightWidth: "2px",
+        borderLeftWidth: "2px",
+        borderBottomWidth: "2px",
         minW: "none",
     },
     item: {

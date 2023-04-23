@@ -7,6 +7,7 @@ import {
   Votes,
   useUserData,
 } from "../features/UserProfile";
+import { Box, Container } from "@chakra-ui/react";
 import "../assets/UserProfile.css";
 import { useParams } from "react-router-dom";
 
@@ -19,17 +20,17 @@ export default function Overview() {
   return (
     <>
       <ProfileHead userData={userData} />
-      <div className="profile-body container">
-        <div className="row">
+      <Box className="container" my={10} px={{base: 2, xl: 10}}>
+        <Box className="row">
           <AboutMe userData={userData} />
-          <div className="col-md-8 col-12">
+          <Box className="col-md-8 col-12">
             <Votes userData={userData} />
             <Opinions userData={userData} />
             <Insights userData={userData} />
             <Groups userData={userData} />
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 }

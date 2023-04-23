@@ -1,4 +1,5 @@
 
+import { Box } from "@chakra-ui/react";
 import "../assets/Home.css";
 
 import { Welcome, Navbar, Hero, HomeFooter } from "../features/Home";
@@ -7,12 +8,12 @@ import { Welcome, Navbar, Hero, HomeFooter } from "../features/Home";
 const Home = ({ sendToast }) => {
 
     return (
-        <div className="scroll-snap">
+        <Box className="scroll-snap" bgColor="gray.50">
             <Welcome />
             <Navbar sendToast={sendToast} />
             <Hero />
             <HomeFooter />
-        </div>
+        </Box>
     );
 }
 

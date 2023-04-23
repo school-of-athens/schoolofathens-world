@@ -1,12 +1,13 @@
+import { Box } from "@chakra-ui/react";
+
 const NavbarContainer = ({ children }) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-min-height"
-      style={{ padding: "0" }}
     >
-      <div className="container-fluid" style={{ padding: "0 3rem" }}>
+      <Box className="container-fluid" px={8}>
         {children}
-      </div>
+      </Box>
     </nav>
   );
 };

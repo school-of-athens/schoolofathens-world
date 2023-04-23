@@ -64,10 +64,6 @@ h1 {
   color: #007bff !important;
 }
 
-a {
-  font-size: 1.1rem !important;
-}
-
 .scroll-snap {
   max-height: 100vh;
   overflow-y: scroll;
@@ -95,4 +91,8 @@ a {
   width: 100%;
   height: auto;
   border-radius: 30px;
+}
+
+.bg-dark {
+  backdrop-filter: brightness(0.75);
 }

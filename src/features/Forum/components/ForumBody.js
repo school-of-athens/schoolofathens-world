@@ -1,13 +1,11 @@
-
+import { Box } from "@chakra-ui/react";
 
 const ForumBody = ({ children }) => {
-
-
-    return (
-        <div className="row ps-3 vote-list mb-4">
-            {children}
-        </div>
-    );
-}
+  return (
+    <Box className="container">
+      <Box className="row vote-list mb-4">{children}</Box>
+    </Box>
+  );
+};
 
 export default ForumBody;

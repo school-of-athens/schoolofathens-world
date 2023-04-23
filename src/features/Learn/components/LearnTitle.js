@@ -1,4 +1,12 @@
-import { Heading, Button, ButtonGroup } from "@chakra-ui/react";
+import {
+  Heading,
+  Button,
+  ButtonGroup,
+  Box,
+  Flex,
+  Container,
+  Text,
+} from "@chakra-ui/react";
 import useAuthRedirect from "../../../hooks/useAuthRedirect";
 import { funeralOrnationCropped } from "../../../data/projectFiles";
 
@@ -6,29 +14,21 @@ export default function () {
   const authRedirect = useAuthRedirect();
 
   return (
-    <div className="page-title">
-      <img src={funeralOrnationCropped} />
-      {/* container with paddings */}
-      <div className="container-fluid page-title--body px-3 px-sm-5">
-        {/* title */}
-        <Heading my={10} color="white">
-          Share Your Insights
-        </Heading>
-        {/* description */}
-        {/* button groups */}
-        <ButtonGroup spacing={4}>
-          <Button variant="gray" fontSize="lg">
-            Community Rules
-          </Button>
-          <Button
-            variant="blue"
-            fontSize="lg"
-            onClick={() => authRedirect("compose")}
-          >
-            Compose
-          </Button>
-        </ButtonGroup>
-      </div>
-    </div>
+    <Flex
+      bgImage={funeralOrnationCropped}
+      bgSize="cover"
+      className="bg-dark"
+      width="100%"
+      alignItems="center"
+    >
+      <Box width="100%" backdropFilter="brightness(0.7)" py="5rem">
+        <Box className="container" color="white">
+          <Heading fontSize="2.5rem">Share Your Insights</Heading>
+          <Heading size="md" mt={4} fontWeight="400">
+            Take an idea, leave an idea.
+          </Heading>
+        </Box>
+      </Box>
+    </Flex>
   );
 }

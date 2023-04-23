@@ -25,6 +25,7 @@ import Compose from "./pages/Compose";
 import Verify from "./pages/Verify";
 import UserProfile from "./pages/UserProfile";
 import Jinzhou from "./pages/Jinzhou";
+import Mario from "./pages/Mario";
 import Bulletin from "./components/Bulletin";
 import SetUp from "./pages/SetUp";
 import PageNotFound from "./pages/PageNotFound";
@@ -62,6 +63,10 @@ export default function App() {
           <Route path="about">
             <Route index element={<About />} />
             <Route path="jinzhou" element={<Jinzhou />} />
+            <Route
+              path="mario-evangjeli"
+              element={<Mario />}
+            />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
@@ -70,8 +75,7 @@ export default function App() {
             <Route path="setup" element={<SetUp />} />
             <Route path=":userId" element={<UserProfile />} />
           </Route>
-          <Route path="test">
-          </Route>
+          <Route path="test"></Route>
           <Route path="community" element={<Community />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>

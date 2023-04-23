@@ -13,11 +13,10 @@ const Quote = () => {
     //   </div>
     // </div>
     <Flex
-      borderLeftWidth="4px"
-      borderColor="gray.400"
-      ps={10}
-      pe={5}
-      py={3}
+      borderLeftWidth="0.5rem"
+      borderColor="gray.500"
+      px={8}
+      py={4}
       bgColor="gray.100"
       flexDir="column"
       mt={6}
