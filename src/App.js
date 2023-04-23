@@ -31,9 +31,6 @@ import SetUp from "./pages/SetUp";
 import PageNotFound from "./pages/PageNotFound";
 import Tomomi from "./pages/Tomomi";
 export default function App() {
-  useEffect(() => {
-    document.title = "The School of Athens | Home to Modern Democracy";
-  }, []);
 
   return (
     <BrowserRouter>
