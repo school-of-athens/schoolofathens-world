@@ -30,6 +30,7 @@ import Bulletin from "./components/Bulletin";
 import SetUp from "./pages/SetUp";
 import PageNotFound from "./pages/PageNotFound";
 import Tomomi from "./pages/Tomomi";
+import Cole from "./pages/Cole";
 export default function App() {
 
   return (
@@ -65,6 +66,7 @@ export default function App() {
               path="mario-evangjeli"
               element={<Mario />}
             />
+            <Route path="cole" element={<Cole />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<SignUp />} />
