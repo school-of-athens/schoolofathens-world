@@ -4,9 +4,9 @@ function ArticleExpand({ article, setExpanded }) {
   return (
     <>
       <Heading size="lg" mb={4}>
-        The Gettysburg Address
+        {article.title}
       </Heading>
-      {article.map((item, index) => {
+      {article.body.map((item, index) => {
         if (item.type === "img") {
           return (
             <Image

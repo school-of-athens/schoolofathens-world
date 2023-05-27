@@ -8,11 +8,12 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, async (currentUser) => {
-
+      setUser(currentUser);
       if (currentUser) {
         if (!currentUser.emailVerified) {
           navigate("/user/verify");
@@ -30,7 +31,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const value = {
-    auth,
+    user,
     userData,
     setUserData,
   };

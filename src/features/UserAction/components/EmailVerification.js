@@ -1,16 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
-import { Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text } from "@chakra-ui/react";
 import useSendVerificationEmail from "../hooks/useSendVerificationEmail";
 import useCheckIfVerified from "../hooks/useCheckIfVerified";
+import { Box } from "react-bootstrap-icons";
 
 const EmailVerification = () => {
   const sendVerificationEmail = useSendVerificationEmail();
   const checkIfVerified = useCheckIfVerified();
 
   return (
-    <Container
-      maxW="container.lg"
+    <Box
+      className="container"
       height="calc(100vh - 4rem)"
       justifyContent="center"
       width="100%"
@@ -43,7 +44,7 @@ const EmailVerification = () => {
       <Button variant="light" mt={3} onClick={sendVerificationEmail}>
         Resend verification email
       </Button>
-    </Container>
+    </Box>
   );
 };
 

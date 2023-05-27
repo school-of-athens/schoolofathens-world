@@ -15,7 +15,7 @@ const useUserInfo = (userId) => {
 
   useEffect(() => {
     getUserInfoAsync();
-  }, []);
+  }, [userId]);
 
   return userInfo;
 };

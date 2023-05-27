@@ -9,14 +9,14 @@ import { AuthContext } from "../context/AuthContext";
 import { useContext } from "react";
 
 export default function () {
-  const { auth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <NavbarContainer>
       <OffcanvasButton />
       <NavbarBody />
-      {auth.currentUser ? (
-        <UserMenu user={auth?.currentUser} />
+      {user ? (
+        <UserMenu user={user} />
       ) : (
         <LoginSignUp />
       )}

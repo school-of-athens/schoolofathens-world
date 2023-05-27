@@ -1,14 +1,13 @@
-
-import { Container, Grid } from "@chakra-ui/react";
+import { Box, Grid } from "@chakra-ui/react";
 
 function ContainerGrid({ children }) {
-    return (
-        <Container maxW="container.xl">
-          <Grid templateColumns="repeat(12, 1fr)" pb={4}>
-            {children}
-          </Grid>
-        </Container>
-    );
-  };
+  return (
+    <Box className="container">
+      <Grid templateColumns="repeat(12, 1fr)" pb={4}>
+        {children}
+      </Grid>
+    </Box>
+  );
+}
 
 export default ContainerGrid;

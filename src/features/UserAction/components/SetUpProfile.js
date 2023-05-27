@@ -8,7 +8,6 @@ import {
   FormLabel,
   Textarea,
   FormHelperText,
-  Container,
   Grid,
   GridItem,
 } from "@chakra-ui/react";
@@ -23,8 +22,8 @@ const SetUpProfile = () => {
 
   return (
     <>
-      <Container
-        maxW="container.xl"
+      <Box
+        className="container"
         display="flex"
         flexDirection="column"
         my={12}
@@ -127,7 +126,7 @@ const SetUpProfile = () => {
             </Button>
           </GridItem>
         </Grid>
-      </Container>
+      </Box>
     </>
   );
 };

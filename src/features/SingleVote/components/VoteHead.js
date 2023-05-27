@@ -10,11 +10,9 @@ import {
   Grid,
   GridItem,
   useDisclosure,
-  Container,
 } from "@chakra-ui/react";
 import VoteBarBinary from "./VoteBarBinary";
 import getSortedObjectKeys from "../../../utils/getSortedObjectKeys";
-import useEffect from "react";
 
 function VoteHead({ voteData, setVoteData }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,7 +26,7 @@ function VoteHead({ voteData, setVoteData }) {
       borderBottom="2px solid"
       borderColor="gray.300"
     >
-      <Container maxW="container.xl">
+      <Box className="container">
         <Heading textAlign="center" mt={0} mb={2}>
           {voteData.title}
         </Heading>
@@ -103,7 +101,7 @@ function VoteHead({ voteData, setVoteData }) {
             </Accordion>
           </GridItem>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 }

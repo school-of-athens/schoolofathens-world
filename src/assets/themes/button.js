@@ -40,8 +40,8 @@ const light = defineStyle({
   fontSize: "md",
   border: "2px solid",
   borderColor: "gray.300",
-  paddingY: 4,
-  paddingX: 3,
+  py: 4,
+  px: 3,
   minW: "6rem",
 
   _hover: {
