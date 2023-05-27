@@ -1,8 +1,8 @@
 
 
-import NewOpinionButtton from "./components/NewOpinionButton";
+import NewOpinionButton from "./components/NewOpinionButton";
 import NewOpinionModal from "./components/NewOpinionModal";
 import useNewOpinion from "./hooks/useNewOpinion";
-import handleSubmit from "./services/handleSubmit";
+import useSubmitOpinion from "./hooks/useSubmitOpinion";
 
-export { NewOpinionButtton, NewOpinionModal, useNewOpinion, handleSubmit };
+export { NewOpinionButton, NewOpinionModal, useNewOpinion, useSubmitOpinion };

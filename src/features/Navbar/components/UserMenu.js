@@ -5,7 +5,6 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  useToast,
   Box,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +28,7 @@ const UserPortrait = ({ user }) => {
         lineHeight="0"
       >
         <MenuButton>
-          <Avatar size="sm" name={user.displayName} src={user.photoURL} />
+          <Avatar size="sm"  referrerPolicy="no-referrer" name={user.displayName} src={user.photoURL} />
         </MenuButton>
       </Box>
 

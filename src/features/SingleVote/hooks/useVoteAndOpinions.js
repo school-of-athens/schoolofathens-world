@@ -1,44 +1,36 @@
 import { useState, useEffect } from "react";
 import getVote from "../../../services/getVote";
-import getOpinion from "../../../services/getOpinion";
+import getOpinions from "../../../services/getOpinions";
+import getSortedObjectKeys from "../../../utils/getSortedObjectKeys";
 
 const useVoteAndOpinions = (voteId) => {
   const [voteData, setVoteData] = useState(null);
   // set up a list of lists, representing opinions
-  const [opinionList, setOpinionList] = useState([]);
+  const [opinionsData, setOpinionsData] = useState({});
 
-  const getOpinionAsync = async (option, opinionId) => {
-    const opinionData = await getOpinion(opinionId);
+  const getOpinionAsync = async (option) => {
+    const opinions = await getOpinions(voteId, option);
 
-    setOpinionList((prev) => {
-      const newList = { ...prev };
-
-      if (!newList[option]) {
-        newList[option] = [opinionData];
-      } else {
-        newList[option].push(opinionData);
-      }
-
-      return newList;
+    setOpinionsData((prev) => {
+      return { ...prev, [option]: opinions };
     });
   };
 
   const getVoteAsync = async () => {
-    const voteData = await getVote(voteId);
-    setVoteData(voteData);
+    const voteDataResult = await getVote(voteId);
+    setVoteData(voteDataResult);
+    const options = getSortedObjectKeys(voteDataResult.options);
 
-    for (const option in voteData.options) {
-      voteData.options[option].opinions.forEach((opinionId) => {
-        getOpinionAsync(option, opinionId);
-      });
-    }
+    options.forEach((option) => {
+      getOpinionAsync(option);
+    });
   };
 
   useEffect(() => {
     getVoteAsync();
   }, []);
 
-  return [voteData, opinionList];
+  return [voteData, setVoteData, opinionsData];
 };
 
 export default useVoteAndOpinions;

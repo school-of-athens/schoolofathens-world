@@ -55,9 +55,11 @@ const ghostGray = defineStyle({
   color: 'black',
   fontWeight: '500',
   height: "fit-content",
+  px: 2,
+  py: 1,
 
   _hover: {
-    background: 'gray.300'
+    background: 'gray.200'
   }
 });
 

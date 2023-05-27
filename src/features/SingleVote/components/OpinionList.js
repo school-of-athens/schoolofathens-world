@@ -1,37 +1,52 @@
+import {
+  Container,
+  Grid,
+  GridItem,
+  Text,
+} from "@chakra-ui/react";
 import OpinionCard from "./OpinionCard";
+import getSortedObjectKeys from "../../../utils/getSortedObjectKeys";
 
-const OpinionList = ({ voteOptions, opinionList }) => {
+const OpinionList = ({ voteData, opinionsData }) => {
+
+  const options = getSortedObjectKeys(voteData.options);
+
   return (
-    <div className="vote-body">
-      <div className="container">
-        {/* OpinionList is a list with two rows */}
-        {/* TODO: build a selector for which option to display */}
-        <div className="row">
-          <div className="col-12 col-md-6 opinion-list pe-4">
-            {opinionList[voteOptions[0]] ? (
-              opinionList[voteOptions[0]].map((opinion) => {
-                return <OpinionCard {...opinion} />;
-              })
-            ) : (
-              <p className="text-center">
-                There is currently no opinion supporting this option.
-              </p>
-            )}
-          </div>
-          <div className="col-12 col-md-6 opinion-list ps-4">
-            {opinionList[voteOptions[1]] ? (
-              opinionList[voteOptions[1]].map((opinion) => {
-                return <OpinionCard {...opinion} />;
-              })
-            ) : (
-              <p className="text-center">
-                There is currently no opinion supporting this option.
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container maxW="container.xl">
+      {/* OpinionList is a list with two rows */}
+      {/* TODO: build a selector for which option to display */}
+      <Grid templateColumns="repeat(12, 1fr)" minH="40vh" mb={2}>
+        <GridItem
+          colSpan={{ base: 12, md: 6 }}
+          my={8}
+          borderRight="3px dashed"
+          borderColor="gray.200"
+          me="-1.5px"
+          pe={6}
+        >
+          {opinionsData[options[0]].length ? (
+            opinionsData[options[0]].map((opinion) => {
+              return <OpinionCard opinion={opinion} key={opinion.id} />;
+            })
+          ) : (
+            <Text textAlign="center" mt={6}>
+              There is currently no opinion supporting this option.
+            </Text>
+          )}
+        </GridItem>
+        <GridItem colSpan={{ base: 12, md: 6 }} my={8} ps={6}>
+          {opinionsData[options[1]].length ? (
+            opinionsData[options[1]].map((opinion) => {
+              return <OpinionCard opinion={opinion} key={opinion.id} />;
+            })
+          ) : (
+            <Text textAlign="center" mt={6}>
+              There is currently no opinion supporting this option.
+            </Text>
+          )}
+        </GridItem>
+      </Grid>
+    </Container>
   );
 };
 

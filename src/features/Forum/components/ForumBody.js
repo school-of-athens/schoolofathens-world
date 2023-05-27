@@ -1,10 +1,12 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container, Grid } from "@chakra-ui/react";
 
 const ForumBody = ({ children }) => {
   return (
-    <Box className="container">
-      <Box className="row vote-list mb-4">{children}</Box>
-    </Box>
+    <Container maxW="container.xl">
+      <Grid templateColumns="repeat(12, 1fr)" className="vote-list mb-4">
+        {children}
+      </Grid>
+    </Container>
   );
 };
 

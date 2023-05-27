@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../../services/firebase";
+import { useToast } from "@chakra-ui/react";
 
 const useVoteList = () => {
+
+  const toast = useToast();
+
   const [voteList, setVoteList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -14,9 +18,17 @@ const useVoteList = () => {
       });
       setVoteList(voteListFiltered);
 
+      console.log(voteListFiltered);
+
       setIsLoading(false);
     } catch (error) {
-      console.log(error.message);
+      toast({
+        status: "error",
+        variant: "left-accent",
+        title: `An error has occured: ${error.message}`,
+        position: "bottom-left",
+        isClosable: true,
+      });
       setIsLoading(false);
     }
   };

@@ -1,4 +1,3 @@
-import "../assets/Login.css";
 import { LoginComponent } from "../features/Login";
 
 const Login = () => {

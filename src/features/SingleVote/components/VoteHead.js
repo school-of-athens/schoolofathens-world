@@ -1,152 +1,111 @@
 import {
   Heading,
+  Box,
+  Text,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Grid,
+  GridItem,
   useDisclosure,
-  AlertDialog,
-  AlertDialogBody,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogContent,
-  AlertDialogOverlay,
-  Button,
+  Container,
 } from "@chakra-ui/react";
-import useObjectKeys from "../../../hooks/useObjectKeys";
+import VoteBarBinary from "./VoteBarBinary";
+import getSortedObjectKeys from "../../../utils/getSortedObjectKeys";
+import useEffect from "react";
 
-export default function VoteHead({ voteData }) {
-  // vote head contains all the information of the vote
+function VoteHead({ voteData, setVoteData }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const optionList = useObjectKeys(voteData.options);
+  const options = getSortedObjectKeys(voteData.options);
 
   return (
-    <>
-      {optionList ? (
-        <div className="vote-head">
-          <div className="container">
-            {/* title & introduction */}
-            <Heading className="text-center">{voteData.title}</Heading>
-            <p className="vote-intro py-3 px-3 px-md-5">
-              {voteData.introduction}
-            </p>
+    <Box
+      bg="gray.100"
+      pt={12}
+      pb={4}
+      borderBottom="2px solid"
+      borderColor="gray.300"
+    >
+      <Container maxW="container.xl">
+        <Heading textAlign="center" mt={0} mb={2}>
+          {voteData.title}
+        </Heading>
+        <Text
+          py={3}
+          px={{ base: 3, md: 5 }}
+          textAlign="center"
+          ms="auto"
+          me="auto"
+          mb={4}
+        >
+          {voteData.description}
+        </Text>
 
-            {/* vote bar */}
-            <div className="vote-bar">
-              <div className="vote-bar-left">
-                <p>
-                  {voteData.totalVotes
-                    ? Math.round(
-                        (voteData.options[optionList[0]].votes /
-                          voteData.totalVotes) *
-                          100
-                      )
-                    : 0}
-                  % ({voteData.options[optionList[0]].votes}/
-                  {voteData.totalVote || 0})
-                </p>
-              </div>
-              <div className="vote-bar-right" onClick={onOpen}>
-                <p>
-                  {voteData.totalVotes
-                    ? Math.round(
-                        (voteData.options[optionList[1]].votes /
-                          voteData.totalVotes) *
-                          100
-                      )
-                    : 0}
-                  % ({voteData.options[optionList[1]].votes}/
-                  {voteData.totalVotes || 0})
-                </p>
-              </div>
-            </div>
-            {/* each option's summary is represented by an accordion to save space */}
-            <div className="row vote-summary">
-              <div className="col-12 col-md-6 vote-summary--left">
-                <div className="accordion">
-                  <div className="accordion-item">
-                    <h2
-                      className="accordion-header"
-                      id="panelsStayOpen-headingOne"
-                    >
-                      <button
-                        className="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
-                      >
-                        {optionList[0]}
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseOne"
-                      className="accordion-collapse collapse show"
-                      aria-labelledby="panelsStayOpen-headingOne"
-                    >
-                      <div className="accordion-body">
-                        <p>{voteData.options[optionList[0]].summary}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <VoteBarBinary voteData={voteData} options={options} setVoteData={setVoteData} />
 
-              <div className="col-12 col-md-6 vote-summary--right">
-                <div className="accordion">
-                  <div className="accordion-item">
-                    <h2
-                      className="accordion-header"
-                      id="panelsStayOpen-headingOne"
-                    >
-                      <button
-                        className="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne"
-                        aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne"
-                      >
-                        {optionList[1]}
-                      </button>
-                    </h2>
-                    <div
-                      id="panelsStayOpen-collapseOne"
-                      className="accordion-collapse collapse show"
-                      aria-labelledby="panelsStayOpen-headingOne"
-                    >
-                      <div className="accordion-body">
-                        <p>{voteData.options[optionList[1]].summary}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <AlertDialog isOpen={isOpen} onClose={onClose} isCentered>
-            <AlertDialogOverlay>
-              <AlertDialogContent>
-                <AlertDialogHeader fontSize="lg" fontWeight="bold">
-                  Vote this option?
-                </AlertDialogHeader>
+        <Grid templateColumns="repeat(12, 1fr)" my={4}>
+          <GridItem
+            colSpan={{ base: 12, md: 6 }}
+            borderRight="3px dashed"
+            borderColor="gray.200"
+            me="-1px"
+          >
+            <Accordion
+              onClick={isOpen ? onClose : onOpen}
+              index={isOpen ? [0] : []}
+            >
+              <AccordionItem border="none">
+                <AccordionButton
+                  display="flex"
+                  justifyContent="space-between"
+                  borderStartRadius="md"
+                  _hover={{ bg: "gray.200" }}
+                >
+                  <Heading m={0} size={{ base: "md", lg: "lg" }}>
+                    {options[0]}
+                  </Heading>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel py={4}>
+                  <Text size="md" m={0}>
+                    {voteData.options[options[0]].description}
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </GridItem>
 
-                <AlertDialogBody>
-                  Are you sure? You can't undo this action afterwards.
-                </AlertDialogBody>
-
-                <AlertDialogFooter>
-                  <Button colorScheme="red" onClick={onClose}>
-                    Cancel
-                  </Button>
-                  <Button variant="blue" onClick={onClose} ml={3}>
-                    Vote
-                  </Button>
-                </AlertDialogFooter>
-              </AlertDialogContent>
-            </AlertDialogOverlay>
-          </AlertDialog>
-        </div>
-      ) : (
-        <></>
-      )}
-    </>
+          <GridItem colSpan={{ base: 12, md: 6 }}>
+            <Accordion
+              onClick={isOpen ? onClose : onOpen}
+              index={isOpen ? [0] : []}
+            >
+              <AccordionItem border="none">
+                <AccordionButton
+                  display="flex"
+                  justifyContent="space-between"
+                  borderEndRadius="md"
+                  _hover={{ bg: "gray.200" }}
+                >
+                  <AccordionIcon />
+                  <Heading my={0} mx={4} size={{ base: "md", lg: "lg" }}>
+                    {options[1]}
+                  </Heading>
+                </AccordionButton>
+                <AccordionPanel py={4}>
+                  <Text size="md" m={0}>
+                    {voteData.options[options[1]].description}
+                  </Text>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
+          </GridItem>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
+
+export default VoteHead;

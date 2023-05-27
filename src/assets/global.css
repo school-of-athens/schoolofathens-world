@@ -19,6 +19,7 @@
   --success-light: #f0fff4;
   --error-light: #fff5f5;
   --gold: #ffbe17;
+  --body-blue: #2a84ee;
 }
 
 html {
@@ -32,11 +33,6 @@ h4,
 h5 {
   font-weight: bold;
   line-height: 1.25;
-}
-
-span {
-  display: flex;
-  align-items: center;
 }
 
 /* .page-title {
@@ -72,12 +68,6 @@ a:active {
 
 a:visited {
   color: black;
-}
-
-input,
-textarea,
-select {
-  border: 2px solid var(--border-gray-dark) !important;
 }
 
 .notice {
@@ -352,12 +342,6 @@ select {
   margin-top: 0;
 }
 
-.under-nav {
-  position: sticky !important;
-  top: 4rem;
-  z-index: 100;
-}
-
 .row {
   margin: 0;
 }
@@ -378,4 +362,40 @@ select {
 .masonry-grid--col > div {
   /* change div to reference your elements you put in <Masonry> */
   margin-bottom: 1.5rem;
+}
+
+
+.page-title {
+  height: 20rem;
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid var(--border-gray-dark);
+}
+
+.page-title img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(.7);
+}
+
+.page-title--body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  top: 0;
+  padding-bottom: 3rem;
+  /* color: white; */
+}
+
+.page-title--tabs {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
 }

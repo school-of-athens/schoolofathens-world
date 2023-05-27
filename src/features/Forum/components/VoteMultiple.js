@@ -1,43 +1,107 @@
+import { Heading, Box, Flex, Text } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
-export default function () {
-
+function VoteMultiple() {
   const navigate = useNavigate();
 
   return (
-    <div className="single-vote container" id="" onClick={() => navigate("/forum/vote")}>
-      <h2 className="text-center vote-title">Vote Multiple Title</h2>
-    <div className="vote-stats">
-        0 votes | 0 opinions
-    </div>
+    <Box
+      position="relative"
+      borderTop="2px"
+      _last={{
+        borderBottom: "2px",
+        borderColor: "gray.300",
+      }}
+      _hover={{
+        backgroundColor: "gray.50",
+      }}
+      borderColor="gray.300"
+      pt={7}
+      pb={4}
+      px={5}
+      cursor="pointer"
+    >
+      <Heading
+        size={{ base: "sm", lg: "md" }}
+        textAlign="center"
+        fontWeight="bold"
+      >
+        <span style={{ color: "var(--chakra-colors-gray-400)" }}>
+          Poll |{" "}
+        </span>
+        Test Vote Multiple
+      </Heading>
 
-      <div className="option">
-        <div className="vote-bar-multiple vote-multiple-1">
-            <p>0% (0/0)</p>
-        </div>
+      <Box
+        marginBottom="1rem"
+        marginTop="0.75rem"
+        width="100%"
+        textAlign="center"
+      >
+        1235 votes | 1451 opinions
+      </Box>
 
-        <h3>Option 1</h3>
-      </div>
+        <>
+          <Box
+            display="flex"
+            fontWeight="bold"
+            justifyContent="space-between"
+            margin-bottom="1rem"
+          >
+            <Heading size={{ base: "xs", lg: "sm" }}>Option 1</Heading>
+            <Heading size={{ base: "xs", lg: "sm" }}>Option 2</Heading>
+          </Box>
+          <Box
+            mt={2}
+            height="2rem"
+            backgroundColor="transparent"
+            width="100%"
+            position="relative"
+            borderRadius="full"
+            overflow="hidden"
+          >
+            <Flex
+              width="30%"
+              height="100%"
+              bg="blue.200"
+              position="absolute"
+              left="0"
+              paddingLeft={6}
+              justifyContent="start"
+              alignItems="center"
+            >
+              <Text m={0}>
+                0
+                % (0/
+                0)
+              </Text>
+            </Flex>
 
-      <div className="option">
-        <div className="vote-bar-multiple vote-multiple-2">
-            <p>0% (0/0)</p>
-        </div>
+            <Flex
+              width="70%"
+              height="100%"
+              bg="blue.200"
+              position="absolute"
+              right="0"
+              paddingRight={6}
+              justifyContent="end"
+              alignItems="center"
+            >
+              <Text m={0}>
+                0
+                % (0/0)
+              </Text>
+            </Flex>
+          </Box>
+        </>
 
-        <h3>Option 2</h3>
-      </div>
-
-      <div className="option">
-        
-        <div className="vote-bar-multiple vote-multiple-3">
-            <p>0% (0/0)</p>
-        </div>
-
-        <h3>Option 3</h3>
-      </div>
-      <div className="vote-note">
-        Public | No Due Date
-      </div>
-    </div>
+      <Text mt={3} mb={0} fontSize="sm">
+        {"Public"}{" "}
+        {"  "} | {"  "}
+        {"No due date"}
+      </Text>
+    </Box>
   );
 }
+
+export default VoteMultiple;

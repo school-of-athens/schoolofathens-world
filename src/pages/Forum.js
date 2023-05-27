@@ -1,5 +1,4 @@
 import { Progress } from "@chakra-ui/react";
-import "../assets/Forum.css";
 import {
   ForumTitle,
   ForumBody,
@@ -20,7 +19,9 @@ const Forum = () => {
           size="xs"
           colorScheme="blue"
           isIndeterminate
-          className="under-nav"
+          position="sticky"
+          top="4rem"
+          zIndex={10}
         />
       )}
       <ForumTitle />

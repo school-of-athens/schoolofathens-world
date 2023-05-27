@@ -1,39 +1,53 @@
-import "../assets/Propose.css";
-import { useState, useContext, useEffect } from "react";
-import Bulletin from "../components/Bulletin";
-import { AuthContext } from "../context/AuthContext";
+
 import {
-  CurrentPageControl,
-  StepControl,
+  NewVoteStepper,
+  VoteType,
+  PollInfo,
+  PollOptions,
+  PollRestrictions,
   useNewVote,
+  useSubmit
 } from "../features/NewVote";
+import {
+  Grid,
+  GridItem,
+  useSteps,
+} from "@chakra-ui/react";
 
 const Propose = () => {
-  const { auth } = useContext(AuthContext);
-  const [currentPage, setCurrentPage] = useState(1);
   const [newVote, setNewVote] = useNewVote();
 
-  useEffect(() => {
-    setNewVote((prev) => {
-      return { ...prev, userId: auth?.currentUser?.uid };
-    });
-  }, []);
+  const { activeStep, setActiveStep } = useSteps({
+    index: 0,
+    count: 4,
+  });
+
+  const submit = useSubmit(setActiveStep, newVote);
 
   return (
-    <div className="container-fluid new-vote py-5 px-2 px-md-5">
-      <div className="row">
-        <StepControl
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-        />
-        <CurrentPageControl
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          newVote={newVote}
-          setNewVote={setNewVote}
-        />
-      </div>
-    </div>
+    <Grid minHeight="calc(100vh - 8rem)" templateColumns="repeat(12, 1fr)">
+      <GridItem colSpan={{ base: 12, md: 4, lg: 3 }}>
+        <NewVoteStepper activeStep={activeStep} setActiveStep={setActiveStep} />
+      </GridItem>
+      <GridItem
+        colSpan={{ base: 12, md: 8, lg: 9 }}
+        px={{ base: 6, sm: 12, md: 14, lg: 16 }}
+        py={{ base: 6, sm: 12 }}
+      >
+        {activeStep === 0 && (
+          <VoteType setActiveStep={setActiveStep} newVote={newVote} setNewVote={setNewVote} />
+        )}
+        {activeStep === 1 && (
+          <PollInfo setActiveStep={setActiveStep} newVote={newVote} setNewVote={setNewVote} />
+        )}
+        {activeStep === 2 && (
+          <PollOptions setActiveStep={setActiveStep} newVote={newVote} setNewVote={setNewVote} />
+        )}
+        {activeStep === 3 && (
+          <PollRestrictions setActiveStep={setActiveStep} newVote={newVote} setNewVote={setNewVote} submit={submit} />
+        )}
+      </GridItem>
+    </Grid>
   );
 };
 

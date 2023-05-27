@@ -1,7 +1,8 @@
 // Libraries
-import React, { useEffect } from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./assets/themes";
 
 // Stylesheets
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,76 +11,76 @@ import "./assets/global.css";
 
 // Pages
 import Layout from "./layouts/Layout";
-import Home from "./pages/Home";
-import Forum from "./pages/Forum";
-import Propose from "./pages/Propose";
-import SingleVote from "./pages/SingleVote";
-import Learn from "./pages/Learn";
-import SingleArticle from "./pages/SingleArticle";
-import About from "./pages/About";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import Groups from "./pages/Groups";
-import Community from "./pages/Community";
-import Compose from "./pages/Compose";
-import Verify from "./pages/Verify";
-import UserProfile from "./pages/UserProfile";
-import Jinzhou from "./pages/Jinzhou";
-import Mario from "./pages/Mario";
-import Bulletin from "./components/Bulletin";
-import SetUp from "./pages/SetUp";
-import PageNotFound from "./pages/PageNotFound";
-import Tomomi from "./pages/Tomomi";
-import Cole from "./pages/Cole";
-export default function App() {
+import {
+  Home,
+  Forum,
+  Propose,
+  SingleVote,
+  Learn,
+  SingleArticle,
+  About,
+  Login,
+  SignUp,
+  Groups,
+  Community,
+  Compose,
+  Verify,
+  UserProfile,
+  Jinzhou,
+  Mario,
+  SetUp,
+  PageNotFound,
+  Tomomi,
+  Cole,
+} from "./pages";
 
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <AuthProvider>
-              <Home />
-            </AuthProvider>
-          }
-        />
-        <Route path="/" element={<Layout />}>
-          <Route path="forum">
-            <Route index element={<Forum />} />
-            <Route path="new" element={<Propose />} />
-            <Route path=":voteId" element={<SingleVote />} />
+    <ChakraProvider theme={theme}>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <AuthProvider>
+                <Home />
+              </AuthProvider>
+            }
+          />
+          <Route path="/" element={<Layout />}>
+            <Route path="forum">
+              <Route index element={<Forum />} />
+              <Route path="new" element={<Propose />} />
+              <Route path=":voteId" element={<SingleVote />} />
+            </Route>
+            <Route path="learn">
+              <Route index element={<Learn />} />
+              <Route path=":articleId" element={<SingleArticle />} />
+              <Route path="compose" element={<Compose />} />
+            </Route>
+            <Route path="groups">
+              <Route index element={<Groups />} />
+            </Route>
+            <Route path="about">
+              <Route index element={<About />} />
+              <Route path="jinzhou" element={<Jinzhou />} />
+              <Route path="tomomi" element={<Tomomi />} />
+              <Route path="mario-evangjeli" element={<Mario />} />
+              <Route path="cole" element={<Cole />} />
+            </Route>
+            <Route path="login" element={<Login />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="user">
+              <Route path="verify" element={<Verify />} />
+              <Route path="setup" element={<SetUp />} />
+              <Route path=":userId" element={<UserProfile />} />
+            </Route>
+            <Route path="test"></Route>
+            <Route path="community" element={<Community />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
-          <Route path="learn">
-            <Route index element={<Learn />} />
-            <Route path=":articleId" element={<SingleArticle />} />
-            <Route path="compose" element={<Compose />} />
-          </Route>
-          <Route path="groups">
-            <Route index element={<Groups />} />
-          </Route>
-          <Route path="about">
-            <Route index element={<About />} />
-            <Route path="jinzhou" element={<Jinzhou />} />
-            <Route path="tomomi" element={<Tomomi />} />
-            <Route
-              path="mario-evangjeli"
-              element={<Mario />}
-            />
-            <Route path="cole" element={<Cole />} />
-          </Route>
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="user">
-            <Route path="verify" element={<Verify />} />
-            <Route path="setup" element={<SetUp />} />
-            <Route path=":userId" element={<UserProfile />} />
-          </Route>
-          <Route path="test"></Route>
-          <Route path="community" element={<Community />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
 }

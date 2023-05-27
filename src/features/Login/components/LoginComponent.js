@@ -10,8 +10,11 @@ import {
   InputRightElement,
   FormControl,
   FormLabel,
+  Image,
+  Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import ImageCaption from "../../../components/ImageCaption";
 
 const Login = () => {
   const signInWithGoogle = useSignInWithGoogle();
@@ -19,37 +22,67 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <Box className="row signIn">
-      <Box className="img-caption">
-        Edward Dodwell. <i>Bazar of Athens.</i>
-      </Box>
-
-      <Box className="signIn--form col-11 col-xl-4 col-lg-5 col-md-6 px-lg-5 px-2">
+    <Box
+      width="100vw"
+      minHeight="calc(100vh - 4rem)"
+      backgroundImage="url(https://firebasestorage.googleapis.com/v0/b/school-of-athens-122422.appspot.com/o/projectFiles%2Fimages%2Fbazar_of_athens.jpg?alt=media&token=4ceeb8ca-1a4c-4ef0-b2fe-77d821f7b323)"
+      backgroundSize="cover"
+      position="relative"
+      objectFit="cover"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignContent="center"
+      margin="0"
+      alignItems="center"
+    >
+      <ImageCaption artist="Edward Dodwell." work="Bazar of Athens." />
+      <Box
+        width={{ base: "90%", md: "75%", lg: "50%", xl: "35%" }}
+        px={{ base: 4, sm: 6, md: 8, lg: 10, xl: 12 }}
+        backgroundColor="gray.50"
+        py={12}
+        borderRadius="xl"
+        border="3px solid var(--border-gray-darker)"
+        borderColor="gray.300"
+        justifyContent="center"
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
         <Heading>Sign In</Heading>
         <Button variant="gray" width="100%" onClick={signInWithGoogle} mt={5}>
-          <img src={google} height="18" width="18" className="me-3" />
+          <Image src={google} height="18" width="18" me={3} />
           Sign in with Google
         </Button>
 
-        <Box className="signIn--divide">
-          <hr />
+        <Box
+          display="flex"
+          flexDirection="row"
+          alignItems="center"
+          justifyContent="space-between"
+          mt={6}
+          mb={4}
+          width="100%"
+        >
+          <Divider variant="gray" width="25%" mx={0} />
           Or sign in with email
-          <hr />
+          <Divider variant="gray" width="25%" mx={0} />
         </Box>
         <FormControl>
-          <FormLabel>Email</FormLabel>
+          <FormLabel ms={1} >Email</FormLabel>
           <Input
             type="email"
+            variant="primary"
             onChange={(e) => setEmail(e.target.value)}
-            bgColor="white"
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Password</FormLabel>
+          <FormLabel ms={1} mt={2}>Password</FormLabel>
           <InputGroup>
             <Input
               type={showPassword ? "text" : "password"}
-              bgColor="white"
+              variant="primary"
               onChange={(e) => setPassword(e.target.value)}
             />
             <InputRightElement>

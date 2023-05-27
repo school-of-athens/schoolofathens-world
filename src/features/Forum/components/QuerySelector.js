@@ -1,42 +1,51 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { Box, Button, Heading, Select, Stack, Flex } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Select,
+  Stack,
+  Flex,
+  GridItem,
+  Input,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
 import useAuthRedirect from "../../../hooks/useAuthRedirect";
 
 export default function () {
   const authRedirect = useAuthRedirect();
 
   return (
-    <Box
-      className="col-lg-3 col-md-4 col-12 py-4"
+    <GridItem
+      colSpan={{ base: 12, md: 4, lg: 3 }}
+      py={4}
       px={{ base: 5, md: 7, xl: 10 }}
     >
-      <Box className="query-selector">
-        <Heading size="sm" my={2} ms={1}>
-          Search
-        </Heading>
-
-        <Flex mb={5}>
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search (Disabled)"
-            disabled
-          />
-          <Button colorScheme="blue">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </Button>
-        </Flex>
-        <Heading size="sm" my={2} ms={1}>
-          Sort by
-        </Heading>
-        <Select defaultValue="DEFAULT" mb={5}>
-          <option value="DEFAULT">Default</option>
-          <option value="NEWEST">Newest</option>
-          <option value="VOTES">Votes</option>
-          <option value="OPINIONS">Opinions</option>
-          <option value="DUE_DATE">Due Date</option>
-        </Select>
+      <Box position="sticky" top="6rem">
+        <FormControl mt={4}>
+          <FormLabel>Search</FormLabel>
+          <Flex mb={5}>
+            <Input
+              me={2}
+              variant="primary"
+              type="search"
+              placeholder="Search (Disabled)"
+              isDisabled
+            />
+            <Button colorScheme="blue">
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </Button>
+          </Flex>
+          <FormLabel>Sort by</FormLabel>
+          <Select variant="primary" defaultValue="DEFAULT" mb={5} isDisabled>
+            <option value="DEFAULT">Default</option>
+            <option value="NEWEST">Newest</option>
+            <option value="VOTES">Votes</option>
+            <option value="OPINIONS">Opinions</option>
+            <option value="DUE_DATE">Due Date</option>
+          </Select>
+        </FormControl>
 
         <Stack direction="column" alignItems="start" my={2} spacing={3}>
           <Button variant="gray">Forum Rules</Button>
@@ -45,6 +54,6 @@ export default function () {
           </Button>
         </Stack>
       </Box>
-    </Box>
+    </GridItem>
   );
 }

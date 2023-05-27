@@ -74,6 +74,8 @@ const useUserUpload = () => {
           following: [],
           upvotedArticles: [],
           upvotedOpinions: [],
+          followedVotes: [],
+          startedVotes: [],
         });
         toast({
           status: "success",

@@ -1,20 +1,31 @@
 import { useState } from "react";
 
+
+
 const useNewVote = () => {
+
+
+
   const [newVote, setNewVote] = useState({
+    type: "Poll",
     title: "",
-    introduction: "",
-    topics: [],
+    // topics: [],
+    description: "",
     options: [
       {
         title: "",
-        summary: "",
+        description: "",
+        votes: 0,
       },
       {
         title: "",
-        summary: "",
+        description: "",
+        votes: 0,
       },
     ],
+    // viewRestriction: [],
+    // voteRestriction: [],
+    // due: null
   });
 
   return [newVote, setNewVote];

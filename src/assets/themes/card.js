@@ -25,16 +25,20 @@ const baseStyle = definePartsStyle({
       borderBottomColor: "#2A84EE",
     },
   },
-  header: {},
+  header: {
+    py: 1,
+    px: 0
+  },
   body: {
-    pb: "0",
-    pt: "4",
+    pb: 0,
+    pt: 2,
+    px: 1
   },
   footer: {
     justifyContent: "space-between",
     w: "100%",
-    pt: "1",
-    pb: "2",
+    pt: 1,
+    pb: 2,
   },
 });
 
@@ -48,8 +52,8 @@ const plain = defineStyle({
     borderBottomColor: "gray.300",
     borderRadius: "0.5rem",
     boxShadow: "none",
-    py: "3",
-    px: "4",
+    py: 3,
+    px: 6,
 
     _hover: {
       bgColor: "white",
@@ -59,6 +63,13 @@ const plain = defineStyle({
       borderBottomColor: "gray.300",
     },
   },
+  footer: {
+    borderTop: "2px solid",
+    borderColor: "gray.300",
+    px: 1,
+    mt: 3,
+    pb: 0,
+  }
 });
 
 const gray = defineStyle({

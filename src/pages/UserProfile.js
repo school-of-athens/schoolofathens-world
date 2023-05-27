@@ -15,8 +15,6 @@ export default function Overview() {
   const { userId } = useParams();
   const userData = useUserData(userId);
 
-  console.log(userData);
-
   return (
     <>
       <ProfileHead userData={userData} />

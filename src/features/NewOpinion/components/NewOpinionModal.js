@@ -12,92 +12,83 @@ import {
   Input,
   Select,
   Textarea,
-  useToast,
 } from "@chakra-ui/react";
 import useNewOpinion from "../hooks/useNewOpinion";
-import handleSubmit from "../services/handleSubmit";
-import { useNavigate } from "react-router-dom";
+import useSubmitNewOpinion from "../hooks/useSubmitOpinion";
+import getSortedObjectKeys from "../../../utils/getSortedObjectKeys";
 
-export default function ({ voteOptions, voteId, isOpen, onClose }) {
+export default function ({ voteData, voteId, isOpen, onClose }) {
   const [newOpinion, setNewOpinion, option, setOption] = useNewOpinion(voteId);
-  const toast = useToast();
-  const navigate = useNavigate();
+  const options = getSortedObjectKeys(voteData.options);
 
-  const handleSubmitRedirect = async () => {
-    try {
-      await handleSubmit(newOpinion, option, toast, navigate);
-    } catch (error) {
-      toast({
-        status: "error",
-        variant: "left-accent",
-        title: `An error has occured: ${error.message}`,
-        position: "bottom-left",
-        isClosable: true,
-      });
-    }
-  };
+  const submitOpinion = useSubmitNewOpinion(voteId, option, newOpinion);
 
   return (
     <>
-      {voteOptions && (
-        <Modal
-          isOpen={isOpen}
-          onClose={onClose}
-          scrollBehavior="inside"
-          isCentered
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Share Your Opinion</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <FormControl>
-                <FormLabel>Which side do you support?</FormLabel>
-                <Select onChange={(e) => setOption(e.target.value)}>
-                  <option>Select a side</option>
-                  <option>{voteOptions[0]}</option>
-                  <option>{voteOptions[1]}</option>
-                </Select>
-              </FormControl>
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        scrollBehavior="inside"
+        isCentered
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Share Your Opinion</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <FormControl>
+              <FormLabel>Which side do you support?</FormLabel>
+              <Select
+                variant="primary"
+                value={option}
+                onChange={(e) => setOption(e.target.value)}
+              >
+                <option value="default">Select a side</option>
+                {options.map((option) => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
+              </Select>
+            </FormControl>
 
-              <FormControl mt={4}>
-                <FormLabel>Title (Optional)</FormLabel>
-                <Input
-                  placeholder="Give a title for your opinion"
-                  value={newOpinion.title}
-                  onChange={(e) =>
-                    setNewOpinion((prev) => {
-                      return { ...prev, title: e.target.value };
-                    })
-                  }
-                />
-              </FormControl>
+            <FormControl mt={4}>
+              <FormLabel>Title (Optional)</FormLabel>
+              <Input
+                variant="primary"
+                placeholder="Give a title for your opinion"
+                value={newOpinion.title}
+                onChange={(e) =>
+                  setNewOpinion((prev) => {
+                    return { ...prev, title: e.target.value };
+                  })
+                }
+              />
+            </FormControl>
 
-              <FormControl mt={4}>
-                <FormLabel>Share your opinion with us</FormLabel>
-                <Textarea
-                  rows={5}
-                  value={newOpinion.text}
-                  onChange={(e) =>
-                    setNewOpinion((prev) => {
-                      return { ...prev, text: e.target.value };
-                    })
-                  }
-                ></Textarea>
-              </FormControl>
-            </ModalBody>
+            <FormControl mt={4}>
+              <FormLabel>Share your opinion with us</FormLabel>
+              <Textarea
+                variant="primary"
+                rows={5}
+                value={newOpinion.text}
+                onChange={(e) =>
+                  setNewOpinion((prev) => {
+                    return { ...prev, text: e.target.value };
+                  })
+                }
+              ></Textarea>
+            </FormControl>
+          </ModalBody>
 
-            <ModalFooter>
-              <Button colorScheme="red" mr={3} onClick={onClose}>
-                Discard
-              </Button>
-              <Button variant="blue" onClick={handleSubmitRedirect}>
-                Publsh Opinion
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      )}
+          <ModalFooter>
+            <Button colorScheme="red" mr={3} onClick={onClose}>
+              Discard
+            </Button>
+            <Button variant="blue" onClick={submitOpinion}>
+              Publsh Opinion
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

@@ -1,4 +1,3 @@
-import "../assets/SingleVote.css";
 import { useParams } from "react-router-dom";
 import {
   OpinionsControl,
@@ -12,7 +11,7 @@ import useScrollToTop from "../hooks/useScrollToTop";
 
 const SingleVote = () => {
   const { voteId } = useParams();
-  const [voteData, opinionList] = useVoteAndOpinions(voteId);
+  const [voteData, setVoteData, opinionsData] = useVoteAndOpinions(voteId);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   useScrollToTop();
@@ -23,20 +22,19 @@ const SingleVote = () => {
         <>
           {/* NewOpinion is a modal that will pop up when the button is clicked */}
           <NewOpinionModal
-            voteOptions={Object.keys(voteData.options).sort()}
+            voteData={voteData}
             voteId={voteId}
             isOpen={isOpen}
             onClose={onClose}
           />
 
           {/* VoteHead contains all the information of the vote */}
-          <VoteHead voteData={voteData} />
+          <VoteHead voteData={voteData} setVoteData={setVoteData} />
           {/* VoteToolbar contains a sort by element and a button to publish a new opinion */}
           <OpinionsControl onOpen={onOpen} />
-          <OpinionList
-            voteOptions={Object.keys(voteData.options).sort()}
-            opinionList={opinionList}
-          />
+          {Object.keys(opinionsData).length > 0 && (
+            <OpinionList voteData={voteData} opinionsData={opinionsData} />
+          )}
         </>
       )}
     </>

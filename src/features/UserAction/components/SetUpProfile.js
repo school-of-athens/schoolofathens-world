@@ -8,26 +8,39 @@ import {
   FormLabel,
   Textarea,
   FormHelperText,
+  Container,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import useImageUpload from "../hooks/useImageUpload";
 import useNewUser from "../hooks/useNewUser";
 import useUserUpload from "../hooks/useUserUpload";
 
 const SetUpProfile = () => {
-
   const [newUser, setNewUser] = useNewUser();
   const [imageURL, imageUpload] = useImageUpload();
   const userUpload = useUserUpload();
 
   return (
     <>
-      <Box className="container set_up px-md-5 px-2">
+      <Container
+        maxW="container.xl"
+        display="flex"
+        flexDirection="column"
+        my={12}
+        px={{ base: 2, md: 5 }}
+      >
         <Heading>Set Up Your Profile</Heading>
-        <Box className="row">
-          <Box className="col-12">
-            <Avatar boxSize="10rem" my="4" src={imageURL} name={newUser.displayName} />
-          </Box>
-          <Box className="col-12" mb={3}>
+        <Grid templateColumns="repeat(12, 1fr)" gap={3}>
+          <GridItem colSpan={12}>
+            <Avatar
+              boxSize="10rem"
+              my={4}
+              src={imageURL}
+              name={newUser.displayName}
+            />
+          </GridItem>
+          <GridItem colSpan={12} mb={3}>
             <FormControl>
               <FormLabel>Pick a profile photo</FormLabel>
               <input
@@ -38,58 +51,85 @@ const SetUpProfile = () => {
                   imageUpload(e.target.files[0]);
                 }}
               />
-              <FormHelperText>If you choose not to upload a profile photo, we will create one based on your name.</FormHelperText>
+              <FormHelperText>
+                If you choose not to upload a profile photo, we will create one
+                based on your name.
+              </FormHelperText>
             </FormControl>
-          </Box>
-          <Box className="col-md-4 col-12">
+          </GridItem>
+          <GridItem colSpan={{ base: 12, md: 4 }}>
             <FormControl>
               <FormLabel>Pick a username</FormLabel>
-              <Input type="text" placeholder="Your username" onChange={(e) => {
-                setNewUser((prev) => {
-                  return {...prev, displayName: e.target.value};
-                })
-              }} />
+              <Input
+                type="text"
+                variant="primary"
+                placeholder="Your username"
+                onChange={(e) => {
+                  setNewUser((prev) => {
+                    return { ...prev, displayName: e.target.value };
+                  });
+                }}
+              />
             </FormControl>
-          </Box>
-          <Box className="col-md-4 col-12">
+          </GridItem>
+          <GridItem colSpan={{ base: 12, md: 4 }}>
             <FormControl>
               <FormLabel>What's your first name?</FormLabel>
-              <Input type="text" placeholder="Your first name" onChange={(e) => {
-                setNewUser((prev) => {
-                  return {...prev, firstName: e.target.value};
-                })
-              }} />
+              <Input
+                variant="primary"
+                type="text"
+                placeholder="Your first name"
+                onChange={(e) => {
+                  setNewUser((prev) => {
+                    return { ...prev, firstName: e.target.value };
+                  });
+                }}
+              />
             </FormControl>
-          </Box>
-          <Box className="col-md-4 col-12">
+          </GridItem>
+          <GridItem colSpan={{ base: 12, md: 4 }}>
             <FormControl>
               <FormLabel>What's your last name?</FormLabel>
-              <Input type="text" placeholder="Your last name" onChange={(e) => {
-                setNewUser((prev) => {
-                  return {...prev, lastName: e.target.value};
-                })
-              }} />
+              <Input
+                variant="primary"
+                type="text"
+                placeholder="Your last name"
+                onChange={(e) => {
+                  setNewUser((prev) => {
+                    return { ...prev, lastName: e.target.value };
+                  });
+                }}
+              />
             </FormControl>
-          </Box>
-          <Box className="col-12" mt={3}>
+          </GridItem>
+          <GridItem colSpan={12} mt={3}>
             <FormControl>
               <FormLabel>Public Bio</FormLabel>
-              <Textarea type="text" rows="10" onChange={(e) => {
-                setNewUser((prev) => {
-                  return {...prev, bio: e.target.value};
-                })
-              }} />
+              <Textarea
+                variant="primary"
+                type="text"
+                rows="10"
+                onChange={(e) => {
+                  setNewUser((prev) => {
+                    return { ...prev, bio: e.target.value };
+                  });
+                }}
+              />
             </FormControl>
-          </Box>
-          <Box className="col-12 text-center">
-            <Button variant="blue" mt="5" onClick={() => userUpload(newUser, imageURL)}>
+          </GridItem>
+          <GridItem colSpan={12} textAlign="center">
+            <Button
+              variant="blue"
+              mt="5"
+              onClick={() => userUpload(newUser, imageURL)}
+            >
               Submit
             </Button>
-          </Box>
-        </Box>
-      </Box>
+          </GridItem>
+        </Grid>
+      </Container>
     </>
   );
-}
+};
 
 export default SetUpProfile;
