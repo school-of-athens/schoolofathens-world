@@ -88,7 +88,7 @@ export default function ({ voteData }) {
               justifyContent="start"
               alignItems="center"
             >
-              <Text m={0}>
+              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[0]].votes /
@@ -125,7 +125,7 @@ export default function ({ voteData }) {
               justifyContent="end"
               alignItems="center"
             >
-              <Text m={0}>
+              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[1]].votes /

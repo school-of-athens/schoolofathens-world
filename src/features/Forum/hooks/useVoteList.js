@@ -18,8 +18,6 @@ const useVoteList = () => {
       });
       setVoteList(voteListFiltered);
 
-      console.log(voteListFiltered);
-
       setIsLoading(false);
     } catch (error) {
       toast({

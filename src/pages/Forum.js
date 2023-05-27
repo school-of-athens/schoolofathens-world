@@ -6,6 +6,7 @@ import {
   QuerySelector,
   useVoteList,
 } from "../features/Forum";
+import ContainerGrid from "../layouts/ContainerGrid";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Forum = () => {
@@ -25,7 +26,7 @@ const Forum = () => {
         />
       )}
       <ForumTitle />
-      <ForumBody>
+      <ContainerGrid>
         {width > 768 ? (
           <>
             {voteList ? <VoteList voteList={voteList} /> : <></>}
@@ -37,7 +38,7 @@ const Forum = () => {
             {voteList ? <VoteList voteList={voteList} /> : <></>}
           </>
         )}
-      </ForumBody>
+      </ContainerGrid>
     </>
   );
 };

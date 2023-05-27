@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=DM+Serif+Display:ital@0;1&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:wght@400;700&family=Roboto:wght@100&display=swap");
 
 :root {
   --body-gray: #f7fafc;
@@ -50,10 +50,6 @@ body {
 
 .row {
   width: 100%;
-}
-
-p {
-  font-size: 1.1rem;
 }
 
 a {
@@ -364,7 +360,6 @@ a:visited {
   margin-bottom: 1.5rem;
 }
 
-
 .page-title {
   height: 20rem;
   width: 100%;
@@ -376,7 +371,7 @@ a:visited {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  filter: brightness(.7);
+  filter: brightness(0.7);
 }
 
 .page-title--body {

@@ -11,10 +11,12 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
   const [voted, setVoted] = useState("");
 
   useEffect(() => {
-    for (const vote of userData.votes) {
-      if (vote.voteId === voteData.id) {
-        setVoted(vote.option);
-        break;
+    if (userData) {
+      for (const vote of userData.votes) {
+        if (vote.voteId === voteData.id) {
+          setVoted(vote.option);
+          break;
+        }
       }
     }
   }, [userData]);
@@ -147,9 +149,9 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                     ? "blue.300"
                     : "gray.400",
               }}
-              onClick={() => authRequired(vote(options[0]))}
+              onClick={() => authRequired(() => vote(options[0]))}
             >
-              <Text m={0}>
+              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[0]].votes /
@@ -196,9 +198,9 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                     ? "blue.300"
                     : "gray.200",
               }}
-              onClick={() => authRequired(vote(options[1]))}
+              onClick={() => authRequired(() => vote(options[1]))}
             >
-              <Text m={0}>
+              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[1]].votes /

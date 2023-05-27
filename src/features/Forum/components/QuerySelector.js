@@ -18,7 +18,7 @@ export default function () {
 
   return (
     <GridItem
-      colSpan={{ base: 12, md: 4, lg: 3 }}
+      colSpan={{ base: 12, md: 4 }}
       py={4}
       px={{ base: 5, md: 7, xl: 10 }}
     >

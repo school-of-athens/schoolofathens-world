@@ -21,7 +21,7 @@ export default function ({ opinion }) {
         >
           <Avatar
             size="xs"
-            mr={5}
+            mr={2}
             name={userInfo.displayName}
             src={userInfo.photoURL}
           />

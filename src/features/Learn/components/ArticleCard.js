@@ -10,53 +10,70 @@ import {
   Box,
   Text,
   CardFooter,
-  Divider,
+  CardHeader,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { acropolisAtAthens } from "../../../data/projectFiles";
 import { faCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import ArticleExpand from "./ArticleExpand";
+import ArticlePreview from "./ArticlePreview";
 
-export default function ArticleCard({ article, num }) {
+export default function ArticleCard() {
   const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+
+  const article = [
+    {
+      type: "img",
+      src: "https://billmoyers.com/wp-content/uploads/2020/08/dont-believe-the-meme.jpg",
+    },
+    {
+      type: "p",
+      text: "Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal.",
+    },
+    {
+      type: "p",
+      text: "Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.",
+    },
+    {
+      type: "img",
+      src: "https://cdn.britannica.com/13/913-050-BF67B227/troops-Confederate-objective-progress-mark-Cemetery-Ridge.jpg",
+    },
+    {
+      type: "p",
+      text: "But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow -- this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us -- that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion -- that we here highly resolve that these dead shall not have died in vain -- that this nation, under God, shall have a new birth of freedom -- and that government of the people, by the people, for the people, shall not perish from the earth.",
+    },
+  ];
 
   return (
-    <Card maxW="sm" overflow="hidden" variant="borderBottom">
-      <Box onClick={() => navigate(`/learn/${article.id}`)}>
-        <Image objectFit="cover" src={acropolisAtAthens} width="100%" maxH="13rem" />
+    <Card variant="plain" mb={6}>
+      <CardHeader>
+        <Button variant="ghostGray">
+          <Avatar
+            size="xs"
+            mr={2}
+            src="https://religionnews.com/wp-content/uploads/2019/08/thumbRNS-Abraham-Lincoln-1863.jpg"
+          />
+          Abraham Lincoln
+        </Button>
+      </CardHeader>
+      <CardBody>
+        {expanded ? (
+          <ArticleExpand article={article} setExpanded={setExpanded} />
+        ) : (
+          <ArticlePreview article={article} setExpanded={setExpanded} />
+        )}
+      </CardBody>
 
-        <CardBody mb={0} pb={0} pt={4}>
-          <Heading size="md" lineHeight="1.4" noOfLines={num}>
-            {article.title}
-          </Heading>
-          <Button variant="ghostGray" mt={1} p={1} height="fit-content">
-            <Flex
-              gap="2"
-              alignItems="center"
-              flexWrap="wrap"
-              justifyContent="start"
-              p={0}
-            >
-              <Avatar name="Author WU" size="2xs" src="" colorScheme="blue" />
-              <Box>
-                <Text fontSize="sm">Author</Text>
-              </Box>
-            </Flex>
-          </Button>
-        </CardBody>
-      </Box>
-      <Divider variant="gray" my="1" />
-      <CardFooter w="100%" justifyContent="space-between" pt={1} pb={2}>
-        <Text fontSize="sm">3/20/2023 4:00</Text>
+      <CardFooter>
+        <span>Published November 19, 1863</span>
         <Button
           variant="ghostGray"
-          height="fit-content"
-          onClick={(e) => {
-            e.preventDefault();
-            alert("Haha");
-          }}
+          onClick={(e) => e.target.children[0].classList.toggle("blue")}
+          isDisabled
         >
-          <FontAwesomeIcon icon={faCircleUp} className="me-2" color="gray" />0
+          <FontAwesomeIcon icon={faCircleUp} className="icon-gray" />0 upvotes
         </Button>
       </CardFooter>
     </Card>

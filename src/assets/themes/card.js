@@ -46,10 +46,6 @@ const plain = defineStyle({
   container: {
     borderWidth: "2px",
     bgColor: "white",
-    borderTopColor: "gray.300",
-    borderLeftColor: "gray.300",
-    borderRightColor: "gray.300",
-    borderBottomColor: "gray.300",
     borderRadius: "0.5rem",
     boxShadow: "none",
     py: 3,
