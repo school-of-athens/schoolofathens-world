@@ -13,9 +13,13 @@ function EditableTitle({ article, setArticle }) {
         value={article.title}
         _hover={{ bg: "gray.100" }}
         p={1}
+        borderRadius="md"
         as={Heading}
+        width="100%"
+        display="flex"
+        m={0}
       >
-        <EditablePreview />
+        <EditablePreview width="100%" />
         <EditableTextarea
           resize="none"
           overflowY="hidden"

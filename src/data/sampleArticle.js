@@ -8,6 +8,10 @@ const article = {
       src: "https://billmoyers.com/wp-content/uploads/2020/08/dont-believe-the-meme.jpg",
     },
     {
+      type: "h",
+      text: "Gettysburg Address",
+    },
+    {
       type: "p",
       text: "Four score and seven years ago our fathers brought forth, upon this continent, a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal.",
     },

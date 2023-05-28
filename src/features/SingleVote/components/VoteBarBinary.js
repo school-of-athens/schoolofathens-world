@@ -67,8 +67,7 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                           100
                       )
                     : 0}
-                  % ({voteData.options[options[0]].votes}/
-                  {voteData.totalVotes || 0})
+                  %
                 </Text>
               </Flex>
             </Tooltip>
@@ -107,8 +106,7 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                         100
                     )
                   : 0}
-                % ({voteData.options[options[1]].votes}/
-                {voteData.totalVotes || 0})
+                %
               </Text>
             </Flex>
           </Tooltip>
@@ -159,8 +157,7 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                         100
                     )
                   : 0}
-                % ({voteData.options[options[0]].votes}/
-                {voteData.totalVotes || 0})
+                %
               </Text>
             </Flex>
           </Tooltip>
@@ -208,8 +205,7 @@ function VoteBarBinary({ voteData, options, setVoteData }) {
                         100
                     )
                   : 0}
-                % ({voteData.options[options[1]].votes}/
-                {voteData.totalVotes || 0})
+                %
               </Text>
             </Flex>
           </Tooltip>

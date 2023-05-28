@@ -11,13 +11,10 @@ function ArticleExpand({ article, setExpanded }) {
           return (
             <Image
               key={index}
-              maxH="50vh"
               width="100%"
               objectFit="cover"
-              src={item.src}
+              src={item.src || URL.createObjectURL(item.file)}
               mb={4}
-              // border="2px solid"
-              // borderColor="gray.300"
               borderRadius="lg"
             />
           );
@@ -32,6 +29,18 @@ function ArticleExpand({ article, setExpanded }) {
             >
               {item.text}
             </Text>
+          );
+        }
+        else if (item.type === "h") {
+          return (
+            <Heading
+              key={index}
+              mb={4}
+              fontSize="xl"
+              fontFamily="Lato"
+            >
+              {item.text}
+            </Heading>
           );
         }
       })}

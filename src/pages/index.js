@@ -3,7 +3,6 @@ import Forum from "./Forum";
 import Propose from "./Propose";
 import SingleVote from "./SingleVote";
 import Learn from "./Learn";
-import SingleArticle from "./SingleArticle";
 import About from "./About";
 import Login from "./Login";
 import SignUp from "./SignUp";
@@ -25,7 +24,6 @@ export {
   Propose,
   SingleVote,
   Learn,
-  SingleArticle,
   About,
   Login,
   SignUp,

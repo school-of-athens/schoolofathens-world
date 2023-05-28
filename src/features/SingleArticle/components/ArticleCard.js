@@ -1,14 +1,8 @@
 import {
   Card,
-  Stack,
-  Image,
   CardBody,
-  Heading,
   Button,
-  Flex,
   Avatar,
-  Box,
-  Text,
   CardFooter,
   CardHeader,
 } from "@chakra-ui/react";
@@ -17,20 +11,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import ArticleExpand from "./ArticleExpand";
 import ArticlePreview from "./ArticlePreview";
-import useUserInfo from "../hooks/useUserInfo";
+import useUserInfo from "../../../hooks/useUserInfo";
+import timestampToDate from "../../../utils/timestampToDate";
+import { useNavigate } from "react-router-dom";
 
-function ArticleCard({ article }) {
+function ArticleCard({ article, mode }) {
   // console.log(article.userId);
   const [expanded, setExpanded] = useState(false);
   const userInfo = useUserInfo(article.userId);
+  const navigate = useNavigate();
 
   return (
     <Card variant="plain" mb={6}>
       <CardHeader>
-        <Button variant="ghostGray">
-          <Avatar size="xs" mr={2} src={userInfo?.photoURL} />
-          {userInfo?.displayName}
-        </Button>
+        {mode === "preview" ? (
+          <Button variant="ghostGray">
+            <Avatar size="xs" mr={2} src={userInfo?.photoURL} />
+            {userInfo?.displayName}
+          </Button>
+        ) : (
+          <Button
+            variant="ghostGray"
+            onClick={() => navigate(`/user/${article.userId}`)}
+          >
+            <Avatar size="xs" mr={2} src={userInfo?.photoURL} />
+            {userInfo?.displayName}
+          </Button>
+        )}
       </CardHeader>
       <CardBody>
         {expanded ? (
@@ -41,7 +48,12 @@ function ArticleCard({ article }) {
       </CardBody>
 
       <CardFooter>
-        <span>Published {article.date}</span>
+        <span>
+          Published{" "}
+          {typeof article.date === "string"
+            ? article.date
+            : timestampToDate(article.date)}
+        </span>
         <Button
           variant="ghostGray"
           onClick={(e) => e.target.children[0].classList.toggle("blue")}

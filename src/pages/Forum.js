@@ -27,15 +27,15 @@ const Forum = () => {
       )}
       <ForumTitle />
       <ContainerGrid>
-        {width > 768 ? (
+        {width >= 768 ? (
           <>
-            {voteList ? <VoteList voteList={voteList} /> : <></>}
+            <VoteList voteList={voteList} />
             <QuerySelector />
           </>
         ) : (
           <>
             <QuerySelector />
-            {voteList ? <VoteList voteList={voteList} /> : <></>}
+            <VoteList voteList={voteList} />
           </>
         )}
       </ContainerGrid>

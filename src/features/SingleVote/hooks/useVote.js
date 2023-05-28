@@ -6,12 +6,12 @@ import { useToast } from "@chakra-ui/react";
 
 function useVote(voteData, setVoteData) {
   const toast = useToast();
-  const { auth, setUserData } = useContext(AuthContext);
+  const { user, setUserData } = useContext(AuthContext);
 
   const vote = async (option) => {
     try {
       const voteRef = doc(db, "votes", voteData.id);
-      const userRef = doc(db, "userDetails", auth.currentUser.uid);
+      const userRef = doc(db, "userDetails", user.uid);
 
       await updateDoc(voteRef, {
         [`options.${option}.votes`]: increment(1),

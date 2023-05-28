@@ -3,7 +3,7 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../../services/firebase";
 
 const useArticleList = () => {
-  const [articlesList, setArticlesList] = useState([]);
+  const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const articlesCollectionRef = collection(db, "articles");
 
@@ -13,15 +13,15 @@ const useArticleList = () => {
       ...doc.data(),
       id: doc.id,
     }));
-    setArticlesList(filteredData);
+    setArticles(filteredData);
+    setIsLoading(false);
   };
 
   useEffect(() => {
     getArticles();
-    setIsLoading(false);
   }, []);
 
-  return { articlesList, isLoading };
+  return { articles, isLoading };
 };
 
 export default useArticleList;

@@ -2,23 +2,33 @@ import {
   LearnTitle,
   InsightList,
   QuerySelector,
-  ArticleCard,
   useArticleList,
 } from "../features/Learn";
-import "../assets/Learn.css";
 import ContainerGrid from "../layouts/ContainerGrid";
 import { Box } from "@chakra-ui/react";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Learn = () => {
-  const { articlesList, isLoading } = useArticleList();
+  const { articles, isLoading } = useArticleList();
+  const { width } = useWindowDimensions();
+  console.log(articles);
 
   return (
     <>
       <LearnTitle />
       <Box bg="gray.50">
         <ContainerGrid>
-          <InsightList />
-          <QuerySelector />
+          {width >= 768 ? (
+            <>
+              <InsightList articles={articles} />
+              <QuerySelector />
+            </>
+          ) : (
+            <>
+              <QuerySelector />
+              <InsightList articles={articles} />
+            </>
+          )}
         </ContainerGrid>
       </Box>
     </>

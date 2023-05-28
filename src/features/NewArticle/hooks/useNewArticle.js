@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
+import { Timestamp } from "firebase/firestore";
 
 function useNewArticle() {
   const { user } = useContext(AuthContext);
@@ -8,7 +9,7 @@ function useNewArticle() {
   const [article, setArticle] = useState({
     title: "Title",
     userId: user?.uid,
-    date: null,
+    date: Timestamp.now(),
     body: [],
   });
 

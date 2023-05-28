@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
-import { Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
 import useSendVerificationEmail from "../hooks/useSendVerificationEmail";
 import useCheckIfVerified from "../hooks/useCheckIfVerified";
-import { Box } from "react-bootstrap-icons";
 
 const EmailVerification = () => {
   const sendVerificationEmail = useSendVerificationEmail();

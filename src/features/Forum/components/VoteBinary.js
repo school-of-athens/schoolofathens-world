@@ -88,7 +88,7 @@ export default function ({ voteData }) {
               justifyContent="start"
               alignItems="center"
             >
-              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
+              <Text m={0} fontSize={{base: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[0]].votes /
@@ -96,8 +96,7 @@ export default function ({ voteData }) {
                         100
                     )
                   : 0}
-                % ({voteData.options[options[0]].votes}/
-                {voteData.totalVotes || 0})
+                %
               </Text>
             </Flex>
 
@@ -125,7 +124,7 @@ export default function ({ voteData }) {
               justifyContent="end"
               alignItems="center"
             >
-              <Text m={0} fontSize={{base: "3xs", sm: "sm", md: "md", lg: "lg"}}>
+              <Text m={0} fontSize={{base: "sm", md: "md", lg: "lg"}}>
                 {voteData.totalVotes
                   ? Math.round(
                       (voteData.options[options[1]].votes /
@@ -133,8 +132,7 @@ export default function ({ voteData }) {
                         100
                     )
                   : 0}
-                % ({voteData.options[options[1]].votes}/
-                {voteData.totalVotes || 0})
+                %
               </Text>
             </Flex>
           </Box>

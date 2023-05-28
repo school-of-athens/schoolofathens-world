@@ -1,24 +1,31 @@
 import { Heading, Image, Text, Box, Button } from "@chakra-ui/react";
 
 function ArticlePreview({ article, setExpanded }) {
-  // if the first element is not a paragraph, then show everything until the first paragraph
-  // if the first element is a paragraph, just show the paragarph
+  // show at most two elements
+  // show until the first paragraph element
 
   const articleTruncated = [];
-  for (const item of article.body) {
-    if (item.type === "p") {
-      articleTruncated.push(item);
-      break;
-    } else {
-      articleTruncated.push(item);
+  if (article.body.length > 0) {
+    articleTruncated.push(article.body[0]);
+    if (
+      article.body[0].type !== "p" &&
+      article.body.find((item) => item.type === "p")
+    ) {
+      articleTruncated.push(article.body.find((item) => item.type === "p"));
     }
   }
 
   return (
     <>
-      <Heading size="lg" mb={4} noOfLines={3}>
-        {article.title}
-      </Heading>
+      {articleTruncated.length === article.body.length ? (
+        <Heading size="lg" mb={4}>
+          {article.title}
+        </Heading>
+      ) : (
+        <Heading size="lg" mb={4} noOfLines={3}>
+          {article.title}
+        </Heading>
+      )}
 
       {articleTruncated.map((item, index) => {
         if (item.type === "p") {
@@ -36,7 +43,7 @@ function ArticlePreview({ article, setExpanded }) {
                   content: '""',
                   position: "absolute",
                   zIndex: "1",
-                  bottom: "-0.5rem",
+                  bottom: "-0.75rem",
                   left: "0",
                   pointerEvents: "none",
                   backgroundImage:
@@ -53,13 +60,18 @@ function ArticlePreview({ article, setExpanded }) {
           return (
             <Image
               key={index}
-              maxH="50vh"
               width="100%"
               objectFit="cover"
-              src={item.src}
+              src={item.src || URL.createObjectURL(item.file)}
               mb={4}
               borderRadius="lg"
             />
+          );
+        } else if (item.type === "h") {
+          return (
+            <Heading key={index} mb={4} fontSize="xl" fontFamily="Lato">
+              {item.text}
+            </Heading>
           );
         }
       })}

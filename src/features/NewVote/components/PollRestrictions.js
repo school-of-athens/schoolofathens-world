@@ -14,7 +14,7 @@ import {
 function PollRestrictions({ setActiveStep, newVote, setNewVote, submit }) {
   return (
     <>
-      <Heading mb={8}>Set up the options of your poll</Heading>
+      <Heading mb={8}>Who can vote and who can view</Heading>
       <Alert status="warning" borderRadius={8}>
         <AlertIcon />
         This function is still under development. If you have set up your vote,

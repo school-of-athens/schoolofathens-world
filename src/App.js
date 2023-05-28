@@ -17,7 +17,6 @@ import {
   Propose,
   SingleVote,
   Learn,
-  SingleArticle,
   About,
   Login,
   SignUp,
@@ -55,7 +54,6 @@ export default function App() {
             </Route>
             <Route path="learn">
               <Route index element={<Learn />} />
-              <Route path=":articleId" element={<SingleArticle />} />
               <Route path="compose" element={<Compose />} />
             </Route>
             <Route path="groups">
