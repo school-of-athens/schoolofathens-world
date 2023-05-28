@@ -11,7 +11,6 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 const Learn = () => {
   const { articles, isLoading } = useArticleList();
   const { width } = useWindowDimensions();
-  console.log(articles);
 
   return (
     <>

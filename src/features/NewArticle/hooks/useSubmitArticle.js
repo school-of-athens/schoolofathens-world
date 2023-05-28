@@ -72,7 +72,7 @@ function useSubmitArticle({ article }) {
         toast({
           status: "success",
           variant: "left-accent",
-          title: `Your opinion has been added.`,
+          title: `Your article has been published.`,
           position: "bottom-left",
           isClosable: true,
         });

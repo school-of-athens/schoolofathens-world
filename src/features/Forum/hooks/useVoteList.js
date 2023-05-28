@@ -18,7 +18,7 @@ const useVoteList = () => {
       });
       setVoteList(voteListFiltered);
 
-      setIsLoading(false);
+      
     } catch (error) {
       toast({
         status: "error",
@@ -27,8 +27,8 @@ const useVoteList = () => {
         position: "bottom-left",
         isClosable: true,
       });
-      setIsLoading(false);
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {

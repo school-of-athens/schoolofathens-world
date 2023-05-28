@@ -223,6 +223,7 @@ const Compose = () => {
                             ],
                           };
                         });
+                        setNewImageURL("");
                       }}
                     >
                       Confirm

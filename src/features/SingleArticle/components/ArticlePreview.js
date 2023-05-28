@@ -18,11 +18,11 @@ function ArticlePreview({ article, setExpanded }) {
   return (
     <>
       {articleTruncated.length === article.body.length ? (
-        <Heading size="lg" mb={4}>
+        <Heading size="lg" mb={3}>
           {article.title}
         </Heading>
       ) : (
-        <Heading size="lg" mb={4} noOfLines={3}>
+        <Heading size="lg" mb={3} noOfLines={3}>
           {article.title}
         </Heading>
       )}
@@ -32,7 +32,7 @@ function ArticlePreview({ article, setExpanded }) {
           return (
             <Text
               key={index}
-              mb={4}
+              mb={2}
               lineHeight="1.75"
               fontSize="1.05rem"
               fontFamily="Lato"
@@ -63,13 +63,13 @@ function ArticlePreview({ article, setExpanded }) {
               width="100%"
               objectFit="cover"
               src={item.src || URL.createObjectURL(item.file)}
-              mb={4}
+              mb={2}
               borderRadius="lg"
             />
           );
         } else if (item.type === "h") {
           return (
-            <Heading key={index} mb={4} fontSize="xl" fontFamily="Lato">
+            <Heading key={index} mb={2} mt={3} fontSize="xl" fontFamily="Lato">
               {item.text}
             </Heading>
           );
@@ -77,7 +77,7 @@ function ArticlePreview({ article, setExpanded }) {
       })}
 
       {articleTruncated.length !== article.body.length && (
-        <Box textAlign="end" mt="-1rem">
+        <Box textAlign="end">
           <Button
             variant="ghostGray"
             color="blue.700"

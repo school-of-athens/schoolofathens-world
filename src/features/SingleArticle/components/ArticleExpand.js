@@ -3,7 +3,7 @@ import { Heading, Image, Text, Box, Button } from "@chakra-ui/react";
 function ArticleExpand({ article, setExpanded }) {
   return (
     <>
-      <Heading size="lg" mb={4}>
+      <Heading size="lg" mb={3}>
         {article.title}
       </Heading>
       {article.body.map((item, index) => {
@@ -14,7 +14,7 @@ function ArticleExpand({ article, setExpanded }) {
               width="100%"
               objectFit="cover"
               src={item.src || URL.createObjectURL(item.file)}
-              mb={4}
+              mb={2}
               borderRadius="lg"
             />
           );
@@ -22,7 +22,7 @@ function ArticleExpand({ article, setExpanded }) {
           return (
             <Text
               key={index}
-              mb={4}
+              mb={2}
               lineHeight="1.75"
               fontSize="1.05rem"
               fontFamily="Lato"
@@ -35,7 +35,8 @@ function ArticleExpand({ article, setExpanded }) {
           return (
             <Heading
               key={index}
-              mb={4}
+              mb={2}
+              mt={3}
               fontSize="xl"
               fontFamily="Lato"
             >
@@ -44,7 +45,7 @@ function ArticleExpand({ article, setExpanded }) {
           );
         }
       })}
-      <Box textAlign="end" mt="-1rem">
+      <Box textAlign="end">
         <Button
           variant="ghostGray"
           color="blue.700"

@@ -16,7 +16,6 @@ import timestampToDate from "../../../utils/timestampToDate";
 import { useNavigate } from "react-router-dom";
 
 function ArticleCard({ article, mode }) {
-  // console.log(article.userId);
   const [expanded, setExpanded] = useState(false);
   const userInfo = useUserInfo(article.userId);
   const navigate = useNavigate();
