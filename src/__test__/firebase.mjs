@@ -1,13 +1,17 @@
+import "@tensorflow/tfjs";
+import * as toxicity from "@tensorflow-models/toxicity";
 
-import { db } from "../services/firebase";
-import { collection, getDocs } from "firebase/firestore";
+// const checkToxicity = async (text) => {
+//     const model = await toxicity.load(0.8);
+//     const predictions = await model.classify(text);
+//     // return predictions;
+// }
 
-const cRef = collection(db, "testCollection");
+// console.log(checkToxicity(["You suck!"]));
 
-try {
-    const snap = getDocs(cRef);
-    console.log(snap.exists());
-}
-catch(error) {
-    console.log(error)
-}
+toxicity.load(0.8).then((model) => {
+  // Now you can use the `model` object to label sentences.
+  model.classify(["you suck"]).then((predictions) => {
+    console.log(predictions);
+  });
+});
