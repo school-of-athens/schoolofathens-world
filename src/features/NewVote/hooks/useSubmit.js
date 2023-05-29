@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function useSubmit(setActiveStep, newVote) {
   const toast = useToast();
   const navigate = useNavigate();
-  const { auth } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const submit = async () => {
     // check that all the inputs are filled
@@ -49,7 +49,7 @@ function useSubmit(setActiveStep, newVote) {
           const newVoteReformat = {
             ...newVote,
             options: newVoteOptions,
-            userId: auth.currentUser.uid,
+            userId: user.uid,
             totalVotes: 0,
             totalOpinions: 0,
           };
@@ -58,7 +58,7 @@ function useSubmit(setActiveStep, newVote) {
             collection(db, "votes"),
             newVoteReformat
           );
-          await updateDoc(doc(db, "userDetails", auth.currentUser.uid), {
+          await updateDoc(doc(db, "userDetails", user.uid), {
             startedVotes: arrayUnion(voteSnapshot.id),
           });
           toast({

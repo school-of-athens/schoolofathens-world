@@ -1,7 +1,6 @@
 import { Progress } from "@chakra-ui/react";
 import {
   ForumTitle,
-  ForumBody,
   VoteList,
   QuerySelector,
   useVoteList,

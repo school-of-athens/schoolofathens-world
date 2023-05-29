@@ -30,10 +30,12 @@ const useSignInWithGoogle = () => {
 
         try {
           // update user profile in firebase authentication
-          await updateProfile(auth.currentUser, {
-            displayName: name,
-            photoURL: fileURL,
-          });
+          if (!auth.currentUser.displayName && !auth.currentUser.photoURL) {
+            await updateProfile(auth.currentUser, {
+              displayName: name,
+              photoURL: fileURL,
+            });
+          }
 
           // prepare to upload new user info
           const newUserInfo = {

@@ -7,7 +7,7 @@ import { addDoc, arrayUnion, doc, updateDoc, collection, Timestamp, increment } 
 
 function useSubmitOpinion(voteId, option, newOpinion) {
   const toast = useToast();
-  const { auth, setUserData } = useContext(AuthContext);
+  const { user, setUserData } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const submitOpinion = async () => {
@@ -39,7 +39,7 @@ function useSubmitOpinion(voteId, option, newOpinion) {
           {
             ...newOpinion,
             publishDate: Timestamp.now(),
-            userId: auth.currentUser.uid,
+            userId: user.uid,
           }
         );
 
@@ -48,7 +48,7 @@ function useSubmitOpinion(voteId, option, newOpinion) {
         });
 
         // update userDetails to include the new opinion
-        await updateDoc(doc(db, "userDetails", auth.currentUser.uid), {
+        await updateDoc(doc(db, "userDetails", user.uid), {
           opinions: arrayUnion({
             voteId: voteId,
             option: option,

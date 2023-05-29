@@ -17,8 +17,6 @@ const useVoteList = () => {
         return { ...doc.data(), id: doc.id };
       });
       setVoteList(voteListFiltered);
-
-      
     } catch (error) {
       toast({
         status: "error",

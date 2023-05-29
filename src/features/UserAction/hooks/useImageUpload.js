@@ -4,7 +4,6 @@ import {
   uploadBytes,
   ref,
   getDownloadURL,
-  deleteObject,
 } from "firebase/storage";
 import { useToast } from "@chakra-ui/react";
 import { updateProfile } from "firebase/auth";

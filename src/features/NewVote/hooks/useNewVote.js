@@ -4,8 +4,6 @@ import { useState } from "react";
 
 const useNewVote = () => {
 
-
-
   const [newVote, setNewVote] = useState({
     type: "Poll",
     title: "",

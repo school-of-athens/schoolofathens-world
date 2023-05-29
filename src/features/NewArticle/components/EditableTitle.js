@@ -6,6 +6,9 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 
+// q: what is ternary operator?
+// a: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+
 function EditableTitle({ article, setArticle }) {
   return (
     <Tooltip label="Click to edit" placement="top">
