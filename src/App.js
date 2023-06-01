@@ -36,8 +36,6 @@ import TextToxicity from "./__test__/TextToxicity";
 
 export default function App() {
 
-  console.log("Welcome to the School of Athens!");
-
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
