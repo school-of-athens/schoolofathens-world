@@ -18,7 +18,7 @@ const Footer = () => {
             technology and decentralized management, the School of Athens
             ensures the security and transparency of the voting process. Join
             the School of Athens today and become a part of modern democracy.
-            (Written by ChatGTP)
+            (Website last updated on 6/1/2023)
           </Text>
           <Box className="row">
           <Box className="col-md-6 col-12 text-center text-md-start footer--logo ps-0">
