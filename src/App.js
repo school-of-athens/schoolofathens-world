@@ -36,8 +36,6 @@ import TextToxicity from "./__test__/TextToxicity";
 
 export default function App() {
 
-  console.log(process.env);
-
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
