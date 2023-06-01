@@ -1,11 +1,11 @@
 const firebaseConfig = {
-  apiKey: "AIza" + "SyBjs" + "g82du" + "Vqy8N" + "wexQS" + "dQskI" + "hzv9N" + "9xx2A",
-  authDomain: "school-of-athens-122422" + ".firebaseapp.com",
-  projectId: "school-" + "of-athens-" + "122422",
-  storageBucket: "school-" + "of-athens-" + "122422" + ".appspot.com",
-  messagingSenderId: "767259" + "328870",
-  appId: "1:767259328870" + ":web:" + "cbce73385e22ed49e3c8a7",
-  measurementId: "G-THP2Y" + "BH90N",
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.DATABASEURL,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+  appId: process.env.APPID,
+  measurementId: process.env.MEASUREMENTID,
 };
 
 export default firebaseConfig;

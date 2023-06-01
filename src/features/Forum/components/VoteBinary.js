@@ -114,7 +114,7 @@ export default function ({ voteData }) {
               height="100%"
               bg={
                 voteData.options[options[1]].votes >=
-                voteData.options[options[1]].votes
+                voteData.options[options[0]].votes
                   ? "blue.200"
                   : "gray.300"
               }
