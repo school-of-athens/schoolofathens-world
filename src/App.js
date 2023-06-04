@@ -11,6 +11,7 @@ import "./assets/global.css";
 
 // Pages
 import Layout from "./layouts/Layout";
+import Bulletin from "./pages/Bulletin";
 import {
   Home,
   Forum,
@@ -67,7 +68,7 @@ export default function App() {
               <Route path="tomomi" element={<Tomomi />} />
               <Route path="mario-evangjeli" element={<Mario />} />
               <Route path="cole" element={<Cole />} />
-              <Route path="mc" element={<Bulletin />} />
+              <Route path="mc" element={<Bulletin text="Welcome our new member, Michael C!" />} />
             </Route>
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />
