@@ -11,6 +11,7 @@ import "./assets/global.css";
 
 // Pages
 import Layout from "./layouts/Layout";
+import Bulletin from "./components/Bulletin";
 import {
   Home,
   Forum,
