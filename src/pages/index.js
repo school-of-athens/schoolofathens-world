@@ -17,6 +17,8 @@ import SetUp from "./SetUp";
 import PageNotFound from "./PageNotFound";
 import Tomomi from "./Tomomi";
 import Cole from "./Cole";
+import MC from "./MC";
+import Soleil from "./Soleil";
 
 export {
   Home,
@@ -38,4 +40,6 @@ export {
   PageNotFound,
   Tomomi,
   Cole,
+  MC,
+  Soleil
 };

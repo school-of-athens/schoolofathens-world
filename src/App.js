@@ -32,6 +32,8 @@ import {
   PageNotFound,
   Tomomi,
   Cole,
+  MC,
+  Soleil
 } from "./pages";
 import TextToxicity from "./__test__/TextToxicity";
 
@@ -68,7 +70,8 @@ export default function App() {
               <Route path="tomomi" element={<Tomomi />} />
               <Route path="mario-evangjeli" element={<Mario />} />
               <Route path="cole" element={<Cole />} />
-              <Route path="mc" element={<Bulletin />} />
+              <Route path="mc" element={<MC />} />
+              <Route path="soleil" element={<Soleil />} />
             </Route>
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<SignUp />} />

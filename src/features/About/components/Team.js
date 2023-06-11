@@ -37,11 +37,16 @@ export default function () {
           intro="Co-Founder"
         />
         <PersonCard
-          url="michael-clinton"
+          url="mc"
           name="Michael Clinton"
+          photoURL="https://lh3.googleusercontent.com/a/AGNmyxZ8FA4MAeX-x8dG-3ZI4tSu7u-smCwJ5JROp99R=s96-c"
           intro="Co-Founder"
         />
-        <PersonCard url="ewen-wang" name="Ewen Wang" intro="Developer" />
+        <PersonCard
+        url="soleil"
+        name="Soleil P"
+        intro="Co-Founder"
+        />
         {/* <PersonCard /> */}
       </Masonry>
       <Heading mb={4} mt={6}>
