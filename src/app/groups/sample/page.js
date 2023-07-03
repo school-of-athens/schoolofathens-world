@@ -20,10 +20,10 @@ import {
 import { ArrowLeftIcon } from "@chakra-ui/icons";
 import "@/assets/dissapear.css";
 import sampleGroup from "@/data/sampleGroup.js";
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 function SingleGroup() {
-  var wid = window.innerWidth;
-  var hei = window.innerHeight;
+  const { width, height } = useWindowDimensions();
   const overlay = {
     position: "absolute",
     overflow: "hidden",
@@ -33,14 +33,14 @@ function SingleGroup() {
 
   const mainView = {
     backgroundColor: "white",
-    height: hei * 0.8 + "px",
-    width: wid * 0.8 - 10 + "px",
+    height: height * 0.8 + "px",
+    width: width * 0.8 - 10 + "px",
     fontFamily: "Arial",
   };
   const alternative = {
     backgroundColor: "white",
-    height: hei * 0.8 + "px",
-    width: wid * 0.2 - 10 + "px",
+    height: height * 0.8 + "px",
+    width: width * 0.2 - 10 + "px",
     fontFamily: "Arial",
   };
 

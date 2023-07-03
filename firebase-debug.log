@@ -107,3 +107,53 @@
     at async prepareFrameworks (/usr/local/share/nvm/versions/node/v20.3.0/lib/node_modules/firebase-tools/lib/frameworks/index.js:216:33)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2023-07-03T12:38:45.726Z] ----------------------------------------------------------------------
+[debug] [2023-07-03T12:38:45.728Z] Command:       /usr/local/share/nvm/versions/node/v20.3.0/bin/node /home/codespace/nvm/current/bin/firebase deploy
+[debug] [2023-07-03T12:38:45.729Z] CLI Version:   12.4.2
+[debug] [2023-07-03T12:38:45.729Z] Platform:      linux
+[debug] [2023-07-03T12:38:45.729Z] Node Version:  v20.3.0
+[debug] [2023-07-03T12:38:45.729Z] Time:          Mon Jul 03 2023 12:38:45 GMT+0000 (Coordinated Universal Time)
+[debug] [2023-07-03T12:38:45.729Z] Env Overrides: GITHUB_API_URL
+[debug] [2023-07-03T12:38:45.730Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-03T12:38:45.799Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-03T12:38:45.799Z] > authorizing via signed-in user (jinzhouwu.public@gmail.com)
+[debug] [2023-07-03T12:38:45.799Z] [iam] checking project school-of-athens-122422 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-07-03T12:38:45.801Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/school-of-athens-122422:testIamPermissions [none]
+[debug] [2023-07-03T12:38:45.801Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/school-of-athens-122422:testIamPermissions x-goog-quota-user=projects/school-of-athens-122422
+[debug] [2023-07-03T12:38:45.802Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/school-of-athens-122422:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-03T12:38:46.927Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/school-of-athens-122422:testIamPermissions 200
+[debug] [2023-07-03T12:38:46.928Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/school-of-athens-122422:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-07-03T12:38:46.928Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/school-of-athens-122422 [none]
+[debug] [2023-07-03T12:38:47.228Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/school-of-athens-122422 200
+[debug] [2023-07-03T12:38:47.228Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/school-of-athens-122422 {"projectId":"school-of-athens-122422","projectNumber":"767259328870","displayName":"The School of Athens","name":"projects/school-of-athens-122422","resources":{"hostingSite":"school-of-athens-122422","realtimeDatabaseInstance":"school-of-athens-122422-default-rtdb","storageBucket":"school-of-athens-122422.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_49ea8e19-3513-46e2-9bb5-90ae20b028c4"}
+[debug] [2023-07-03T12:38:49.788Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/school-of-athens-122422/sites pageToken=&pageSize=10
+[debug] [2023-07-03T12:38:50.396Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/school-of-athens-122422/sites 200
+[debug] [2023-07-03T12:38:50.396Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/school-of-athens-122422/sites {"sites":[{"name":"projects/school-of-athens-122422/sites/school-of-athens-122422","defaultUrl":"https://school-of-athens-122422.web.app","appId":"1:767259328870:web:cbce73385e22ed49e3c8a7","type":"DEFAULT_SITE"}]}
+[debug] [2023-07-03T12:38:50.397Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:767259328870:web:cbce73385e22ed49e3c8a7/config [none]
+[debug] [2023-07-03T12:38:51.538Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:767259328870:web:cbce73385e22ed49e3c8a7/config 200
+[debug] [2023-07-03T12:38:51.547Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:767259328870:web:cbce73385e22ed49e3c8a7/config {"projectId":"school-of-athens-122422","appId":"1:767259328870:web:cbce73385e22ed49e3c8a7","databaseURL":"https://school-of-athens-122422-default-rtdb.firebaseio.com","storageBucket":"school-of-athens-122422.appspot.com","locationId":"us-central","apiKey":"AIzaSyBjsg82duVqy8NwexQSdQskIhzv9N9xx2A","authDomain":"school-of-athens-122422.firebaseapp.com","messagingSenderId":"767259328870","measurementId":"G-THP2YBH90N"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2023-07-03T12:39:21.303Z] Error: Export encountered errors on following paths:
+	/groups/sample/page: /groups/sample
+    at /workspaces/schoolofathens-world/node_modules/next/dist/export/index.js:624:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Span.traceAsyncFn (/workspaces/schoolofathens-world/node_modules/next/dist/trace/trace.js:103:20)
+    at async /workspaces/schoolofathens-world/node_modules/next/dist/build/index.js:1491:21
+    at async Span.traceAsyncFn (/workspaces/schoolofathens-world/node_modules/next/dist/trace/trace.js:103:20)
+    at async /workspaces/schoolofathens-world/node_modules/next/dist/build/index.js:1347:17
+    at async Span.traceAsyncFn (/workspaces/schoolofathens-world/node_modules/next/dist/trace/trace.js:103:20)
+    at async build (/workspaces/schoolofathens-world/node_modules/next/dist/build/index.js:145:29)
+    at async build (/usr/local/share/nvm/versions/node/v20.3.0/lib/node_modules/firebase-tools/lib/frameworks/next/index.js:57:5)
+    at async prepareFrameworks (/usr/local/share/nvm/versions/node/v20.3.0/lib/node_modules/firebase-tools/lib/frameworks/index.js:216:33)
+[error] 
+[error] Error: An unexpected error has occurred.
