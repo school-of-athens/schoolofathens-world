@@ -1,0 +1,25 @@
+.disappear {
+  display: block;
+}
+
+@media only screen and (max-width: 1000px) {
+  .disappear {
+    display: none;
+  }
+}
+
+.appear {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .appear {
+    display: block;
+  }
+}
+
+.under {
+  z-index: 0;
+  position: fixed;
+  top: 0;
+}
