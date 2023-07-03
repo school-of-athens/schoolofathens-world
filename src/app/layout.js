@@ -7,10 +7,10 @@ import ChakraProviders from "@/context/ChakraProviders";
 import Navbar from "@/layouts/Navbar";
 import Footer from "@/layouts/Footer";
 
-export const metadata = {
-  title: "The School of Athens",
-  description: "Next.js version",
-};
+// export const metadata = {
+//   title: "The School of Athens",
+//   description: "Next.js version",
+// };
 
 export default function RootLayout({ children }) {
   return (
