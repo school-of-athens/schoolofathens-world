@@ -6,6 +6,16 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+env:
+  CI: false
+  NEXT_PUBLIC_APIKEY: ${{ secrets.FIREBASE_APIKEY }}
+  NEXT_PUBLIC_AUTHDOMAIN: ${{ secrets.FIREBASE_AUTHDOMAIN }}
+  NEXT_PUBLIC_DATABASEURL: ${{ secrets.FIREBASE_DATABASEURL }}
+  NEXT_PUBLIC_PROJECTID: ${{ secrets.FIREBASE_PROJECTID }}
+  NEXT_PUBLIC_STORAGEBUCKET: ${{ secrets.FIREBASE_STORAGEBUCKET }}
+  NEXT_PUBLIC_MESSAGINGSENDERID: ${{ secrets.FIREBASE_MESSAGINGSENDERID }}
+  NEXT_PUBLIC_APPID: ${{ secrets.FIREBASE_APPID }}
+  NEXT_PUBLIC_MEASUREMENTID: ${{ secrets.FIREBASE_MEASUREMENTID }}
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
