@@ -1,0 +1,31 @@
+[debug] [2023-07-03T13:25:00.643Z] ----------------------------------------------------------------------
+[debug] [2023-07-03T13:25:00.644Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\22766\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-07-03T13:25:00.644Z] CLI Version:   11.28.0
+[debug] [2023-07-03T13:25:00.644Z] Platform:      win32
+[debug] [2023-07-03T13:25:00.645Z] Node Version:  v18.13.0
+[debug] [2023-07-03T13:25:00.645Z] Time:          Mon Jul 03 2023 21:25:00 GMT+0800 (China Standard Time)
+[debug] [2023-07-03T13:25:00.645Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-07-03T13:25:00.689Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-07-03T13:25:00.689Z] > authorizing via signed-in user (jinzhouwu.public@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\schoolofathens-world-next
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2023-07-03T13:25:09.701Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\22766\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+[error] 
+[error] Error: An unexpected error has occurred.

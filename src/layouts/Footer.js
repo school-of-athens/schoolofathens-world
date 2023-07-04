@@ -1,6 +1,7 @@
+"use client";
+
 import { Box, Grid, GridItem, Link, Flex, Image } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { logo } from "@/data/projectFiles";
 
 const Footer = () => {
   return (

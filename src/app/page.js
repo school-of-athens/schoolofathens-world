@@ -20,9 +20,6 @@ import ParallaxText from "@/features/Home/components/ParallaxText";
 export default function Home() {
   return (
     <>
-      {/* <Welcome /> */}
-      {/* <Hero /> */}
-      {/* <UnderDevelopment /> */}
       <Box>
         <Box bg="gray.100">
           <Container maxW="7xl" py={24}>

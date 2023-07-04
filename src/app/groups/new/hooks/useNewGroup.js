@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { useContext } from "react";
-import { AuthContext } from "../../../../../context/AuthContext"
+import { AuthContext } from "../../../context/AuthContext"
 
 function useNewGroup() {
 
@@ -10,8 +10,8 @@ function useNewGroup() {
     const [newGroup, setNewGroup] = useState({
         name: '',
         description: '',
-        photo: "",
-        members: [user?.uid],
+        photoURL: '',
+        members: [user.uid],
     });
 
     return [newGroup, setNewGroup];
