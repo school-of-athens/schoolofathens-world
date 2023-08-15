@@ -1,4 +1,7 @@
-import { EmailVerification } from "../features/UserAction";
+"use client";
+
+
+import EmailVerification from "./components/EmailVerification";
 
 
 const Verify = () => {

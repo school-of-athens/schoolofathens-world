@@ -18,6 +18,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import ParallaxText from "@/features/Home/components/ParallaxText";
 
 export default function Home() {
+
   return (
     <>
       <Box>
@@ -257,12 +258,17 @@ export default function Home() {
                     stroke-linejoin="round"
                   ></path>
                 </svg>
-                <Text mb={0} ms={3} fontSize="lg">Ethereum</Text>
+                <Text mb={0} ms={3} fontSize="lg">
+                  Ethereum
+                </Text>
               </Flex>
             </HStack>
           </Container>
         </Box>
-        <Box bg="purple.100">
+        <Box
+          bg="purple.500"
+          color="white"
+        >
           <Box color="purple.900" py={24} pb={12}>
             <ParallaxText baseVelocity={-5}>
               <FontAwesomeIcon icon={faPlay} />

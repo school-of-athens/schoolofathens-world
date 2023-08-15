@@ -1,4 +1,4 @@
-import { auth } from "../../../services/firebase";
+import { auth } from "@/services/firebase";
 import { sendEmailVerification } from "firebase/auth";
 import { useToast } from "@chakra-ui/react";
 import { useEffect } from "react";
@@ -32,7 +32,7 @@ const useSendVerificationEmail = () => {
     sendVerificationEmail();
   }, []);
 
-  return sendVerificationEmail;
+  return [auth?.currentUser?.email, sendVerificationEmail];
 };
 
 export default useSendVerificationEmail;

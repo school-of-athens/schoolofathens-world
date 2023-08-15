@@ -1,14 +1,20 @@
-import { GridItem } from "@chakra-ui/react";
+import { GridItem, VStack } from "@chakra-ui/react";
 import ArticleCard from "./ArticleCard";
 // import article from "../../../data/sampleArticle";
 
-function InsightList({ articles }) {
-
+function InsightList({ articles, onOpen, setDrawerContent }) {
   return (
-    <GridItem colSpan={{ base: 12, md: 8 }} pt={12} px={0} minH="50vh">
-      {articles.map((article, index) => (
-        <ArticleCard article={article} key={index} />
-      ))}
+    <GridItem colSpan={8} my={8} ms={16}>
+      <VStack spacing={6}>
+        {articles.map((article, index) => (
+          <ArticleCard
+            article={article}
+            key={index}
+            onOpen={onOpen}
+            setDrawerContent={setDrawerContent}
+          />
+        ))}
+      </VStack>
     </GridItem>
   );
 }

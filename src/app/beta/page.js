@@ -1,99 +1,183 @@
 "use client";
 
-import "./beta.css";
-import { EditorContent, generateHTML, useEditor } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import React from "react";
-import MenuBar from "./MenuBar";
-import Image from "@tiptap/extension-image";
-import { Box, Container, Code, Heading } from "@chakra-ui/react";
-import { Prose } from "@nikolovlazar/chakra-ui-prose";
-import Typography from "@tiptap/extension-typography";
-import CharacterCount from "@tiptap/extension-character-count";
+import {
+  Avatar,
+  Box,
+  Flex,
+  HStack,
+  Icon,
+  IconButton,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Stack,
+  StackDivider,
+  Text,
+  Button,
+  ButtonGroup,
+  Container,
+  Divider,
+  SimpleGrid,
+} from "@chakra-ui/react";
+import {
+  FiBookmark,
+  FiClock,
+  FiGrid,
+  FiHelpCircle,
+  FiMoreVertical,
+  FiPieChart,
+  FiSearch,
+  FiSettings,
+  
+} from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { DocumentCollapse } from "./DocumentCollapse";
+import { Logo } from "./Logo";
+import { SidebarButton } from "./SidebarButton";
+import { links } from './_data';
 
-export default function Editor() {
-  const [content, setContent] = React.useState(null);
-  // if (content) {
-  //   console.log(generateHTML(content, [StarterKit, Image]));
-  // }
-
-  const editor = useEditor({
-    extensions: [
-      StarterKit.configure({
-        heading: {
-          levels: [1, 2],
-        },
-      }),
-      Image,
-      CharacterCount,
-      Typography,
-    ],
-    content: `
-      <h2>
-        Hi there,
-      </h2>
-      <p>
-        this is a <em>basic</em> example of <strong>tiptap</strong>. Sure, there are all kind of basic text styles you’d probably expect from a text editor. But wait until you see the lists:
-      </p>
-      <ul>
-        <li>
-          That’s a bullet list with one …
-        </li>
-        <li>
-          … or two list items.
-        </li>
-      </ul>
-      <p>
-        Isn’t that great? And all of that is editable. But wait, there’s more. Let’s try a code block:
-      </p>
-      <pre><code class="language-css">body {
-  display: none;
-}</code></pre>
-      <p>
-        I know, I know, this is impressive. It’s only the tip of the iceberg though. Give it a try and click a little bit around. Don’t forget to check the other examples too.
-      </p>
-      <blockquote>
-        Wow, that’s amazing. Good work, boy! 👏
-        <br />
-        — Mom
-      </blockquote>
-    `,
-    onUpdate({ editor }) {
-      setContent(editor.getJSON());
-    },
-  });
-
-  if (!editor) {
-    return null;
-  }
-
+export default function App() {
   return (
-    <Box minH="calc(100vh - 8rem)">
-      <Container maxW="7xl">
-        <Box my={6}>
-          <MenuBar editor={editor} />
-        </Box>
-        <Prose>
-          <EditorContent editor={editor} />
-        </Prose>
-        {/* {content && (
-          <Prose
-            dangerouslySetInnerHTML={{
-              __html: generateHTML(content, [StarterKit, Image]),
-            }}
+    <>
+      <Flex as="section" minH="100vh">
+        <Stack
+          flex="1"
+          maxW={{ base: "full", sm: "xs" }}
+          py={{ base: "6", sm: "8" }}
+          px={{ base: "4", sm: "6" }}
+          bg="blue.400"
+          color="white"
+          borderRightWidth="1px"
+          justifyContent="space-between"
+        >
+          <Stack spacing="8">
+            <Logo alignSelf="start" />
+            <InputGroup>
+              <InputLeftElement>
+                <Icon as={FiSearch} color="fg.accent.muted" fontSize="lg" />
+              </InputLeftElement>
+              <Input placeholder="Search" variant="filled.accent" />
+            </InputGroup>
+            <Stack spacing="1">
+              <SidebarButton leftIcon={<FiGrid />}>Dashboard</SidebarButton>
+              <SidebarButton leftIcon={<FiPieChart />}>Analysis</SidebarButton>
+              <DocumentCollapse />
+              <SidebarButton leftIcon={<FiClock />}>History</SidebarButton>
+              <SidebarButton leftIcon={<FiBookmark />}>Favorites</SidebarButton>
+            </Stack>
+          </Stack>
+          <Stack
+            spacing="4"
+            divider={<StackDivider borderColor="bg.accent.subtle" />}
           >
-          </Prose>
-        )} */}
-        <Heading>
-          Current words: {editor.storage.characterCount.words()}
-          <br />
-          Type:{" "}
-          {content?.content.length < 5 &&
-          editor.storage.characterCount.words() < 250
-            ? "Post"
-            : "Article"}
-        </Heading>
-      </Container>
-    </Box>
+            <Box />
+            <Stack spacing="1">
+              <SidebarButton leftIcon={<FiHelpCircle />}>
+                Help Center
+              </SidebarButton>
+              <SidebarButton leftIcon={<FiSettings />}>Settings</SidebarButton>
+            </Stack>
+            <HStack spacing="3" justify="space-between">
+              <HStack spacing="3">
+                <Avatar boxSize="10" src="https://i.pravatar.cc/300" />
+                <Box>
+                  <Text textStyle="sm" fontWeight="medium">
+                    John Doe
+                  </Text>
+                  <Text textStyle="sm" color="fg.accent.muted">
+                    john@chakra-ui.com
+                  </Text>
+                </Box>
+              </HStack>
+              <IconButton
+                variant="tertiary.accent"
+                icon={<FiMoreVertical />}
+                aria-label="Open Menu"
+              />
+            </HStack>
+          </Stack>
+        </Stack>
+      </Flex>
+      <Box bg="bg.accent.default" color="on-acccent">
+        <Container as="footer" role="contentinfo">
+          <Stack
+            justify="space-between"
+            align="start"
+            direction={{ base: "column", lg: "row" }}
+            py={{ base: "12", md: "16" }}
+            spacing="8"
+          >
+            <Stack spacing={{ base: "6", md: "8" }} align="start">
+              <Logo />
+              <Text color="fg.accent.muted">
+                Create beautiful websites remarkably fast.
+              </Text>
+            </Stack>
+            <SimpleGrid
+              columns={{ base: 2, md: 4 }}
+              gap="8"
+              width={{ base: "full", lg: "auto" }}
+            >
+              {links.map((group, idx) => (
+                <Stack key={idx} spacing="4" minW={{ lg: "40" }}>
+                  <Text
+                    fontSize="sm"
+                    fontWeight="semibold"
+                    color="fg.accent.subtle"
+                  >
+                    {group.title}
+                  </Text>
+                  <Stack spacing="3" shouldWrapChildren>
+                    {group.links.map((link, idx) => (
+                      <Button
+                        key={idx}
+                        as="a"
+                        variant="text.accent"
+                        href={link.href}
+                      >
+                        {link.label}
+                      </Button>
+                    ))}
+                  </Stack>
+                </Stack>
+              ))}
+            </SimpleGrid>
+          </Stack>
+          <Divider borderColor="bg.accent.subtle" />
+          <Stack
+            pt="8"
+            pb="12"
+            justify="space-between"
+            direction={{ base: "column-reverse", md: "row" }}
+            align="center"
+          >
+            <Text fontSize="sm" color="fg.accent.subtle">
+              &copy; {new Date().getFullYear()} Chakra UI Pro, Inc. All rights
+              reserved.
+            </Text>
+            <ButtonGroup variant="tertiary.accent">
+              <IconButton
+                as="a"
+                href="#"
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
+              />
+              <IconButton
+                as="a"
+                href="#"
+                aria-label="GitHub"
+                icon={<FaGithub />}
+              />
+              <IconButton
+                as="a"
+                href="#"
+                aria-label="Twitter"
+                icon={<FaTwitter />}
+              />
+            </ButtonGroup>
+          </Stack>
+        </Container>
+      </Box>
+    </>
   );
 }

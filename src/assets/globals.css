@@ -1,10 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather:wght@400;700&family=Roboto:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:wght@400;700&display=swap');
 
 body {
   font-family: "DM Sans", sans-serif !important;
   margin: 0 !important;
   width: 100%;
   overflow-x: hidden !important;
+}
+
+.ProseMirror:focus-visible {
+  outline: none;
 }
 
 .row {

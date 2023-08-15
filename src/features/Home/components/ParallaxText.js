@@ -66,6 +66,8 @@ export default function ParallaxText({ children, baseVelocity = 100 }) {
       whiteSpace="nowrap"
       display="flex"
       flexWrap="nowrap"
+      color="white"
+      
     >
       <Box
         as={motion.div}

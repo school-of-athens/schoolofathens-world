@@ -15,13 +15,16 @@ import useUserInfo from "@/hooks/useUserInfo";
 import timestampToDate from "@/utils/timestampToDate";
 import { useRouter } from "next/navigation";
 
-function ArticleCard({ article, mode }) {
+function ArticleCard({ article, mode, onOpen, setDrawerContent }) {
   const [expanded, setExpanded] = useState(false);
   const userInfo = useUserInfo(article.userId);
   const router = useRouter();
 
   return (
-    <Card variant="plain" mb={6}>
+    <Card variant="plain" mb={6} onClick={() => {
+      onOpen();
+      setDrawerContent(<ArticleExpand article={article} setExpanded={setExpanded} />);
+    }}>
       <CardHeader>
         {mode === "preview" ? (
           <Button variant="ghostGray">

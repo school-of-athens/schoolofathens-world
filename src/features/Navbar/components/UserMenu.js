@@ -11,7 +11,7 @@ import {
   Icon,
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faRightFromBracket, faHouse } from "@fortawesome/free-solid-svg-icons";
 import useSignOut from "../hooks/useSignOut";
 import NextLink from "next/link";
 
@@ -43,12 +43,37 @@ const UserPortrait = ({ user }) => {
 
       <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
         <MenuItem>
-          <Link as={NextLink} href={`/user/${user.uid}`} fontSize="1rem" _hover={{ textDecoration: "none" }} color="gray.500" fontWeight={500}>
+          <Link
+            as={NextLink}
+            href={`/dashboard}`}
+            fontSize="1rem"
+            _hover={{ textDecoration: "none" }}
+            color="gray.500"
+            fontWeight={500}
+          >
+            <Icon as={FontAwesomeIcon} icon={faHouse} me={2} />
+            Dashboard
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link
+            as={NextLink}
+            href={`/user/${user.uid}`}
+            fontSize="1rem"
+            _hover={{ textDecoration: "none" }}
+            color="gray.500"
+            fontWeight={500}
+          >
             <Icon as={FontAwesomeIcon} icon={faUser} me={2} />
             My Profile
           </Link>
         </MenuItem>
-        <MenuItem onClick={signOut} fontSize="1rem" color="gray.500" fontWeight={500}>
+        <MenuItem
+          onClick={signOut}
+          fontSize="1rem"
+          color="gray.500"
+          fontWeight={500}
+        >
           <Icon as={FontAwesomeIcon} icon={faRightFromBracket} me={2} />
           Log out
         </MenuItem>

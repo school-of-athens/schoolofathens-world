@@ -10,38 +10,49 @@ import {
   AvatarGroup,
   Avatar,
   Link,
+  Divider,
+  Box,
+  Icon,
 } from "@chakra-ui/react";
 import sampleGroup from "@/data/sampleGroup";
 import NextLink from "next/link";
+import { acropolisAtAthens } from "@/data/projectFiles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserGroup } from "@fortawesome/free-solid-svg-icons";
 
 function GroupCard() {
   return (
-    <GridItem colSpan={4}>
+    <GridItem colSpan={3}>
       <Link
         as={NextLink}
         href={`/groups/sample`}
         _hover={{ textDecoration: "none" }}
       >
-        <Card px={4} py={6}>
-          <CardHeader>
-            <Image src={sampleGroup.photoURL} />
-            <Heading>{sampleGroup.name}</Heading>
-          </CardHeader>
-          <CardBody>
-            <Text>{sampleGroup.description}</Text>
+        <Card variant="borderBottom">
+          <Image
+            objectFit="cover"
+            src={acropolisAtAthens}
+            width="100%"
+            maxH="13rem"
+          />
+
+          <CardBody px={3} py={2}>
+            <Heading size="md" lineHeight="1.4" noOfLines={2}>
+              Group Name
+            </Heading>
+            <Text mb={0}>
+              Group Description.
+            </Text>
           </CardBody>
-          <CardFooter>
-            <Text>Members: {sampleGroup.members.length}</Text>
-            <AvatarGroup size="md" max={2}>
-              <Avatar name="Ryan Florence" src="https://bit.ly/ryan-florence" />
-              <Avatar name="Segun Adebayo" src="https://bit.ly/sage-adebayo" />
-              <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-              <Avatar
-                name="Prosper Otemuyiwa"
-                src="https://bit.ly/prosper-baba"
-              />
-              <Avatar name="Christian Nwamba" src="https://bit.ly/code-beast" />
-            </AvatarGroup>
+          <CardFooter
+            borderTop="2px solid"
+            borderTopColor="gray.300"
+            display="flex"
+            justifyContent="end"
+            alignItems="center"
+            color="gray.500"
+          >
+            <Icon as={FontAwesomeIcon} icon={faUserGroup} me={2} /> 0
           </CardFooter>
         </Card>
       </Link>

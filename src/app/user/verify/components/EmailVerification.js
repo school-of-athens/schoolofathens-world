@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 import { Button, Flex, Heading, Text, Box } from "@chakra-ui/react";
-import useSendVerificationEmail from "../hooks/useSendVerificationEmail";
-import useCheckIfVerified from "../hooks/useCheckIfVerified";
+import useSendVerificationEmail from "../../hooks/useSendVerificationEmail";
+import useCheckIfVerified from "../../hooks/useCheckIfVerified";
 
 const EmailVerification = () => {
-  const sendVerificationEmail = useSendVerificationEmail();
+  const [email, sendVerificationEmail] = useSendVerificationEmail();
   const checkIfVerified = useCheckIfVerified();
 
   return (
@@ -34,7 +34,7 @@ const EmailVerification = () => {
 
       <Heading>Please verify your email</Heading>
       <Text my={4} textAlign="center">
-        Check your inbox! We sent an email verification link to name@example.com
+        Check your inbox! We sent an email verification link to {email}
       </Text>
 
       <Button variant="blue" onClick={checkIfVerified}>
